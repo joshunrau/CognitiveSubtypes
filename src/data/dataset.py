@@ -17,6 +17,7 @@ class Dataset(Config):
         Variable names based on user selections as will be recoded.
     
     df: DataFrame
+        Dataset which can be manipulated using the below methods
 
     Methods
     -------
@@ -29,6 +30,7 @@ class Dataset(Config):
         Apply inclusion criteria based on specified method. Available options are "AND" and "OR".
     
     apply_exclusion_criteria()
+        Apply exclusion criteria by removing cases where any of the specified diagnoses are present
 
     recode_vars()
         Replace values for each variable as specified in the config class 
@@ -107,16 +109,3 @@ class Dataset(Config):
 
     def write_csv(self):
         self.df.to_csv(self.filepaths["Output"], index=False)
-
-
-def main():
-    data = Dataset()
-    data.recode_diagnoses()
-    data.apply_inclusion_criteria(method="OR")
-    data.apply_exclusion_criteria()
-    data.recode_vars()
-    data.write_csv()
-
-
-if __name__ == "__main__":
-    main()
