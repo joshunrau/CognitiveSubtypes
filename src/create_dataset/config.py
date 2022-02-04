@@ -9,6 +9,7 @@ class Config:
     This class is used to encapsulate all data that can easily be manually adjusted by
     each of us. It is inherited by the Dataset class and there is no reason for it to 
     ever be instantiated (if you don't know what this means, don't worry about it). 
+
     Attributes
     ----------
     
@@ -22,32 +23,41 @@ class Config:
         Specifies the paths to the raw data file and the output file to be created when 
         subsetting the dataset. By default, the output file is set to your name and the 
         current date to avoid confusion, but feel free to change this.
+    
     variables: dict
         Specifies the parameters of variables that may be included in the dataset. Additional 
         variables may be added as key-value pairs, where each variable is an arbitrary name, 
         mapped onto the following parameters:
+
             DataField: The unique identifier in the Biobank for that variable
             InstanceNum: The desired instance for that variable
+
             ArrayRange: The array of values associated with a DataField at a particular instance
             Included: Specifies whether this variable should be included in the subset
+
             Coding: Specifies labels used to recode values in dataset. If values are to be recoded, 
             then this should be a dictionary of the format 'value: label', where both values must be 
             strings. Otherwise, if the variable should not be recoded, or if it is recoded using a special 
             method in the Dataset class, as is the case for diagnoses, it should be 'None'.
+
         Note that the above parameters are provided on the Biobank showcase website.
     
     included_diagnoses: dict
         Specifies the diagnoses to be included in the dataset, which are given arbitrary names and map
         onto regular expressions to match the ICD diagnostic codes specified in the Biobank.
+
     excluded_diagnoses: dict
         Specifies the diagnoses to be excluded in the dataset, which are given arbitrary names and map
         onto regular expressions to match the ICD diagnostic codes specified in the Biobank.
+
     selected_diagnoses: dict
         Combined dictionary of all included and excluded diagnoses
+
     Notes
     -----
     ICD diagnostic codes are specified in the Biobank using coding method 19
     For more details, see https://biobank.ndph.ox.ac.uk/showcase/coding.cgi?id=19
+    
     """
 
     name = "Josh"
