@@ -1,7 +1,7 @@
 import re
 import pandas as pd
 
-from .config import Config
+from config import Config
 
 
 class Dataset(Config):
@@ -57,7 +57,8 @@ class Dataset(Config):
                 recoded_vars += array_vars
     assert len(ukbb_vars) == len(recoded_vars)
 
-    def __init__(self) -> None:
+    def __init__(self, name) -> None:
+        self.name = name
         self.df = pd.read_csv(self.filepaths["RawData"], dtype=str, usecols=self.ukbb_vars)
         self.df.rename({k: v for k, v in zip(self.ukbb_vars, self.recoded_vars)}, axis=1, inplace=True)
         self.df.dropna(axis=1, how="all", inplace=True)
@@ -109,4 +110,4 @@ class Dataset(Config):
                 self.df[cols] = self.df[cols].replace(to_replace=self.variables[name]["Coding"])
 
     def write_csv(self):
-        self.df.to_csv(self.filepaths["Output"], index=False)
+        self.df.to_csv(self.name + "_" + self.filepaths["Output"], index=False)
