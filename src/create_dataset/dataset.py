@@ -109,4 +109,4 @@ class Dataset(Config):
                 self.df[cols] = self.df[cols].replace(to_replace=self.variables[name]["Coding"])
 
     def write_csv(self):
-        self.df.to_csv(self.name + "_" + self.filepaths["Output"], index=False)
+        self.df.to_csv(self.filepaths["Output"], index=False)
