@@ -1,7 +1,7 @@
 import re
 import pandas as pd
 
-from config import Config
+from .config import Config
 
 
 class Dataset(Config):
