@@ -1,5 +1,6 @@
 import datetime
 import os
+from pathlib import Path
 
 
 class Config:
@@ -12,13 +13,16 @@ class Config:
     Attributes
     ----------
     
+    name: str
+        Your name
+    
     data_dir: str
         Path to the directory containing any data files and where the subsetted dataset will be outputted
     
     filepaths: dict
         Specifies the paths to the raw data file and the output file to be created when 
-        subsetting the dataset. By default, the output file is set to the current date 
-        to avoid confusion, but feel free to change this.
+        subsetting the dataset. By default, the output file is set to your name and the 
+        current date to avoid confusion, but feel free to change this.
 
     variables: dict
         Specifies the parameters of variables that may be included in the dataset. Additional 
@@ -58,11 +62,13 @@ class Config:
 
     """
 
-    data_dir = "/Users/joshua/Developer/CognitiveSubtypes/data"
+    name = "Josh"
+
+    data_dir = os.path.join(Path.home(), "projects", "def-mlepage", "UKBB")
 
     filepaths = {
         "RawData": os.path.join(data_dir, "raw_all_civet.csv"),
-        "Output": os.path.join(data_dir, f"processed_{datetime.date.today().isoformat()}.csv")
+        "Output": os.path.join(data_dir, f"{name}_{datetime.date.today().isoformat()}.csv")
     }
 
     variables = {
