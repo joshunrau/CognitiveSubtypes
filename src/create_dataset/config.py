@@ -62,8 +62,8 @@ class Config:
 
     name = "Josh"
 
-    data_dir = os.path.join(Path.home(), "projects", "def-mlepage", "UKBB")
-
+    data_dir = os.path.join(Path.home(), "Developer", "CognitiveSubtypes", "data")
+    
     filepaths = {
         "RawData": os.path.join(data_dir, "current_civet.csv"),
         "Output": os.path.join(data_dir, f"{name}_{datetime.date.today().isoformat()}.csv")

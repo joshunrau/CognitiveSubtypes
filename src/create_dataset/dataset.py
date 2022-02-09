@@ -56,8 +56,7 @@ class Dataset(Config):
                 recoded_vars += array_vars
     assert len(ukbb_vars) == len(recoded_vars)
 
-    def __init__(self, name) -> None:
-        self.name = name
+    def __init__(self) -> None:
         self.df = pd.read_csv(self.filepaths["RawData"], dtype=str, usecols=self.ukbb_vars)
         self.df.rename({k: v for k, v in zip(self.ukbb_vars, self.recoded_vars)}, axis=1, inplace=True)
         self.df.dropna(axis=1, how="all", inplace=True)
