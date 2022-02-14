@@ -2,6 +2,7 @@ import datetime
 import os
 from pathlib import Path
 
+from medications import MEDICATION_CODES
 
 class Config:
     """
@@ -117,8 +118,8 @@ class Config:
             'DataField': 20003,
             'InstanceNum': 2,
             'ArrayRange': range(0, 48),
-            'Included': False,
-            'Coding': None
+            'Included': True,
+            'Coding': MEDICATION_CODES
         },
         'edu_qual': {
             'DataField': 6138,

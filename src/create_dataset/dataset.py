@@ -22,6 +22,15 @@ class Dataset(Config):
     Methods
     -------
 
+    create_binary_variables(voi: str, patterns: dict)
+        Takes as input a variable of interest (e.g., 'medication') and a dictionary with keys representing new
+        variable names mapped onto regular expressions. New binary variables will be created based on whether
+        each individual has a value matching the regular expression in any of the columns related to the variable
+        of interest.
+
+        Example:
+        >>> myDataset.create_binary_variables("medication", {"taking_painkiller": "(aspirin|tylenol)"})
+    
     recode_diagnoses()
         Creates new variables for groups of diagnoses included or excluded, based on
         whether one or more of such diagnoses is present.
@@ -60,6 +69,31 @@ class Dataset(Config):
         self.df = pd.read_csv(self.filepaths["RawData"], dtype=str, usecols=self.ukbb_vars)
         self.df.rename({k: v for k, v in zip(self.ukbb_vars, self.recoded_vars)}, axis=1, inplace=True)
         self.df.dropna(axis=1, how="all", inplace=True)
+    
+    def create_binary_variables(self, voi: str, patterns: dict):
+
+        cols = [col for col in self.df if col.startswith(voi)]
+        all_vars = list(patterns.keys())
+        new_vars = {var_name: [] for var_name in ["eid"] + all_vars}
+
+        for index, row in self.df[cols].iterrows():
+            new_vars["eid"].append(self.df["eid"][index])
+            for pat in patterns:
+                for value in row:
+                    try:
+                        if re.match(patterns[pat], value) is not None:
+                            new_vars[pat].append(True)
+                            break
+                    except TypeError:
+                        continue
+                if len(new_vars["eid"]) != len(new_vars[pat]):
+                    new_vars[pat].append(False)
+
+        if not sum([len(x) for x in new_vars.values()]) == len(new_vars["eid"]) * len(new_vars.keys()):
+            raise ValueError(f"{sum([len(x) for x in new_vars.values()])} != {len(new_vars['eid']) * len(new_vars.keys())}")
+        
+        new_df = pd.DataFrame(new_vars)
+        self.df = pd.merge(self.df, new_df, left_on="eid", right_on="eid")
 
     def recode_diagnoses(self):
         dx_cols = [col for col in self.df if col.startswith("diagnoses")]
