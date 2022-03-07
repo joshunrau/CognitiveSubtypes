@@ -83,7 +83,7 @@ class Config(ABC):
             'Included': True,
             'Coding': DIAGNOSTIC_CODES
         },
-        'hand': {
+        'handedness': {
             'DataField': 1707,
             'InstanceNum': 0,
             'ArrayRange': range(0, 1),
@@ -95,120 +95,113 @@ class Config(ABC):
                 "-3": "Decline to Answer"
             }
         },
-        'year_birth': {
-            'DataField': 34,
-            'InstanceNum': 0,
-            'ArrayRange': range(0, 1),
-            'Included': True,
-            'Coding': None
-        },
-        'age_assess': {
+        'age': {
             'DataField': 21003,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'medication': {
-            'DataField': 20003,
-            'InstanceNum': 2,
-            'ArrayRange': range(0, 48),
-            'Included': True,
-            'Coding': MEDICATION_CODES
-        },
-        'edu_qual': {
-            'DataField': 6138,
-            'InstanceNum': 2,
-            'ArrayRange': range(0, 6),
-            'Included': False,
-            'Coding': None
-        },
-        'mean_reaction_time': {
+        'meanReactionTimeTest': {
             'DataField': 20023,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'num_mem_max': {
+        'maxDigitsNumericMemoryTest': {
             'DataField': 4282,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'trail_numeric': {
+        'timeTrailMakingTestA': {
             'DataField': 6348,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'trail_alpha_numeric': {
+        'timeTrailMakingTestB': {
             'DataField': 6350,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'tower_attempted': {
+        'attemptsTowerTest': {
             'DataField': 6383,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'tower_correct': {
+        'correctTowerTest': {
             'DataField': 21004,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'digit_sub_attempted': {
+        'attemptsSymbolDigitTest': {
             'DataField': 23323,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'digit_sub_correct': {
+        'correctSymbolDigitTest': {
             'DataField': 23324,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'assoc_learn_correct': {
-            'DataField': 20197,
-            'InstanceNum': 2,
-            'ArrayRange': range(0, 1),
-            'Included': False,
-            'Coding': None
-        },
-        'prosp_mem': {
+        'resultProspectiveMemoryTask': {
             'DataField': 20018,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
             'Coding': None
         },
-        'pairsmatch_incorr': {
+        'incorrectPairsMatchingTask': {
             'DataField': 399,
             'InstanceNum': 2,
             'ArrayRange': range(1, 4),
             'Included': True,
             'Coding': None
         },
+        'correctAssociateLearningTest': { # Begin not included
+            'DataField': 20197,
+            'InstanceNum': 2,
+            'ArrayRange': range(0, 1),
+            'Included': False, 
+            'Coding': None
+        },
+        'educationalQualifications': {
+            'DataField': 6138,
+            'InstanceNum': 2,
+            'ArrayRange': range(0, 6),
+            'Included': False,
+            'Coding': None
+        },
+        'medications': {
+            'DataField': 20003,
+            'InstanceNum': 2,
+            'ArrayRange': range(0, 48),
+            'Included': False,
+            'Coding': MEDICATION_CODES
+        },
     }
 
     included_diagnoses = {
-        "SSD": "F2\d",
-        "MoodDisorder": "F3\d"
+        "anySSD": "F2\d",
+        "anyMoodDisorder": "F3\d"
     }
 
     excluded_diagnoses = {
-        "Dementia": "F0\d"
+        "anyDementia": "F0\d"
     }
 
     selected_diagnoses = included_diagnoses | excluded_diagnoses

@@ -8,10 +8,9 @@ import pandas as pd
 from .config import Config
 
 class Dataset(Config):
-    
+
     def __init__(self, df) -> None:
         self.df = df
-        self.features = df.drop([self.idvar], axis=1).to_numpy()
     
     def write_csv(self):
         filename = os.path.join(self.data_dir, "processed", f"dataset_{date.today().isoformat()}.csv")
@@ -40,7 +39,7 @@ class Dataset(Config):
     @classmethod
     def load(cls):
         """ Returns a Dataset instance using the most recent saved dataframe """
-
+        
         filepath = cls.get_latest_filepath()
         if filepath is None:
             raise FileNotFoundError("Could not find existing dataset")
@@ -61,17 +60,17 @@ class Dataset(Config):
                         array_vars.append(f"{cls.variables[var]['DataField']}-{cls.variables[var]['InstanceNum']}.{i}")
                     ukbb_vars += array_vars
                     if len(cls.variables[var]['ArrayRange']) == 1:
-                        recoded_vars.append(f"{var}_t{cls.variables[var]['InstanceNum']}")
+                        recoded_vars.append(var)
                     else:
                         array_vars = []
                         for i in cls.variables[var]['ArrayRange']:
-                            array_vars.append(f"{var}_t{cls.variables[var]['InstanceNum']}_{i}")
+                            array_vars.append(f"{var}{i}")
                         recoded_vars += array_vars
             if len(ukbb_vars) != len(recoded_vars):
                 raise ValueError
             return ukbb_vars, recoded_vars
         
-        def add_binary_variables(df, target: str, patterns: dict):
+        def add_binary_variables(df: pd.DataFrame, target: str, patterns: dict, drop_target=False):
             """ 
             Takes as input a variable of interest and a dictionary with keys representing new
             variable names mapped onto regular expressions. New binary variables will be created
@@ -100,6 +99,8 @@ class Dataset(Config):
                 raise ValueError(f"{sum([len(x) for x in new_vars.values()])} != {len(new_vars['eid']) * len(new_vars.keys())}")
             
             new_df = pd.DataFrame(new_vars)
+            if drop_target:
+                df.drop(cols, axis=1, inplace=True)
             return pd.merge(df, new_df, left_on=cls.idvar, right_on=cls.idvar)
         
         # Import, recode, and subset tabular data
@@ -110,7 +111,7 @@ class Dataset(Config):
         df.dropna(axis=1, how="all", inplace=True)
 
         # Apply inclusion criteria for diagnoses
-        df = add_binary_variables(df, "diagnoses", cls.selected_diagnoses)
+        df = add_binary_variables(df, "diagnoses", cls.selected_diagnoses, drop_target=True)
         list_series = [df[key] == True for key in cls.included_diagnoses]
         df = df[pd.concat(list_series, axis=1).any(axis=1)]
 
@@ -124,4 +125,5 @@ class Dataset(Config):
             if cls.variables[name]["Included"] and cols != []:
                 df[cols] = df[cols].replace(to_replace=cls.variables[name]["Coding"])
         
+        df.reset_index(drop=True, inplace=True)
         return cls(df)
