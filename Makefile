@@ -1,15 +1,21 @@
-.DEFAULT_GOAL:= clean-install
-.PHONY: clean install clean-install
+.ONESHELL:
+.PHONY: install clean
+
+PYTHON = venv/bin/python3.9
+
+all: install clean
+
+install: venv
+	$(PYTHON) -m pip install .
+
+venv:
+	if command -v module &> /dev/null; then module load python/3.9 scipy-stack/2021a; fi
+	virtualenv --no-download venv
+	$(PYTHON) -m pip install --no-index --upgrade pip
 
 clean:
 	rm -fr build/
 	rm -fr dist/
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '__pycache__' -exec rm -fr {} +
-
-install:
-	@if [ $${CONDA_PREFIX:(-17):17} != CognitiveSubtypes ]; then echo ERROR: must install in CognitiveSubtypes environment && exit 1; fi
-	pip install -r requirements.txt
-	pip install .
-
-clean-install: install clean
+	

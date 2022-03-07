@@ -1,0 +1,3 @@
+class CivetData:
+    prefix = "ukbb"
+    
