@@ -18,6 +18,7 @@ venv:
 	else
 		virtualenv --no-download venv
 		$(PYTHON) -m pip install --require-virtualenv --no-index --upgrade pip
+		$(PYTHON) -m pip install notebook
 	fi
 
 clean:

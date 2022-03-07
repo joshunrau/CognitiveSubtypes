@@ -6,4 +6,5 @@ def load_json(resource_name):
     with open(filepath) as file:
         return json.load(file)
 
+DIAGNOSTIC_CODES = load_json("diagnoses.json")
 MEDICATION_CODES = load_json("medications.json")
