@@ -1,6 +1,7 @@
 .ONESHELL:
 .PHONY: install clean
 
+SHELL:=/bin/bash
 PYTHON = venv/bin/python3.9
 
 all: install clean
@@ -9,9 +10,15 @@ install: venv
 	$(PYTHON) -m pip install .
 
 venv:
-	if command -v module &> /dev/null; then module load python/3.9 scipy-stack/2021a; fi
-	virtualenv --no-download venv
-	$(PYTHON) -m pip install --no-index --upgrade pip
+	if command -v module &> /dev/null; then 
+		module load python/3.9 scipy-stack/2022a
+		virtualenv --no-download venv
+		$(PYTHON) -m pip install --require-virtualenv --no-index --upgrade pip
+		$(PYTHON) -m pip install --require-virtualenv --no-index -r requirements.txt
+	else
+		virtualenv --no-download venv
+		$(PYTHON) -m pip install --require-virtualenv --no-index --upgrade pip
+	fi
 
 clean:
 	rm -fr build/
