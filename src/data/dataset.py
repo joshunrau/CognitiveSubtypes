@@ -24,7 +24,7 @@ class Dataset:
     
     @classmethod
     def make(cls):
-        path_tabular_data = Path.cwd().joinpath("data", "raw", "tabular.csv")
+        path_tabular_data = Path.cwd().joinpath("data", "raw", "current_civet.csv")
         tabular_data = TabularData(path_tabular_data)
         return cls(tabular_data.df)
     
