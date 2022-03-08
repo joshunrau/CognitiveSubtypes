@@ -2,6 +2,8 @@ import os
 
 from abc import ABC
 
+import numpy as np
+
 from .coding import DIAGNOSTIC_CODES, MEDICATION_CODES
 
 
@@ -114,7 +116,9 @@ class Config(ABC):
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
-            'Coding': None
+            'Coding': {
+                "-1": np.NaN
+            }
         },
         'timeTrailMakingTestA': {
             'DataField': 6348,
