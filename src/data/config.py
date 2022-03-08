@@ -162,12 +162,16 @@ class Config(ABC):
             'Included': True,
             'Coding': None
         },
-        'resultProspectiveMemoryTask': {
+        'prospectiveMemoryTask': {
             'DataField': 20018,
             'InstanceNum': 2,
             'ArrayRange': range(0, 1),
             'Included': True,
-            'Coding': None
+            'Coding': {
+                "0": "NotRecalled",
+                "1": "FirstAttempt",
+                "2": "SecondAttempt"
+            }
         },
         'incorrectPairsMatchingTask': {
             'DataField': 399,

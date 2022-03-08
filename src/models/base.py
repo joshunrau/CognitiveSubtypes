@@ -37,12 +37,3 @@ class BaseModel(ABC):
         
         if filepath is not None:
             plt.savefig(filepath)
-
-
-
-
-
-    
-
-
-

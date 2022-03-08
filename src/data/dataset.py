@@ -8,7 +8,7 @@ import pandas as pd
 from .config import Config
 
 class Dataset(Config):
-
+    
     def __init__(self, df) -> None:
         self.df = df
     
@@ -126,4 +126,6 @@ class Dataset(Config):
                 df[cols] = df[cols].replace(to_replace=cls.variables[name]["Coding"])
         
         df.reset_index(drop=True, inplace=True)
+        df = df.apply(pd.to_numeric, errors="ignore")
+        df = pd.get_dummies(df, prefix_sep="")
         return cls(df)
