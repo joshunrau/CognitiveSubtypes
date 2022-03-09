@@ -11,8 +11,16 @@ class BaseModel(ABC):
     def __init__(self) -> None:
         data = Dataset.load()
         self.df = data.df[[data.idvar] + self.feature_names]
-        self.features = self.df[self.feature_names].to_numpy()
         assert self.features.shape[1] == self.n_features
+    
+    @property
+    @abstractmethod
+    def estimator(self):
+        pass
+    
+    @property
+    def features(self):
+        return self.df[self.feature_names].to_numpy()
     
     @property
     @abstractmethod
