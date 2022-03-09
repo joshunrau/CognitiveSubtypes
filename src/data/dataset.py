@@ -5,9 +5,33 @@ from datetime import date, datetime
 
 import pandas as pd
 
-from .config import Config
+from .variables import VARIABLES
 
-class Dataset(Config):
+class Dataset:
+    
+    
+    data_dir = "/Users/joshua/Developer/CognitiveSubtypes/data"
+    path_tabular_data = os.path.join(data_dir, "raw", "tabular.csv")
+    
+    if not os.path.isdir(data_dir):
+        raise NotADirectoryError
+    
+    if not os.path.isfile(path_tabular_data):
+        raise FileNotFoundError
+    
+    idvar = "id"
+    variables = VARIABLES
+    
+    included_diagnoses = {
+        "anySSD": "F2\d",
+        "anyMoodDisorder": "F3\d"
+    }
+
+    excluded_diagnoses = {
+        "anyDementia": "F0\d"
+    }
+    
+    selected_diagnoses = included_diagnoses | excluded_diagnoses
     
     def __init__(self, df) -> None:
         self.df = df

@@ -15,7 +15,7 @@ class BaseModel(ABC):
     
     @property
     @abstractmethod
-    def estimator(self):
+    def pipeline(self):
         pass
     
     @property
