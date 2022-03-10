@@ -1,5 +1,15 @@
-from pkg_resources import resource_filename
-from ...utils import load_json
+import json
+import os
 
-DIAGNOSTIC_CODES = load_json(resource_filename(__name__, "diagnoses.json"))
-MEDICATION_CODES = load_json(resource_filename(__name__, "medications.json"))
+from pkg_resources import resource_filename
+
+def _load():
+    codes = {}
+    for filename in os.listdir(os.path.abspath(os.path.dirname(__file__))):
+        if filename.startswith("coding"):
+            coding_id = filename.strip("coding.json")
+            with open(resource_filename(__name__, filename)) as file:
+                codes[coding_id] = json.loads(file.read())
+    return codes
+
+VARIABLE_CODES = _load()

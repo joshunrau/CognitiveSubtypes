@@ -19,9 +19,7 @@
             "stop":1
         },
         "Included":true,
-        "Coding":{
-            "-1":null
-        }
+        "Coding":100696
     },
     "timeTrailMakingTestA":{
         "DataField":6348,
@@ -32,7 +30,7 @@
             "stop":1
         },
         "Included":true,
-        "Coding":null
+        "Coding":1990
     },
     "timeTrailMakingTestB":{
         "DataField":6350,
@@ -43,7 +41,7 @@
             "stop":1
         },
         "Included":true,
-        "Coding":null
+        "Coding":1990
     },
     "attemptsTowerTest":{
         "DataField":6383,
@@ -76,7 +74,7 @@
             "stop":1
         },
         "Included":true,
-        "Coding":null
+        "Coding":6361
     },
     "correctSymbolDigitTest":{
         "DataField":23324,
@@ -98,11 +96,7 @@
             "stop":1
         },
         "Included":true,
-        "Coding":{
-            "0":"NotRecalled",
-            "1":"FirstAttempt",
-            "2":"SecondAttempt"
-        }
+        "Coding":18
     },
     "incorrectPairsMatchingTask":{
         "DataField":399,
@@ -114,6 +108,116 @@
         },
         "Included":true,
         "Coding":null
+    },
+    "responseAssociateLearningTestHuge":{
+        "DataField":6448,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6448
+    },
+    "responseAssociateLearningTestHappy":{
+        "DataField":6459,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6459
+    },
+    "responseAssociateLearningTestTattered":{
+        "DataField":6470,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6470
+    },
+    "responseAssociateLearningTestOld":{
+        "DataField":6481,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6481
+    },
+    "responseAssociateLearningTestLong":{
+        "DataField":6492,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6492
+    },
+    "responseAssociateLearningTestRed":{
+        "DataField":6503,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6503
+    },
+    "responseAssociateLearningTestSulking":{
+        "DataField":6514,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6514
+    },
+    "responseAssociateLearningTestPretty":{
+        "DataField":6525,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6525
+    },
+    "responseAssociateLearningTestTiny":{
+        "DataField":6536,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6536
+    },
+    "responseAssociateLearningTestNew":{
+        "DataField":6547,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":false,
+        "Coding":6547
     },
     "correctAssociateLearningTest":{
         "DataField":20197,

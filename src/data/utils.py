@@ -1,11 +1,10 @@
 import json
+import pandas as pd
 
-def parse_range(dct):
-    if "ArrayRange" in dct:
-        ar = dct["ArrayRange"]
-        dct["ArrayRange"] = range(ar["start"], ar["stop"], ar["step"])
-    return dct
-
-def load_json(filepath):
-    with open(filepath) as file:
-        return json.loads(file.read(), object_hook=parse_range)
+def ukbb_tsv_to_json(path_tsv, path_json):
+    df = pd.read_csv(path_tsv, sep="\t")
+    contents = {}
+    for _, row in df.iterrows():
+        contents[row["coding"]] = row["meaning"]
+    with open(path_json, "w") as file:
+        file.write(json.dumps(contents, indent=4))

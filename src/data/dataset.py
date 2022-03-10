@@ -5,7 +5,7 @@ from datetime import date, datetime
 
 import pandas as pd
 
-from .variables import VARIABLES
+from .variables import load_variables
 
 class Dataset:
     
@@ -19,7 +19,7 @@ class Dataset:
         raise FileNotFoundError
     
     idvar = "id"
-    variables = VARIABLES
+    variables = load_variables()
     
     included_diagnoses = {
         "anySSD": "F2\d",

@@ -8,10 +8,7 @@
             "stop":1
         },
         "Included":true,
-        "Coding":{
-            "0":"Female",
-            "1":"Male"
-        }
+        "Coding":9
     },
     "diagnoses":{
         "DataField":41270,
@@ -22,7 +19,7 @@
             "stop":226
         },
         "Included":true,
-        "Coding":null
+        "Coding":19
     },
     "handedness":{
         "DataField":1707,
@@ -33,12 +30,7 @@
             "stop":1
         },
         "Included":true,
-        "Coding":{
-            "1":"Right",
-            "2":"Left",
-            "3":"Both",
-            "-3":"Decline to Answer"
-        }
+        "Coding":100430
     },
     "age":{
         "DataField":21003,
@@ -60,7 +52,7 @@
             "stop":6
         },
         "Included":false,
-        "Coding":null
+        "Coding":100305
     },
     "medications":{
         "DataField":20003,
@@ -71,6 +63,6 @@
             "stop":48
         },
         "Included":false,
-        "Coding":null
+        "Coding":4
     }
 }
