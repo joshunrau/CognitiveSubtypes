@@ -150,5 +150,4 @@ class Dataset:
         
         df.reset_index(drop=True, inplace=True)
         df = df.apply(pd.to_numeric, errors="ignore")
-        df = pd.get_dummies(df, prefix_sep="")
         return cls(df)
