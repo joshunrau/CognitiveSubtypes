@@ -9,7 +9,6 @@ from .variables import VARIABLES
 
 class Dataset:
     
-    
     data_dir = "/Users/joshua/Developer/CognitiveSubtypes/data"
     path_tabular_data = os.path.join(data_dir, "raw", "tabular.csv")
     
@@ -62,14 +61,14 @@ class Dataset:
     
     @classmethod
     def load(cls):
-        """ Returns a Dataset instance using the most recent saved dataframe """
+        """ Returns the most recent saved dataframe """
         
         filepath = cls.get_latest_filepath()
         if filepath is None:
             raise FileNotFoundError("Could not find existing dataset")
-
-        return cls(pd.read_csv(filepath))
-
+        
+        return pd.read_csv(filepath)
+    
     @classmethod
     def make(cls):
         """ Returns a Dataset instance using a dataframe created with the parameters specified in Config """
