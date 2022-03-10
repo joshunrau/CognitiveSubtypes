@@ -1,6 +1,6 @@
 from .base import Features
 
-class ImagingFeature(Features):
+class ImagingFeatures(Features):
     
     def __init__(self):
         super().__init__()
