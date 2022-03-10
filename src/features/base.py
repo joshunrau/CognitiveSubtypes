@@ -7,7 +7,7 @@ class Features(ABC):
     
     def __init__(self):
         self.df = Dataset.load()
-    
+        
     def __get__(self, obj, objtype=None):
         return self.df[self.names].to_numpy()
     

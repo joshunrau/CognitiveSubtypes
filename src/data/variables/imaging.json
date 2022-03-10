@@ -1,47 +1,369 @@
 {
-    "sex":{
-        "DataField":31,
-        "InstanceNum":0,
+    "areaLeftCaudalanteriorcingulate":{
+        "DataField":27143,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightCaudalanteriorcingulate":{
+        "DataField":27236,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftCaudalmiddlefrontal":{
+        "DataField":27144,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightCaudalmiddlefrontal":{
+        "DataField":27237,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftCuneus":{
+        "DataField":27145,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightCuneus":{
+        "DataField":27238,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftEntorhinal":{
+        "DataField":27146,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightEntorhinal":{
+        "DataField":27239,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftFusiform":{
+        "DataField":27147,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightFusiform":{
+        "DataField":27240,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftInferiorparietal":{
+        "DataField":27148,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightInferiorparietal":{
+        "DataField":27241,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftInferiortemporal":{
+        "DataField":27149,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightInferiortemporal":{
+        "DataField":27242,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftInsula":{
+        "DataField":27173,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightInsula":{
+        "DataField":27266,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftIsthmuscingulate":{
+        "DataField":27150,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightIsthmuscingulate":{
+        "DataField":27243,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftLateraloccipital":{
+        "DataField":27151,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightLateraloccipital":{
+        "DataField":27244,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftLateralorbitofrontal":{
+        "DataField":27152,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightLateralorbitofrontal":{
+        "DataField":27245,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftLingual":{
+        "DataField":27153,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightLingual":{
+        "DataField":27246,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftMedialorbitofrontal":{
+        "DataField":27154,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightMedialorbitofrontal":{
+        "DataField":27247,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftMiddletemporal":{
+        "DataField":27155,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightMiddletemporal":{
+        "DataField":27248,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftParacentral":{
+        "DataField":27157,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaRightParacentral":{
+        "DataField":27250,
+        "InstanceNum":2,
+        "ArrayRange":{
+            "start":0,
+            "step":1,
+            "stop":1
+        },
+        "Included":true,
+        "Coding":null
+    },
+    "areaLeftParahippocampal":{
+        "DataField":27156,
+        "InstanceNum":2,
         "ArrayRange":{
             "start":0,
             "step":1,
             "stop":1
         },
         "Included":true,
-        "Coding":{
-            "0":"Female",
-            "1":"Male"
-        }
+        "Coding":null
     },
-    "diagnoses":{
-        "DataField":41270,
-        "InstanceNum":0,
+    "areaRightParahippocampal":{
+        "DataField":27249,
+        "InstanceNum":2,
         "ArrayRange":{
             "start":0,
             "step":1,
-            "stop":226
+            "stop":1
         },
         "Included":true,
         "Coding":null
     },
-    "handedness":{
-        "DataField":1707,
-        "InstanceNum":0,
+    "areaLeftParsopercularis":{
+        "DataField":27158,
+        "InstanceNum":2,
         "ArrayRange":{
             "start":0,
             "step":1,
             "stop":1
         },
         "Included":true,
-        "Coding":{
-            "1":"Right",
-            "2":"Left",
-            "3":"Both",
-            "-3":"Decline to Answer"
-        }
+        "Coding":null
     },
-    "age":{
-        "DataField":21003,
+    "areaRightParsopercularis":{
+        "DataField":27251,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -51,8 +373,8 @@
         "Included":true,
         "Coding":null
     },
-    "meanReactionTimeTest":{
-        "DataField":20023,
+    "areaLeftParsorbitalis":{
+        "DataField":27159,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -62,8 +384,8 @@
         "Included":true,
         "Coding":null
     },
-    "maxDigitsNumericMemoryTest":{
-        "DataField":4282,
+    "areaRightParsorbitalis":{
+        "DataField":27252,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -71,12 +393,10 @@
             "stop":1
         },
         "Included":true,
-        "Coding":{
-            "-1":null
-        }
+        "Coding":null
     },
-    "timeTrailMakingTestA":{
-        "DataField":6348,
+    "areaLeftParstriangularis":{
+        "DataField":27160,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -86,8 +406,8 @@
         "Included":true,
         "Coding":null
     },
-    "timeTrailMakingTestB":{
-        "DataField":6350,
+    "areaRightParstriangularis":{
+        "DataField":27253,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -97,8 +417,8 @@
         "Included":true,
         "Coding":null
     },
-    "attemptsTowerTest":{
-        "DataField":6383,
+    "areaLeftPericalcarine":{
+        "DataField":27161,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -108,8 +428,8 @@
         "Included":true,
         "Coding":null
     },
-    "correctTowerTest":{
-        "DataField":21004,
+    "areaRightPericalcarine":{
+        "DataField":27254,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -119,8 +439,8 @@
         "Included":true,
         "Coding":null
     },
-    "attemptsSymbolDigitTest":{
-        "DataField":23323,
+    "areaLeftPostcentral":{
+        "DataField":27162,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -130,8 +450,8 @@
         "Included":true,
         "Coding":null
     },
-    "correctSymbolDigitTest":{
-        "DataField":23324,
+    "areaRightPostcentral":{
+        "DataField":27255,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -141,8 +461,8 @@
         "Included":true,
         "Coding":null
     },
-    "prospectiveMemoryTask":{
-        "DataField":20018,
+    "areaLeftPosteriorcingulate":{
+        "DataField":27163,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -150,58 +470,54 @@
             "stop":1
         },
         "Included":true,
-        "Coding":{
-            "0":"NotRecalled",
-            "1":"FirstAttempt",
-            "2":"SecondAttempt"
-        }
+        "Coding":null
     },
-    "incorrectPairsMatchingTask":{
-        "DataField":399,
+    "areaRightPosteriorcingulate":{
+        "DataField":27256,
         "InstanceNum":2,
         "ArrayRange":{
-            "start":1,
+            "start":0,
             "step":1,
-            "stop":4
+            "stop":1
         },
         "Included":true,
         "Coding":null
     },
-    "correctAssociateLearningTest":{
-        "DataField":20197,
+    "areaLeftPrecentral":{
+        "DataField":27164,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
             "step":1,
             "stop":1
         },
-        "Included":false,
+        "Included":true,
         "Coding":null
     },
-    "educationalQualifications":{
-        "DataField":6138,
+    "areaRightPrecentral":{
+        "DataField":27257,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
             "step":1,
-            "stop":6
+            "stop":1
         },
-        "Included":false,
+        "Included":true,
         "Coding":null
     },
-    "medications":{
-        "DataField":20003,
+    "areaLeftPrecuneus":{
+        "DataField":27165,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
             "step":1,
-            "stop":48
+            "stop":1
         },
-        "Included":false,
+        "Included":true,
         "Coding":null
     },
-    "volumeLeftAmygdala":{
-        "DataField":25888,
+    "areaRightPrecuneus":{
+        "DataField":27258,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -211,8 +527,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightAmygdala":{
-        "DataField":25889,
+    "areaLeftRostralanteriorcingulate":{
+        "DataField":27166,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -222,8 +538,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftAngularGyrus":{
-        "DataField":25822,
+    "areaRightRostralanteriorcingulate":{
+        "DataField":27259,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -233,8 +549,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightAngularGyrus":{
-        "DataField":25823,
+    "areaLeftRostralmiddlefrontal":{
+        "DataField":27167,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -244,8 +560,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeBrainStem":{
-        "DataField":25892,
+    "areaRightRostralmiddlefrontal":{
+        "DataField":27260,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -255,8 +571,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftCaudate":{
-        "DataField":25880,
+    "areaLeftSuperiorfrontal":{
+        "DataField":27168,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -266,8 +582,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightCaudate":{
-        "DataField":25881,
+    "areaRightSuperiorfrontal":{
+        "DataField":27261,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -277,8 +593,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftCentralOpercularCortex":{
-        "DataField":25864,
+    "areaLeftSuperiorparietal":{
+        "DataField":27169,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -288,8 +604,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightCentralOpercularCortex":{
-        "DataField":25865,
+    "areaRightSuperiorparietal":{
+        "DataField":27262,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -299,8 +615,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftCingulateGyrusAnteriorDivision":{
-        "DataField":25838,
+    "areaLeftSuperiortemporal":{
+        "DataField":27170,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -310,8 +626,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightCingulateGyrusAnteriorDivision":{
-        "DataField":25839,
+    "areaRightSuperiortemporal":{
+        "DataField":27263,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -321,8 +637,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftCingulateGyrusPosteriorDivision":{
-        "DataField":25840,
+    "areaLeftSupramarginal":{
+        "DataField":27171,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -332,8 +648,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightCingulateGyrusPosteriorDivision":{
-        "DataField":25841,
+    "areaRightSupramarginal":{
+        "DataField":27264,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -343,8 +659,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftCrusICerebellum":{
-        "DataField":25900,
+    "areaLeftTransversetemporal":{
+        "DataField":27172,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -354,8 +670,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightCrusICerebellum":{
-        "DataField":25902,
+    "areaRightTransversetemporal":{
+        "DataField":27265,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -365,8 +681,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeVermisCrusICerebellum":{
-        "DataField":25901,
+    "thicknessLeftCaudalanteriorcingulate":{
+        "DataField":27174,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -376,8 +692,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftCrusIiCerebellum":{
-        "DataField":25903,
+    "thicknessRightCaudalanteriorcingulate":{
+        "DataField":27267,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -387,8 +703,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightCrusIiCerebellum":{
-        "DataField":25905,
+    "thicknessLeftCaudalmiddlefrontal":{
+        "DataField":27175,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -398,8 +714,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeVermisCrusIiCerebellum":{
-        "DataField":25904,
+    "thicknessRightCaudalmiddlefrontal":{
+        "DataField":27268,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -409,8 +725,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftCunealCortex":{
-        "DataField":25844,
+    "thicknessLeftCuneus":{
+        "DataField":27176,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -420,8 +736,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightCunealCortex":{
-        "DataField":25845,
+    "thicknessRightCuneus":{
+        "DataField":27269,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -431,8 +747,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftFrontalMedialCortex":{
-        "DataField":25830,
+    "thicknessLeftEntorhinal":{
+        "DataField":27177,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -442,8 +758,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightFrontalMedialCortex":{
-        "DataField":25831,
+    "thicknessRightEntorhinal":{
+        "DataField":27270,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -453,8 +769,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftFrontalOperculumCortex":{
-        "DataField":25862,
+    "thicknessLeftFusiform":{
+        "DataField":27178,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -464,8 +780,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightFrontalOperculumCortex":{
-        "DataField":25863,
+    "thicknessRightFusiform":{
+        "DataField":27271,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -475,8 +791,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftFrontalOrbitalCortex":{
-        "DataField":25846,
+    "thicknessLeftInferiorparietal":{
+        "DataField":27179,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -486,8 +802,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightFrontalOrbitalCortex":{
-        "DataField":25847,
+    "thicknessRightInferiorparietal":{
+        "DataField":27272,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -497,8 +813,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftFrontalPole":{
-        "DataField":25782,
+    "thicknessLeftInferiortemporal":{
+        "DataField":27180,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -508,8 +824,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightFrontalPole":{
-        "DataField":25783,
+    "thicknessRightInferiortemporal":{
+        "DataField":27273,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -519,8 +835,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftHeschlGyrus":{
-        "DataField":25870,
+    "thicknessLeftInsula":{
+        "DataField":27204,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -530,8 +846,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightHeschlGyrus":{
-        "DataField":25871,
+    "thicknessRightInsula":{
+        "DataField":27297,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -541,8 +857,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftHippocampus":{
-        "DataField":25886,
+    "thicknessLeftIsthmuscingulate":{
+        "DataField":27181,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -552,8 +868,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightHippocampus":{
-        "DataField":25887,
+    "thicknessRightIsthmuscingulate":{
+        "DataField":27274,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -563,8 +879,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftI-IVCerebellum":{
-        "DataField":25893,
+    "thicknessLeftLateraloccipital":{
+        "DataField":27182,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -574,8 +890,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightI-IVCerebellum":{
-        "DataField":25894,
+    "thicknessRightLateraloccipital":{
+        "DataField":27275,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -585,8 +901,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftIXCerebellum":{
-        "DataField":25915,
+    "thicknessLeftLateralorbitofrontal":{
+        "DataField":27183,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -596,8 +912,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightIXCerebellum":{
-        "DataField":25917,
+    "thicknessRightLateralorbitofrontal":{
+        "DataField":27276,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -607,8 +923,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeVermisIXCerebellum":{
-        "DataField":25916,
+    "thicknessLeftLingual":{
+        "DataField":27184,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -618,8 +934,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftInferiorFrontalGyrusParsOpercularis":{
-        "DataField":25792,
+    "thicknessRightLingual":{
+        "DataField":27277,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -629,8 +945,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightInferiorFrontalGyrusParsOpercularis":{
-        "DataField":25793,
+    "thicknessLeftMedialorbitofrontal":{
+        "DataField":27185,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -640,8 +956,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftInferiorFrontalGyrusParsTriangularis":{
-        "DataField":25790,
+    "thicknessRightMedialorbitofrontal":{
+        "DataField":27278,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -651,8 +967,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightInferiorFrontalGyrusParsTriangularis":{
-        "DataField":25791,
+    "thicknessLeftMiddletemporal":{
+        "DataField":27186,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -662,8 +978,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftInferiorTemporalGyrusAnteriorDivision":{
-        "DataField":25808,
+    "thicknessRightMiddletemporal":{
+        "DataField":27279,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -673,8 +989,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightInferiorTemporalGyrusAnteriorDivision":{
-        "DataField":25809,
+    "thicknessLeftParacentral":{
+        "DataField":27188,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -684,8 +1000,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftInferiorTemporalGyrusPosteriorDivision":{
-        "DataField":25810,
+    "thicknessRightParacentral":{
+        "DataField":27281,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -695,8 +1011,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightInferiorTemporalGyrusPosteriorDivision":{
-        "DataField":25811,
+    "thicknessLeftParahippocampal":{
+        "DataField":27187,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -706,8 +1022,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftInferiorTemporalGyrusTemporooccipitalPart":{
-        "DataField":25812,
+    "thicknessRightParahippocampal":{
+        "DataField":27280,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -717,8 +1033,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightInferiorTemporalGyrusTemporooccipitalPart":{
-        "DataField":25813,
+    "thicknessLeftParsopercularis":{
+        "DataField":27189,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -728,8 +1044,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftInsularCortex":{
-        "DataField":25784,
+    "thicknessRightParsopercularis":{
+        "DataField":27282,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -739,8 +1055,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightInsularCortex":{
-        "DataField":25785,
+    "thicknessLeftParsorbitalis":{
+        "DataField":27190,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -750,8 +1066,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftIntracalcarineCortex":{
-        "DataField":25828,
+    "thicknessRightParsorbitalis":{
+        "DataField":27283,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -761,8 +1077,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightIntracalcarineCortex":{
-        "DataField":25829,
+    "thicknessLeftParstriangularis":{
+        "DataField":27191,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -772,8 +1088,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSupplementaryMotorCortex":{
-        "DataField":25832,
+    "thicknessRightParstriangularis":{
+        "DataField":27284,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -783,8 +1099,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSupplementaryMotorCortex":{
-        "DataField":25833,
+    "thicknessLeftPericalcarine":{
+        "DataField":27192,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -794,8 +1110,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftLateralOccipitalCortexInferiorDivision":{
-        "DataField":25826,
+    "thicknessRightPericalcarine":{
+        "DataField":27285,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -805,8 +1121,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightLateralOccipitalCortexInferiorDivision":{
-        "DataField":25827,
+    "thicknessLeftPostcentral":{
+        "DataField":27193,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -816,8 +1132,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftLateralOccipitalCortexSuperiorDivision":{
-        "DataField":25824,
+    "thicknessRightPostcentral":{
+        "DataField":27286,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -827,8 +1143,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightLateralOccipitalCortexSuperiorDivision":{
-        "DataField":25825,
+    "thicknessLeftPosteriorcingulate":{
+        "DataField":27194,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -838,8 +1154,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftLingualGyrus":{
-        "DataField":25852,
+    "thicknessRightPosteriorcingulate":{
+        "DataField":27287,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -849,8 +1165,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightLingualGyrus":{
-        "DataField":25853,
+    "thicknessLeftPrecentral":{
+        "DataField":27195,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -860,8 +1176,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftMiddleFrontalGyrus":{
-        "DataField":25788,
+    "thicknessRightPrecentral":{
+        "DataField":27288,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -871,8 +1187,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightMiddleFrontalGyrus":{
-        "DataField":25789,
+    "thicknessLeftPrecuneus":{
+        "DataField":27196,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -882,8 +1198,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftMiddleTemporalGyrusAnteriorDivision":{
-        "DataField":25802,
+    "thicknessRightPrecuneus":{
+        "DataField":27289,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -893,8 +1209,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightMiddleTemporalGyrusAnteriorDivision":{
-        "DataField":25803,
+    "thicknessLeftRostralanteriorcingulate":{
+        "DataField":27197,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -904,8 +1220,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftMiddleTemporalGyrusPosteriorDivision":{
-        "DataField":25804,
+    "thicknessRightRostralanteriorcingulate":{
+        "DataField":27290,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -915,8 +1231,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightMiddleTemporalGyrusPosteriorDivision":{
-        "DataField":25805,
+    "thicknessLeftRostralmiddlefrontal":{
+        "DataField":27198,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -926,8 +1242,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftMiddleTemporalGyrusTemporooccipitalPart":{
-        "DataField":25806,
+    "thicknessRightRostralmiddlefrontal":{
+        "DataField":27291,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -937,8 +1253,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightMiddleTemporalGyrusTemporooccipitalPart":{
-        "DataField":25807,
+    "thicknessLeftSuperiorfrontal":{
+        "DataField":27199,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -948,8 +1264,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftOccipitalFusiformGyrus":{
-        "DataField":25860,
+    "thicknessRightSuperiorfrontal":{
+        "DataField":27292,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -959,8 +1275,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightOccipitalFusiformGyrus":{
-        "DataField":25861,
+    "thicknessLeftSuperiorparietal":{
+        "DataField":27200,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -970,8 +1286,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftOccipitalPole":{
-        "DataField":25876,
+    "thicknessRightSuperiorparietal":{
+        "DataField":27293,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -981,8 +1297,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightOccipitalPole":{
-        "DataField":25877,
+    "thicknessLeftSuperiortemporal":{
+        "DataField":27201,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -992,8 +1308,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftPallidum":{
-        "DataField":25884,
+    "thicknessRightSuperiortemporal":{
+        "DataField":27294,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1003,8 +1319,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightPallidum":{
-        "DataField":25885,
+    "thicknessLeftSupramarginal":{
+        "DataField":27202,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1014,8 +1330,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftParacingulateGyrus":{
-        "DataField":25836,
+    "thicknessRightSupramarginal":{
+        "DataField":27295,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1025,8 +1341,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightParacingulateGyrus":{
-        "DataField":25837,
+    "thicknessLeftTransversetemporal":{
+        "DataField":27203,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1036,8 +1352,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftParahippocampalGyrusAnteriorDivision":{
-        "DataField":25848,
+    "thicknessRightTransversetemporal":{
+        "DataField":27296,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1047,8 +1363,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightParahippocampalGyrusAnteriorDivision":{
-        "DataField":25849,
+    "volumeLeftCaudalanteriorcingulate":{
+        "DataField":27205,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1058,8 +1374,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftParahippocampalGyrusPosteriorDivision":{
-        "DataField":25850,
+    "volumeRightCaudalanteriorcingulate":{
+        "DataField":27298,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1069,8 +1385,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightParahippocampalGyrusPosteriorDivision":{
-        "DataField":25851,
+    "volumeLeftCaudalmiddlefrontal":{
+        "DataField":27206,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1080,8 +1396,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftParietalOperculumCortex":{
-        "DataField":25866,
+    "volumeRightCaudalmiddlefrontal":{
+        "DataField":27299,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1091,8 +1407,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightParietalOperculumCortex":{
-        "DataField":25867,
+    "volumeLeftCuneus":{
+        "DataField":27207,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1102,8 +1418,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftPlanumPolare":{
-        "DataField":25868,
+    "volumeRightCuneus":{
+        "DataField":27300,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1113,8 +1429,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightPlanumPolare":{
-        "DataField":25869,
+    "volumeLeftEntorhinal":{
+        "DataField":27208,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1124,8 +1440,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftPlanumTemporale":{
-        "DataField":25872,
+    "volumeRightEntorhinal":{
+        "DataField":27301,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1135,8 +1451,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightPlanumTemporale":{
-        "DataField":25873,
+    "volumeLeftFusiform":{
+        "DataField":27209,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1146,8 +1462,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftPostcentralGyrus":{
-        "DataField":25814,
+    "volumeRightFusiform":{
+        "DataField":27302,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1157,8 +1473,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightPostcentralGyrus":{
-        "DataField":25815,
+    "volumeLeftInferiorparietal":{
+        "DataField":27210,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1168,8 +1484,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftPrecentralGyrus":{
-        "DataField":25794,
+    "volumeRightInferiorparietal":{
+        "DataField":27303,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1179,8 +1495,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightPrecentralGyrus":{
-        "DataField":25795,
+    "volumeLeftInferiortemporal":{
+        "DataField":27211,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1190,8 +1506,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftPrecuneousCortex":{
-        "DataField":25842,
+    "volumeRightInferiortemporal":{
+        "DataField":27304,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1201,8 +1517,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightPrecuneousCortex":{
-        "DataField":25843,
+    "volumeLeftInsula":{
+        "DataField":27235,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1212,8 +1528,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftPutamen":{
-        "DataField":25882,
+    "volumeRightInsula":{
+        "DataField":27328,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1223,8 +1539,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightPutamen":{
-        "DataField":25883,
+    "volumeLeftIsthmuscingulate":{
+        "DataField":27212,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1234,8 +1550,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSubcallosalCortex":{
-        "DataField":25834,
+    "volumeRightIsthmuscingulate":{
+        "DataField":27305,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1245,8 +1561,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSubcallosalCortex":{
-        "DataField":25835,
+    "volumeLeftLateraloccipital":{
+        "DataField":27213,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1256,8 +1572,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSuperiorFrontalGyrus":{
-        "DataField":25786,
+    "volumeRightLateraloccipital":{
+        "DataField":27306,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1267,8 +1583,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSuperiorFrontalGyrus":{
-        "DataField":25787,
+    "volumeLeftLateralorbitofrontal":{
+        "DataField":27214,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1278,8 +1594,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSuperiorParietalLobule":{
-        "DataField":25816,
+    "volumeRightLateralorbitofrontal":{
+        "DataField":27307,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1289,8 +1605,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSuperiorParietalLobule":{
-        "DataField":25817,
+    "volumeLeftLingual":{
+        "DataField":27215,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1300,8 +1616,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSuperiorTemporalGyrusAnteriorDivision":{
-        "DataField":25798,
+    "volumeRightLingual":{
+        "DataField":27308,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1311,8 +1627,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSuperiorTemporalGyrusAnteriorDivision":{
-        "DataField":25799,
+    "volumeLeftMedialorbitofrontal":{
+        "DataField":27216,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1322,8 +1638,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSuperiorTemporalGyrusPosteriorDivision":{
-        "DataField":25800,
+    "volumeRightMedialorbitofrontal":{
+        "DataField":27309,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1333,8 +1649,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSuperiorTemporalGyrusPosteriorDivision":{
-        "DataField":25801,
+    "volumeLeftMiddletemporal":{
+        "DataField":27217,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1344,8 +1660,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSupracalcarineCortex":{
-        "DataField":25874,
+    "volumeRightMiddletemporal":{
+        "DataField":27310,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1355,8 +1671,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSupracalcarineCortex":{
-        "DataField":25875,
+    "volumeLeftParacentral":{
+        "DataField":27219,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1366,8 +1682,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSupramarginalGyrusAnteriorDivision":{
-        "DataField":25818,
+    "volumeRightParacentral":{
+        "DataField":27312,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1377,8 +1693,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSupramarginalGyrusAnteriorDivision":{
-        "DataField":25819,
+    "volumeLeftParahippocampal":{
+        "DataField":27218,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1388,8 +1704,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftSupramarginalGyrusPosteriorDivision":{
-        "DataField":25820,
+    "volumeRightParahippocampal":{
+        "DataField":27311,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1399,8 +1715,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightSupramarginalGyrusPosteriorDivision":{
-        "DataField":25821,
+    "volumeLeftParsopercularis":{
+        "DataField":27220,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1410,8 +1726,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftTemporalFusiformCortexAnteriorDivision":{
-        "DataField":25854,
+    "volumeRightParsopercularis":{
+        "DataField":27313,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1421,8 +1737,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightTemporalFusiformCortexAnteriorDivision":{
-        "DataField":25855,
+    "volumeLeftParsorbitalis":{
+        "DataField":27221,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1432,8 +1748,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftTemporalFusiformCortexPosteriorDivision":{
-        "DataField":25856,
+    "volumeRightParsorbitalis":{
+        "DataField":27314,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1443,8 +1759,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightTemporalFusiformCortexPosteriorDivision":{
-        "DataField":25857,
+    "volumeLeftParstriangularis":{
+        "DataField":27222,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1454,8 +1770,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftTemporalOccipitalFusiformCortex":{
-        "DataField":25858,
+    "volumeRightParstriangularis":{
+        "DataField":27315,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1465,8 +1781,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightTemporalOccipitalFusiformCortex":{
-        "DataField":25859,
+    "volumeLeftPericalcarine":{
+        "DataField":27223,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1476,8 +1792,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftTemporalPole":{
-        "DataField":25796,
+    "volumeRightPericalcarine":{
+        "DataField":27316,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1487,8 +1803,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightTemporalPole":{
-        "DataField":25797,
+    "volumeLeftPostcentral":{
+        "DataField":27224,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1498,8 +1814,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftThalamus":{
-        "DataField":25878,
+    "volumeRightPostcentral":{
+        "DataField":27317,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1509,8 +1825,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightThalamus":{
-        "DataField":25879,
+    "volumeLeftPosteriorcingulate":{
+        "DataField":27225,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1520,8 +1836,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftVCerebellum":{
-        "DataField":25895,
+    "volumeRightPosteriorcingulate":{
+        "DataField":27318,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1531,8 +1847,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightVCerebellum":{
-        "DataField":25896,
+    "volumeLeftPrecentral":{
+        "DataField":27226,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1542,8 +1858,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftVICerebellum":{
-        "DataField":25897,
+    "volumeRightPrecentral":{
+        "DataField":27319,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1553,8 +1869,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightVICerebellum":{
-        "DataField":25899,
+    "volumeLeftPrecuneus":{
+        "DataField":27227,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1564,8 +1880,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeVermisVICerebellum":{
-        "DataField":25898,
+    "volumeRightPrecuneus":{
+        "DataField":27320,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1575,8 +1891,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftVIIIaCerebellum":{
-        "DataField":25909,
+    "volumeLeftRostralanteriorcingulate":{
+        "DataField":27228,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1586,8 +1902,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightVIIIaCerebellum":{
-        "DataField":25911,
+    "volumeRightRostralanteriorcingulate":{
+        "DataField":27321,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1597,8 +1913,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeVermisVIIIaCerebellum":{
-        "DataField":25910,
+    "volumeLeftRostralmiddlefrontal":{
+        "DataField":27229,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1608,8 +1924,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftVIIIbCerebellum":{
-        "DataField":25912,
+    "volumeRightRostralmiddlefrontal":{
+        "DataField":27322,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1619,8 +1935,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightVIIIbCerebellum":{
-        "DataField":25914,
+    "volumeLeftSuperiorfrontal":{
+        "DataField":27230,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1630,8 +1946,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeVermisVIIIbCerebellum":{
-        "DataField":25913,
+    "volumeRightSuperiorfrontal":{
+        "DataField":27323,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1641,8 +1957,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftVIIbCerebellum":{
-        "DataField":25906,
+    "volumeLeftSuperiorparietal":{
+        "DataField":27231,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1652,8 +1968,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightVIIbCerebellum":{
-        "DataField":25908,
+    "volumeRightSuperiorparietal":{
+        "DataField":27324,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1663,8 +1979,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeVermisVIIbCerebellum":{
-        "DataField":25907,
+    "volumeLeftSuperiortemporal":{
+        "DataField":27232,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1674,8 +1990,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftVentralStriatum":{
-        "DataField":25890,
+    "volumeRightSuperiortemporal":{
+        "DataField":27325,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1685,8 +2001,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightVentralStriatum":{
-        "DataField":25891,
+    "volumeLeftSupramarginal":{
+        "DataField":27233,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1696,8 +2012,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeLeftXCerebellum":{
-        "DataField":25918,
+    "volumeRightSupramarginal":{
+        "DataField":27326,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1707,8 +2023,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeVermisXCerebellum":{
-        "DataField":25919,
+    "volumeLeftTransversetemporal":{
+        "DataField":27234,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
@@ -1718,8 +2034,8 @@
         "Included":true,
         "Coding":null
     },
-    "volumeRightXCerebellum":{
-        "DataField":25920,
+    "volumeRightTransversetemporal":{
+        "DataField":27327,
         "InstanceNum":2,
         "ArrayRange":{
             "start":0,
