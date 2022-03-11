@@ -11,7 +11,7 @@ from .variables import load_variables
 class Dataset:
     
     data_dir = "/Users/joshua/Developer/CognitiveSubtypes/data"
-    path_tabular_data = os.path.join(data_dir, "raw", "tabular.csv")
+    path_tabular_data = os.path.join(data_dir, "raw", "current.csv")
     
     if not os.path.isdir(data_dir):
         raise NotADirectoryError
