@@ -27,6 +27,6 @@ setup(
             'autossh=autossh.main:main'
         ]
     },
-    package_data={"data" : ["coding/*.json"]},
+    package_data={"data" : ["variables/*.json", "variables/coding/*.json"]},
     include_package_data=True,
 )

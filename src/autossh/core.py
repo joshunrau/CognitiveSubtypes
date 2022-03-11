@@ -66,21 +66,19 @@ class Server(ABC, Config):
 
 
 class CCServer(Server):
-    
+
+    url = "cedar.computecanada.ca"
+
     def __init__(self, args: argparse.Namespace):
         super().__init__(args)
-    
-    @property
-    def url(self):
-        return "narval.computecanada.ca"
-    
+
     @property
     def usr(self):
-        return Config.usernames["CC"]
+        return self.usernames["CC"]
     
     @property
     def pwd(self):
-        return Config.passwords["CC"]
+        return self.passwords["CC"]
 
     def login(self):
         sp.run(f"sshpass -p {self.pwd} ssh {self.usr}@{self.url}", shell=True)
@@ -94,12 +92,10 @@ class CCServer(Server):
 
 class CICServer(Server):
 
+    url = "ps395560.dreamhostps.com"
+
     def __init__(self, args: argparse.Namespace):
         super().__init__(args)
-    
-    @property
-    def url(self):
-        return "ps395560.dreamhostps.com"
     
     @property
     def usr(self):
@@ -107,7 +103,7 @@ class CICServer(Server):
     
     @property
     def pwd(self):
-        return Config.passwords["CIC"]
+        return self.passwords["CIC"]
 
     def login(self):
         sp.run(f"sshpass -p {self.pwd} ssh -p 8764 {self.usr}@{self.url}", shell=True)
