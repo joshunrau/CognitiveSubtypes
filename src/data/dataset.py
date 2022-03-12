@@ -1,6 +1,5 @@
 import os
 import re
-import warnings
 
 from datetime import date, datetime
 
@@ -143,23 +142,15 @@ class Dataset:
         for key in cls.excluded_diagnoses:
             df = df[df[key] == False]
 
-        ## BEGIN PROBLEM AREA
-
         # Recode variable values
         for name in cls.variables:
             cols = [col for col in df.columns if col.startswith(name)]
-            if cls.variables[name]["Included"] and cols != []:
+            if cls.variables[name]["Included"] and cols != [] and cls.variables[name]["Coding"] is not None:
+                print(cols)
+                print(cls.variables[name]["Coding"])
                 df[cols] = df[cols].replace(to_replace=cls.variables[name]["Coding"])
-        
-        ## END PROBLEM AREA
-        
-        print(df[["attemptsSymbolDigitTest", "correctSymbolDigitTest"]].isnull().sum())
 
         df.reset_index(drop=True, inplace=True)
         df = df.apply(pd.to_numeric, errors="ignore")
-
-        if any(df.isna()):
-            warnings.warn(f"Missing values in columns: {df.columns[df.isna().any()].tolist()}")
-        
         
         return cls(df)
