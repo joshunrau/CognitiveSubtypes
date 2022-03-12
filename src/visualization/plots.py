@@ -24,3 +24,9 @@ def plot_distributions(df: pd.DataFrame, variables: list, filepath=None):
     
     if filepath is not None:
         plt.savefig(filepath)
+
+
+def plot_missing_data(df: pd.DataFrame, variables: list, filepath=None):
+    plt.figure(figsize=(10, len(variables)))
+    sns.heatmap(df[variables].isna().transpose(), cmap="YlGnBu", cbar_kws={'label': 'Missing Data'})
+

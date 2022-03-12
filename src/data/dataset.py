@@ -152,3 +152,6 @@ class Dataset:
         df = df.apply(pd.to_numeric, errors="ignore")
         
         return cls(df)
+    
+    def summarize_na(self):
+        return self.df.isnull().sum()

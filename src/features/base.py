@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 from ..data.dataset import Dataset
-from ..visualization.plots import plot_distributions
+from ..visualization.plots import plot_distributions, plot_missing_data
 
 class Features(ABC):
     
@@ -25,3 +25,6 @@ class Features(ABC):
     
     def plot_distributions(self):
         plot_distributions(self.df, self.names)
+    
+    def plot_missing(self):
+        plot_missing_data(self.df, self.names)
