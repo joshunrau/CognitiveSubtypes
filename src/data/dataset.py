@@ -146,8 +146,6 @@ class Dataset:
         for name in cls.variables:
             cols = [col for col in df.columns if col.startswith(name)]
             if cls.variables[name]["Included"] and cols != [] and cls.variables[name]["Coding"] is not None:
-                print(cols)
-                print(cls.variables[name]["Coding"])
                 df[cols] = df[cols].replace(to_replace=cls.variables[name]["Coding"])
 
         df.reset_index(drop=True, inplace=True)
