@@ -150,6 +150,7 @@ class Dataset:
 
         df.reset_index(drop=True, inplace=True)
         df = df.apply(pd.to_numeric, errors="ignore")
+        df.dropna(how="any", inplace=True)
         
         return cls(df)
     

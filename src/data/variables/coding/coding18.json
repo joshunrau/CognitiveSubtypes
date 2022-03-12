@@ -1,5 +1,5 @@
 {
-    "0": "Instruction not recalled, either skipped or incorrect",
-    "1": "Correct recall on first attempt",
-    "2": "Correct recall on second attempt"
+    "0": "prospectiveMemoryTaskNotRecalled",
+    "1": "prospectiveMemoryTaskFirstAttempt",
+    "2": "prospectiveMemoryTaskSecondAttempt"
 }
