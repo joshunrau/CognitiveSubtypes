@@ -1,16 +1,20 @@
+import os
+
 import numpy as np
 import pandas as pd
 
 from collections import OrderedDict
 
 from ..data.dataset import Dataset
+from . import RESULTS_DIR
+from .utils import camel_case_split, is_number
 
 class Variable:
     
-    def __init__(self, name, table_name, vtype="continuous"):
+    def __init__(self, name, vtype="continuous"):
         
         self.name = name
-        self.table_name = table_name
+        self.table_name = camel_case_split(name)
         
         if vtype not in ["continuous", "categorical"]:
             raise TypeError
@@ -19,22 +23,21 @@ class Variable:
         
     def is_categorical(self):
         return self.vtype == "categorical"
-
-
-def get_summary_statistics():
+    
+def summary_statistics():
     
     df = Dataset.load()
     
     variables = [
-        Variable(name="age", table_name="Age"),
-        Variable(name="sex", table_name="Sex", vtype="categorical"),
-        Variable(name="meanReactionTimeTest", table_name="Mean Score Reaction Time Test"),
-        Variable(name="timeTrailMakingTestA", table_name="Time Trail Making Test Part A"),
-        Variable(name="timeTrailMakingTestB", table_name="Time Trail Making Test Part B"),
-        Variable(name="accuracyTowerTest", table_name="Accuracy Tower Test"),
-        Variable(name="accuracySymbolDigitTest", table_name="Accuracy Symbol Digit Test"),
-        Variable(name="incorrectPairsMatchingTask", table_name="Incorrect Pairs Matching Task"),
-        Variable(name="prospectiveMemoryTask", table_name="Result Prospective Memory Task")
+        Variable(name="age"),
+        Variable(name="sex", vtype="categorical"),
+        Variable(name="meanReactionTimeTest"),
+        Variable(name="timeTrailMakingTestA"),
+        Variable(name="timeTrailMakingTestB"),
+        Variable(name="accuracyTowerTest"),
+        Variable(name="accuracySymbolDigitTest"),
+        Variable(name="incorrectPairsMatchingTask"),
+        Variable(name="prospectiveMemoryTask")
     ]
     
     stats = OrderedDict()
@@ -51,4 +54,6 @@ def get_summary_statistics():
         else:
             stats[variable.table_name] = [sum(np.isnan(data) == False), np.mean(data), np.std(data)]
     
-    return pd.DataFrame.from_dict(stats, orient='index', columns=["N", "Mean/Percent", "SD"])
+    stats = pd.DataFrame.from_dict(stats, orient='index', columns=["N", "Mean/Percent", "SD"])
+    stats = stats.applymap(lambda x: round(x, 2) if is_number(x) else x, na_action="ignore")
+    stats.to_csv(os.path.join(RESULTS_DIR, "summary_statistics.csv"))
