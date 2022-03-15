@@ -5,7 +5,7 @@ import pandas as pd
 
 from collections import OrderedDict
 
-from ..data.dataset import Dataset
+from ..data.base import Dataset
 from . import RESULTS_DIR
 from .utils import camel_case_split, is_number
 
