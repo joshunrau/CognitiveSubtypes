@@ -147,7 +147,7 @@ class BaseData:
             return None
 
         return os.path.join(processed_dir, newest_file)
-    
+
     @classmethod
     def load(cls):
         """ Returns the most recent saved dataframe """
@@ -157,3 +157,4 @@ class BaseData:
             raise FileNotFoundError("Could not find existing dataset")
         
         return pd.read_csv(filepath)
+    
