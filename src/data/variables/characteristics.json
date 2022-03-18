@@ -51,7 +51,7 @@
             "step":1,
             "stop":6
         },
-        "Included":false,
+        "Included":true,
         "Coding":100305
     },
     "medications":{

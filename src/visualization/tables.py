@@ -5,7 +5,7 @@ import pandas as pd
 
 from collections import OrderedDict
 
-from ..data.base import Dataset
+from ..data.dataset import Dataset
 from . import RESULTS_DIR
 from .utils import camel_case_split, is_number
 
@@ -24,20 +24,18 @@ class Variable:
     def is_categorical(self):
         return self.vtype == "categorical"
     
-def summary_statistics():
-    
-    df = Dataset.load()
+def summary_statistics(df):
     
     variables = [
         Variable(name="age"),
         Variable(name="sex", vtype="categorical"),
-        Variable(name="meanReactionTimeTest"),
-        Variable(name="timeTrailMakingTestA"),
-        Variable(name="timeTrailMakingTestB"),
-        Variable(name="accuracyTowerTest"),
-        Variable(name="accuracySymbolDigitTest"),
-        Variable(name="incorrectPairsMatchingTask"),
-        Variable(name="prospectiveMemoryTask")
+        #Variable(name="meanReactionTimeTest"),
+        #Variable(name="timeTrailMakingTestA"),
+        #Variable(name="timeTrailMakingTestB"),
+        #Variable(name="accuracyTowerTest"),
+        #Variable(name="accuracySymbolDigitTest"),
+        #Variable(name="incorrectPairsMatchingTask"),
+        #Variable(name="prospectiveMemoryTask")
     ]
     
     stats = OrderedDict()

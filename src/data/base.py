@@ -30,6 +30,17 @@ class BaseData:
     excluded_diagnoses = {
         "anyDementia": "F0\d"
     }
+
+    edu_levels = {
+        "EduNoneOfTheAbove": "None of the above",
+        "EduDeclineToAnswer": "Prefer not to answer",
+        "EduUniversityDegree": "College or University degree",
+        "EduALevelsOrEq": "A levels/AS levels or equivalent",
+        "EduOLevelsOrEq": "O levels/GCSEs or equivalent",
+        "EduCSEOrEq": "CSEs or equivalent",
+        "EduNVQOrEq": "NVQ or HND or HNC or equivalent",
+        "EduOtherProfQual": "Other professional qualifications eg: nursing, teaching"
+    }
     
     selected_diagnoses = included_diagnoses | excluded_diagnoses
     
@@ -42,6 +53,9 @@ class BaseData:
         self.df.rename({k: v for k, v in zip(ukbb_vars, recoded_vars)}, axis=1, inplace=True)
         self.df.dropna(axis=1, how="all", inplace=True)
 
+        # Recode education
+        self.df = self.add_binary_variables(self.df, "educationalQualifications", self.edu_levels, drop_target=True)
+        
         # Apply inclusion criteria for diagnoses
         self.df = self.add_binary_variables(self.df, "diagnoses", self.selected_diagnoses, drop_target=True)
         list_series = [self.df[key] == True for key in self.included_diagnoses]
