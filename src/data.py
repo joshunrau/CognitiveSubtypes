@@ -4,17 +4,19 @@ import re
 from datetime import date, datetime
 
 import pandas as pd
+import numpy as np
 
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import FunctionTransformer, PowerTransformer, StandardScaler
+
+from . import DATA_DIR
 from .variables import load_variables
 
 
-class BaseData:
-    
-    data_dir = "/Users/joshua/Developer/CognitiveSubtypes/data"
-    path_tabular_data = os.path.join(data_dir, "raw", "current.csv")
-    
-    if not os.path.isdir(data_dir):
-        raise NotADirectoryError
+class RawData:
+    """ class to subset and recode raw data from the ukbb """
+
+    path_tabular_data = os.path.join(DATA_DIR, "raw", "current.csv")
     
     if not os.path.isfile(path_tabular_data):
         raise FileNotFoundError
@@ -44,7 +46,7 @@ class BaseData:
     
     selected_diagnoses = included_diagnoses | excluded_diagnoses
     
-    def __init__(self, rm_na=False) -> None:
+    def __init__(self, subset_dx=True, rm_na=False) -> None:
         
         # Import, recode, and subset tabular data
         ukbb_vars, recoded_vars = self.get_var_names()
@@ -53,17 +55,16 @@ class BaseData:
         self.df.rename({k: v for k, v in zip(ukbb_vars, recoded_vars)}, axis=1, inplace=True)
         self.df.dropna(axis=1, how="all", inplace=True)
 
-        # Recode education
+        # Recode array vars
         self.df = self.add_binary_variables(self.df, "educationalQualifications", self.edu_levels, drop_target=True)
-        
-        # Apply inclusion criteria for diagnoses
         self.df = self.add_binary_variables(self.df, "diagnoses", self.selected_diagnoses, drop_target=True)
-        list_series = [self.df[key] == True for key in self.included_diagnoses]
-        self.df = self.df[pd.concat(list_series, axis=1).any(axis=1)]
         
-        # Apply exclusion criteria for diagnoses
-        for key in self.excluded_diagnoses:
-            self.df = self.df[self.df[key] == False]
+        # Apply inclusion/exclusion criteria for diagnoses
+        if subset_dx:
+            list_series = [self.df[key] == True for key in self.included_diagnoses]
+            self.df = self.df[pd.concat(list_series, axis=1).any(axis=1)]
+            for key in self.excluded_diagnoses:
+                self.df = self.df[self.df[key] == False]
 
         # Recode variable values
         for name in self.variables:
@@ -139,14 +140,14 @@ class BaseData:
         return pd.merge(df, new_df, left_on=self.idvar, right_on=self.idvar)
 
     def write_csv(self):
-        filename = os.path.join(self.data_dir, "processed", f"dataset_{date.today().isoformat()}.csv")
+        filename = os.path.join(DATA_DIR, "processed", f"dataset_{date.today().isoformat()}.csv")
         self.df.to_csv(filename, index=False)
 
     @classmethod
     def get_latest_filepath(cls):
         """ Return the path to most recent saved dataset """
 
-        processed_dir = os.path.join(cls.data_dir, "processed")
+        processed_dir = os.path.join(DATA_DIR, "processed")
         newest_date, newest_file = None, None
 
         for filename in os.listdir(processed_dir):
@@ -171,4 +172,112 @@ class BaseData:
             raise FileNotFoundError("Could not find existing dataset")
         
         return pd.read_csv(filepath)
+
+
+class SubsetData:
     
+    def __init__(self, df):
+        self._df = df
+        self._target = None
+    
+    @property
+    def df(self):
+        return self._df
+
+    @df.setter
+    def df(self, new_df):
+        if not isinstance(new_df, pd.DataFrame):
+            raise TypeError
+        if not list(self.df.columns) == list(new_df.columns):
+            raise ValueError
+        self._df = new_df
+    
+    @property
+    def target(self):
+        return self._target
+    
+    @target.setter
+    def target(self, value):
+        if len(value) != len(self.df):
+            raise ValueError
+        self._target = value
+    
+    def get(self, names):
+        return self.df[names].to_numpy()
+    
+    @property
+    def cognitive_feature_names(self):
+        return [
+            "meanReactionTimeTest",
+            "timeTrailMakingTestA",
+            "timeTrailMakingTestB",
+            "accuracyTowerTest", 
+            "accuracySymbolDigitTest",
+            "incorrectPairsMatchingTask",
+            "prospectiveMemoryTask"
+        ]
+    
+    @property
+    def imaging_feature_names(self):
+        imaging_feature_names = []
+        for col in self.df.columns:
+            if col.startswith("area") or col.startswith("thickness") or col.startswith("volume"):
+                imaging_feature_names.append(col)
+        return imaging_feature_names
+    
+    @property
+    def feature_names(self):
+        return self.cognitive_feature_names + self.imaging_feature_names
+    
+    @property
+    def cognitive(self):
+        return self.get(self.cognitive_feature_names)
+    
+    @property
+    def imaging(self):
+        return self.get(self.imaging_feature_names)
+    
+    @property
+    def features(self):
+        return self.get(self.feature_names)
+    
+
+class Dataset(SubsetData):
+    
+    def __init__(self, df=RawData.load()):
+        train_data, test_data = train_test_split(df, test_size=0.33, random_state=42)
+        self.train, self.test = SubsetData(train_data), SubsetData(test_data)
+    
+    def apply_transforms(self):
+
+        log_transformer = FunctionTransformer(np.log)
+        power_transformer =  PowerTransformer(standardize=False)
+
+        self.transforms = [
+            [log_transformer, ["meanReactionTimeTest", "timeTrailMakingTestA", "timeTrailMakingTestB"]],
+            [power_transformer, ["accuracyTowerTest", "accuracySymbolDigitTest", "incorrectPairsMatchingTask"]]
+        ]
+
+        for transformer, variables in self.transforms:
+            self.train.df[variables] = transformer.fit_transform(self.train.df[variables])
+            self.test.df[variables] = transformer.transform(self.test.df[variables])
+        
+    def apply_scaler(self, scaler = StandardScaler()):
+        self.train.df[self.train.feature_names] = scaler.fit_transform(self.train.features)
+        self.test.df[self.test.feature_names] = scaler.transform(self.test.features)
+    
+    @property
+    def df(self):
+        if list(self.train.df.columns) != list(self.test.df.columns):
+            raise AssertionError
+        return pd.concat(objs=[self.train.df, self.test.df])
+    
+    @property
+    def target(self):
+        if self.train.target is None or self.test.target is None:
+            return None
+        return np.concatenate([self.train.target, self.test.target])
+    
+    @classmethod
+    def from_csv(cls, filepath, **kwargs):
+        return cls(pd.read_csv(filepath), **kwargs)
