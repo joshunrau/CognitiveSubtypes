@@ -12,7 +12,7 @@ class BaseTable(ABC):
     pass
 
 
-class SummaryTable:
+class SummaryTable(BaseTable):
     
     def __init__(self, data: Dataset, categorical_vars: list, continuous_vars: list):
         
