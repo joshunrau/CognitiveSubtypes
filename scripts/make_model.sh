@@ -4,4 +4,5 @@
 #SBATCH --mem-per-cpu=1.5G
 #SBATCH --time=1:00:00
 
-venv/bin/python -c "from data.dataset import Dataset; Dataset.make().write_csv()"
+source venv/bin/activate
+python -m src.main

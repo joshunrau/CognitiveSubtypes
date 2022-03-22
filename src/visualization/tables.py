@@ -4,7 +4,7 @@ from collections import OrderedDict
 import numpy as np
 import pandas as pd
 
-from .data import Dataset
+from ..data.dataset import Dataset
 from .utils import apply_dict_keys, camel_case_split, is_number
 
 

@@ -67,7 +67,7 @@ class Server(ABC, Config):
 
 class CCServer(Server):
 
-    url = "cedar.computecanada.ca"
+    url = "beluga.computecanada.ca"
 
     def __init__(self, args: argparse.Namespace):
         super().__init__(args)

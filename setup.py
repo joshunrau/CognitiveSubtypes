@@ -24,7 +24,8 @@ setup(
     install_requires=get_install_requires(),
     entry_points = {
         'console_scripts': [
-            'autossh=autossh.main:main'
+            'autossh=autossh.main:main',
+            'build_dataset=data.build:build_dataset'
         ]
     },
     package_data={"data" : ["variables/*.json", "variables/coding/*.json"]},
