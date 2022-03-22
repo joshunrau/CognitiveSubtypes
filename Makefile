@@ -4,10 +4,10 @@ ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 all: install clean
 
-train: venv
-	./scripts/make_train.sh
+model: venv
+	./scripts/make_model.sh $(DATA_DIR)
 
-data:
+data: venv
 	./scripts/make_data.sh $(CURRENT_CSV) $(DATA_DIR)
 
 venv:

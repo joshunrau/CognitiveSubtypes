@@ -1,7 +1,5 @@
-import argparse
 import os
 import re
-import sys
 
 from datetime import date, datetime
 
@@ -154,27 +152,22 @@ class BiobankData:
         return os.path.join(output_dir, newest_file)
 
     @classmethod
-    def load(cls):
+    def load(cls, output_dir):
         """ Returns the most recent saved dataframe """
         
-        filepath = cls.get_latest_filepath()
+        filepath = cls.get_latest_filepath(output_dir)
         if filepath is None:
             raise FileNotFoundError("Could not find existing dataset")
         
         return pd.read_csv(filepath)
 
 
-def build_dataset():
+def build_dataset(path_current_csv, path_output_dir, **kwargs):
 
-    parser = argparse.ArgumentParser(prog="build_dataset")
-    parser.add_argument('path_current_csv')
-    parser.add_argument('path_output_dir')
-    args = parser.parse_args(sys.argv[1:])
+    if not os.path.isfile(path_current_csv):
+        raise FileNotFoundError("File not found: " + path_current_csv)
+    if not os.path.isdir(path_output_dir):
+        raise NotADirectoryError("Directory not found: " + path_output_dir)
 
-    if not os.path.isfile(args.path_current_csv):
-        raise FileNotFoundError("File not found: " + args.path_current_csv)
-    if not os.path.isdir(args.path_output_dir):
-        raise NotADirectoryError("Directory not found: " + args.path_output_dir)
-
-    data = BiobankData(args.path_current_csv, rm_na=True, subset_dx=True)
-    data.write_csv(args.path_output_dir)
+    data = BiobankData(path_current_csv, **kwargs)
+    data.write_csv(path_output_dir)

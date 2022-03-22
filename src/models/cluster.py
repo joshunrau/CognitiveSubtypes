@@ -3,19 +3,18 @@ from typing import Callable
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
-from ..data.dataset import Dataset
 from .base import BaseModel
 
 
 class BestKMeans(BaseModel):
-
+    """ methods accept object of a Dataset class """
     available_score_funcs = [silhouette_score]
     estimator = KMeans
 
     def __init__(self, score_func: Callable = silhouette_score) -> None:
         super().__init__(score_func)
     
-    def fit(self, data: Dataset, k_min: int = 2, k_max: int = 6) -> None:
+    def fit(self, data, k_min: int = 2, k_max: int = 6) -> None:
         
         super().fit(data)
         
@@ -34,7 +33,7 @@ class BestKMeans(BaseModel):
             self.scores[str(model)] = score
         self.estimator = best_model
 
-    def predict(self, data: Dataset) -> tuple:
+    def predict(self, data) -> tuple:
         super().predict(data)
         y_train = self.estimator.predict(data.train.cognitive)
         y_test = self.estimator.predict(data.test.cognitive)

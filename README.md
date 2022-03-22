@@ -7,9 +7,9 @@ Step 1: Create a new virtual environment and install dependencies from requireme
 
         make venv
 
-Step 2: Construct a useable dataset from raw data Biobank data:
+Step 2: Refer to the code in main.py
 
-        export CURRENT_CSV=/Users/joshua/Developer/CognitiveSubtypes/data/raw/current.csv
-        export DATA_DIR=/Users/joshua/Developer/CognitiveSubtypes/data
-        make data
+
+        
+
 

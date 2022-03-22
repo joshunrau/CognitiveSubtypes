@@ -6,11 +6,11 @@ from sklearn.metrics import balanced_accuracy_score, classification_report, make
 from sklearn.model_selection import GridSearchCV
 from sklearn.utils.validation import check_is_fitted, NotFittedError
 
-from ..data.dataset import Dataset
-from ..utils import is_instantiated
+from .utils import is_instantiated
 
 class BaseModel(ABC):
-
+    """ methods accept object of a Dataset class """
+    
     def __init__(self, score_func: Callable) -> None:
         self.score_func = score_func
     
@@ -39,13 +39,13 @@ class BaseModel(ABC):
         pass
 
     @abstractmethod
-    def fit(self, data: Dataset) -> None:
+    def fit(self, data) -> None:
         self._data = deepcopy(data)
         if self.score_func not in self.available_score_funcs:
             raise ValueError(f"Scorer must be one of: {self.available_score_funcs}")
     
     @abstractmethod
-    def predict(self, data: Dataset) -> None:
+    def predict(self, data) -> None:
         self.check_is_fitted()
 
 
@@ -61,7 +61,7 @@ class BaseClassifier(BaseModel):
     def param_grid(self):
         pass
 
-    def fit(self, data: Dataset) -> None:
+    def fit(self, data) -> None:
         super().fit(data)
         if self._data.target is None:
             raise ValueError
@@ -69,23 +69,23 @@ class BaseClassifier(BaseModel):
         self.grid.fit(self._data.train.imaging, self._data.train.target)
         self.estimator = self.grid.best_estimator_
     
-    def predict(self, data: Dataset) -> None:
+    def predict(self, data) -> None:
         super().predict(data)
         return self.grid.predict(data.test.imaging)
     
-    def predict_proba(self, data: Dataset):
+    def predict_proba(self, data):
         self.check_is_fitted()
         try:
             return self.estimator.predict_proba(data.test.imaging)
         except AttributeError:
             return None
     
-    def classification_report(self, data: Dataset) -> None:
+    def classification_report(self, data) -> None:
         print(classification_report(data.test.target, self.predict(data)))
     
-    def compute_metric(self, metric: Callable, data: Dataset):
+    def compute_metric(self, metric: Callable, data):
         return metric(data.test.target, self.predict(data))
     
-    def score(self, data: Dataset):
+    def score(self, data):
         self.check_is_fitted()
         return self.compute_metric(self.score_func, data)

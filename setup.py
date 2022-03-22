@@ -25,7 +25,8 @@ setup(
     entry_points = {
         'console_scripts': [
             'autossh=autossh.main:main',
-            'build_dataset=data.build:build_dataset'
+            'build_dataset=data.build:build_dataset',
+            'fit_model=models.fit:fit_model'
         ]
     },
     package_data={"data" : ["variables/*.json", "variables/coding/*.json"]},
