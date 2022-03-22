@@ -11,7 +11,7 @@ data:
 	./scripts/make_data.sh $(CURRENT_CSV) $(DATA_DIR)
 
 venv:
-	./scripts/make_venv.sh ${ROOT_DIR}
+	./scripts/make_venv.sh $(ROOT_DIR)
 
 clean:
 	rm -fr build/
