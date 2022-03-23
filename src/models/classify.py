@@ -6,9 +6,10 @@ from .base import BaseClassifier
 
 
 class BestSVC(BaseClassifier):
-    
+
     estimator = SVC
     param_grid = {
+        'probability': [True],
         'class_weight': ['balanced'],
         'C': [0.1, 1, 10, 100], 
         'gamma': [1, 0.1, 0.01, 0.001],

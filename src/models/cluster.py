@@ -5,11 +5,13 @@ from typing import Callable
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
-from .base import BaseModel
+from .base import BaseCluster
 from .utils import get_array_counts
 
-class BestKMeans(BaseModel):
+
+class BestKMeans(BaseCluster):
     """ methods accept object of a Dataset class """
+    
     available_score_funcs = [silhouette_score]
     estimator = KMeans
 
