@@ -1,10 +1,12 @@
+import pandas as pd
+
 from typing import Callable
 
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
 from .base import BaseModel
-
+from .utils import get_array_counts
 
 class BestKMeans(BaseModel):
     """ methods accept object of a Dataset class """
@@ -38,4 +40,8 @@ class BestKMeans(BaseModel):
         y_train = self.estimator.predict(data.train.cognitive)
         y_test = self.estimator.predict(data.test.cognitive)
         return y_train, y_test
+    
+    def get_class_counts(self, data) -> pd.DataFrame:
+        return get_array_counts(self.predict(data)[0])
+
 
