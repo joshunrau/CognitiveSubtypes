@@ -22,7 +22,13 @@ class BiobankData:
     excluded_diagnoses = {
         "anyDementia": "F0\d"
     }
-
+    
+    any_mental_disorder = {
+        "anyMentalDisorder": "F\d*"
+    }
+    
+    selected_diagnoses = included_diagnoses | excluded_diagnoses | any_mental_disorder
+    
     edu_levels = {
         "EduNoneOfTheAbove": "None of the above",
         "EduDeclineToAnswer": "Prefer not to answer",
@@ -34,9 +40,7 @@ class BiobankData:
         "EduOtherProfQual": "Other professional qualifications eg: nursing, teaching"
     }
     
-    selected_diagnoses = included_diagnoses | excluded_diagnoses
-    
-    def __init__(self, path_csv: str, subset_dx=True, rm_na=False) -> None:
+    def __init__(self, path_csv: str, rm_na=False) -> None:
 
         # Import, recode, and subset tabular data
         ukbb_vars, recoded_vars = self.get_var_names()
@@ -49,13 +53,10 @@ class BiobankData:
         self.df = self.add_binary_variables(self.df, "educationalQualifications", self.edu_levels, drop_target=True)
         self.df = self.add_binary_variables(self.df, "diagnoses", self.selected_diagnoses, drop_target=True)
         
-        # Apply inclusion/exclusion criteria for diagnoses
-        if subset_dx:
-            list_series = [self.df[key] == True for key in self.included_diagnoses]
-            self.df = self.df[pd.concat(list_series, axis=1).any(axis=1)]
-            for key in self.excluded_diagnoses:
-                self.df = self.df[self.df[key] == False]
-
+        # Apply exclusion criteria for diagnoses
+        for key in self.excluded_diagnoses:
+            self.df = self.df[self.df[key] == False]
+            
         # Recode variable values
         for name in self.variables:
             cols = [col for col in self.df.columns if col.startswith(name)]
@@ -75,7 +76,7 @@ class BiobankData:
         # Compute accuracy variables
         self.df["accuracyTowerTest"] = self.df["correctTowerTest"] / self.df["attemptsTowerTest"]
         self.df["accuracySymbolDigitTest"] = self.df["correctSymbolDigitTest"] / self.df["attemptsSymbolDigitTest"]
-
+        
     def get_var_names(self) -> tuple:
         """ Return lists of actual and recoded variable names based on config """
         ukbb_vars, recoded_vars = ["eid"], [self.idvar]
@@ -132,7 +133,15 @@ class BiobankData:
     def write_csv(self, output_dir):
         filename = os.path.join(output_dir, f"dataset_{date.today().isoformat()}.csv")
         self.df.to_csv(filename, index=False)
-
+    
+    def get_patients(self):
+        list_series = [self.df[key] == True for key in self.included_diagnoses]
+        return self.df[pd.concat(list_series, axis=1).any(axis=1)]
+    
+    def get_controls(self):
+        list_series = [self.df[key] == True for key in self.any_mental_disorder]
+        return self.df[pd.concat(list_series, axis=1).any(axis=1)]
+    
     @classmethod
     def get_latest_filepath(cls, output_dir):
         """ Return the path to most recent saved dataset """
@@ -162,12 +171,15 @@ class BiobankData:
         return pd.read_csv(filepath)
 
 
-def build_dataset(path_current_csv, path_output_dir, **kwargs):
+def build_dataset(path_current_csv, path_output_dir):
 
     if not os.path.isfile(path_current_csv):
         raise FileNotFoundError("File not found: " + path_current_csv)
     if not os.path.isdir(path_output_dir):
         raise NotADirectoryError("Directory not found: " + path_output_dir)
-
-    data = BiobankData(path_current_csv, **kwargs)
+    
+    data = BiobankData(path_current_csv, rm_na=True)
+    patient_df = data.get_patients()
+    control_df = data.get_controls().sample(n=len(patient_df), random_state=0)
+    data.df = pd.concat([patient_df, control_df])
     data.write_csv(path_output_dir)
