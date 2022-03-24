@@ -41,6 +41,10 @@ class BiobankData:
         "EduOtherProfQual": "Other professional qualifications eg: nursing, teaching"
     }
     
+    other_include = {
+        'handedness': "Right-handed"
+    }
+    
     def __init__(self, path_csv: str, rm_na=False) -> None:
 
         # Import, recode, and subset tabular data
@@ -81,6 +85,9 @@ class BiobankData:
         # Compute DX
         self.df = self.df.assign(dx = self.df.apply(self.compute_dx, axis=1))
         self.df.drop(list(self.selected_diagnoses.keys()), axis=1)
+
+        for key, value in self.other_include.items():
+            self.df = self.df[self.df[key] == value]
 
     def get_var_names(self) -> tuple:
         """ Return lists of actual and recoded variable names based on config """

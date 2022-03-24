@@ -9,6 +9,7 @@ from ..utils import camel_case_split
 
 class Data:
     
+    id_var = 'id'
     target_var = 'class'
 
     def __init__(self, df):
@@ -116,7 +117,7 @@ class Dataset(Data):
         if list(self.train.df.columns) != list(self.test.df.columns):
             raise AssertionError
         return pd.concat(objs=[self.train.df, self.test.df])
-    
+
     @property
     def target(self):
         if self.train.target is None or self.test.target is None:
