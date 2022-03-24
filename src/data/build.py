@@ -1,3 +1,4 @@
+import copy
 import os
 import re
 
@@ -136,12 +137,16 @@ class BiobankData:
     
     def get_patients(self):
         list_series = [self.df[key] == True for key in self.included_diagnoses]
-        return self.df[pd.concat(list_series, axis=1).any(axis=1)]
+        df = copy.deepcopy(self.df[pd.concat(list_series, axis=1).any(axis=1)])
+        df['subjectType'] = 'patient'
+        return df
     
     def get_controls(self):
-        list_series = [self.df[key] == True for key in self.any_mental_disorder]
-        return self.df[pd.concat(list_series, axis=1).any(axis=1)]
-    
+        list_series = [self.df[key] == False for key in self.any_mental_disorder]
+        df = copy.deepcopy(self.df[pd.concat(list_series, axis=1).any(axis=1)])
+        df['subjectType'] = 'control'
+        return df
+
     @classmethod
     def get_latest_filepath(cls, output_dir):
         """ Return the path to most recent saved dataset """
@@ -182,4 +187,7 @@ def build_dataset(path_current_csv, path_output_dir):
     patient_df = data.get_patients()
     control_df = data.get_controls().sample(n=len(patient_df), random_state=0)
     data.df = pd.concat([patient_df, control_df])
+
+    assert sum(data.df['subjectType'] == 'patient') == sum(data.df['subjectType'] == 'control')
+    
     data.write_csv(path_output_dir)
