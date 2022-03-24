@@ -6,11 +6,12 @@ from sklearn.preprocessing import FunctionTransformer, PowerTransformer, Standar
 
 from .build import BiobankData
 
-class Features:
+class Data:
     
     def __init__(self, df):
         self._df = df
         self._target = None
+        self.df['class'] = self._target
     
     @property
     def df(self):
@@ -33,6 +34,7 @@ class Features:
         if len(value) != len(self.df):
             raise ValueError
         self._target = value
+        self.df['class'] = value
     
     def get(self, names):
         return self.df[names].to_numpy()
@@ -74,11 +76,11 @@ class Features:
         return self.get(self.feature_names)
     
 
-class Dataset(Features):
+class Dataset(Data):
     
     def __init__(self, df):
         train_data, test_data = train_test_split(df, test_size=0.33, random_state=42)
-        self.train, self.test = Features(train_data), Features(test_data)
+        self.train, self.test = Data(train_data), Data(test_data)
     
     def apply_transforms(self):
 
