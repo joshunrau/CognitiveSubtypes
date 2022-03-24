@@ -8,7 +8,7 @@ from sklearn.metrics import balanced_accuracy_score, classification_report, roc_
 from sklearn.model_selection import GridSearchCV
 from sklearn.utils.validation import check_is_fitted, NotFittedError
 
-from .utils import is_instantiated
+from ..utils import is_instantiated
 
 class BaseModel(ABC):
     """ methods accept object of a Dataset class """

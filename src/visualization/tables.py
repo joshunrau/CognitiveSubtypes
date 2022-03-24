@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 from ..data.dataset import Dataset
-from .utils import apply_dict_keys, camel_case_split, is_number
+from ..utils import apply_dict_keys, camel_case_split, is_number
 
 
 class BaseTable(ABC):

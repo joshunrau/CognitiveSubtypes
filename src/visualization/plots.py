@@ -7,7 +7,7 @@ from sklearn.cluster import KMeans
 from yellowbrick.cluster import KElbowVisualizer
 
 from ..data.dataset import Dataset
-from .utils import flatten_list
+from ..utils import flatten_list
 
 def plot_kmeans_elbow(data: Dataset, metric: str = 'distortion') -> None:
     

@@ -8,10 +8,12 @@ from .build import BiobankData
 
 class Data:
     
+    target_var = 'class'
+
     def __init__(self, df):
         self._df = df
         self._target = None
-        self.df['class'] = self._target
+        self.df[self.target_var] = self._target
     
     @property
     def df(self):
@@ -34,7 +36,7 @@ class Data:
         if len(value) != len(self.df):
             raise ValueError
         self._target = value
-        self.df['class'] = value
+        self.df[self.target_var] = value
     
     def get(self, names):
         return self.df[names].to_numpy()
@@ -99,6 +101,12 @@ class Dataset(Data):
     def apply_scaler(self, scaler = StandardScaler()):
         self.train.df[self.train.feature_names] = scaler.fit_transform(self.train.features)
         self.test.df[self.test.feature_names] = scaler.transform(self.test.features)
+    
+    def summarize_by_class(self):
+        if self.target is None:
+            raise ValueError("Target for Dataset has not yet been set!")
+        include = self.cognitive_feature_names + [self.target_var]
+        return self.df[include].groupby(self.target_var).mean().T
     
     @property
     def df(self):

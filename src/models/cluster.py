@@ -6,7 +6,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
 from .base import BaseCluster
-from .utils import get_array_counts
+from ..utils import get_array_counts
 
 
 class BestKMeans(BaseCluster):
