@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import FunctionTransformer, PowerTransformer, StandardScaler
 
 from .build import BiobankData
+from ..utils import camel_case_split
 
 class Data:
     
@@ -106,7 +107,9 @@ class Dataset(Data):
         if self.target is None:
             raise ValueError("Target for Dataset has not yet been set!")
         include = self.cognitive_feature_names + [self.target_var]
-        return self.df[include].groupby(self.target_var).mean().T
+        df = self.df[include].groupby(self.target_var).mean().T
+        df.index = df.index.map(camel_case_split)
+        return df
     
     @property
     def df(self):
