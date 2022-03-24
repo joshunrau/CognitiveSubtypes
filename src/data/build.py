@@ -78,6 +78,10 @@ class BiobankData:
         self.df["accuracyTowerTest"] = self.df["correctTowerTest"] / self.df["attemptsTowerTest"]
         self.df["accuracySymbolDigitTest"] = self.df["correctSymbolDigitTest"] / self.df["attemptsSymbolDigitTest"]
         
+        # Compute DX
+        self.df = self.df.assign(dx = self.df.apply(self.compute_dx, axis=1))
+        self.df.drop(list(self.selected_diagnoses.keys()), axis=1)
+
     def get_var_names(self) -> tuple:
         """ Return lists of actual and recoded variable names based on config """
         ukbb_vars, recoded_vars = ["eid"], [self.idvar]
@@ -174,6 +178,19 @@ class BiobankData:
             raise FileNotFoundError("Could not find existing dataset")
         
         return pd.read_csv(filepath)
+    
+    @staticmethod
+    def compute_dx(df):
+        if df["anySSD"] & df["anyMoodDisorder"]:
+            return "SSD + Mood Disorder"
+        elif df["anySSD"]:
+            return "Only SSD"
+        elif df["anyMoodDisorder"]:
+            return "Only Mood Disorder"
+        elif ~df['anyDementia'] & ~df['anyMentalDisorder']:
+            return None
+        else:
+            raise AssertionError
 
 
 def build_dataset(path_current_csv, path_output_dir):
