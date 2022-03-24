@@ -6,7 +6,7 @@ from sklearn.preprocessing import FunctionTransformer, PowerTransformer, Standar
 
 from .build import BiobankData
 
-class SubsetData:
+class Features:
     
     def __init__(self, df):
         self._df = df
@@ -74,11 +74,11 @@ class SubsetData:
         return self.get(self.feature_names)
     
 
-class Dataset(SubsetData):
+class Dataset(Features):
     
     def __init__(self, df):
         train_data, test_data = train_test_split(df, test_size=0.33, random_state=42)
-        self.train, self.test = SubsetData(train_data), SubsetData(test_data)
+        self.train, self.test = Features(train_data), Features(test_data)
     
     def apply_transforms(self):
 
