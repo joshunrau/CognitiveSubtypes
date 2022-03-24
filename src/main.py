@@ -6,12 +6,8 @@ from data.dataset import Dataset
 from models.classify import BestSVC, BestRandomForestClassifier, BestRidgeClassifier
 from models.cluster import BestKMeans
 
-
-CURRENT_CSV = "/home/junrau/scratch/CognitiveSubtypes/data/current.csv"
-RESULTS_DIR = "/home/junrau/scratch/CognitiveSubtypes/results"
-
-#CURRENT_CSV = "/Users/joshua/Developer/CognitiveSubtypes/data/raw/current.csv"
-#RESULTS_DIR = "/Users/joshua/Developer/CognitiveSubtypes/results"
+CURRENT_CSV = "/Users/joshua/Developer/CognitiveSubtypes/data/raw/current.csv"
+RESULTS_DIR = "/Users/joshua/Developer/CognitiveSubtypes/results"
 
 def main():
 
