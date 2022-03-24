@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import FunctionTransformer, PowerTransformer, StandardScaler
 
+from .build import BiobankData
 
 class SubsetData:
     
@@ -112,3 +113,7 @@ class Dataset(SubsetData):
     @classmethod
     def from_csv(cls, filepath, **kwargs):
         return cls(pd.read_csv(filepath), **kwargs)
+    
+    @classmethod
+    def load(cls, output_dir):
+        return cls(BiobankData.load(output_dir=output_dir))
