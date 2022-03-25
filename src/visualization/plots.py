@@ -18,7 +18,7 @@ def plot_kmeans_scores(model: BestKMeans):
     silhouette_values = [x['silhouette'] for x in model.scores.values()]
     assert len(k_values) == len(calinski_harabasz_values) == len(silhouette_values)
 
-    fig, ax1 = plt.subplots()
+    fig, ax1 = plt.subplots(dpi=100)
 
     color = 'tab:red'
     ax1.set_xlabel('Number of Clusters')
