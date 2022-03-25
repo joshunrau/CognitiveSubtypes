@@ -43,24 +43,6 @@ class BaseModel(ABC):
         self.check_is_fitted()
 
 
-class BaseCluster(BaseModel):
-
-    def __init__(self, score_func: Callable) -> None:
-        self.score_func = score_func
-
-    @property
-    @classmethod
-    @abstractmethod
-    def available_score_funcs(self):
-        pass
-
-    @abstractmethod
-    def fit(self, data):
-        super().fit(data)
-        if self.score_func not in self.available_score_funcs:
-            raise ValueError(f"Scorer must be one of: {self.available_score_funcs}")
-
-
 class BaseClassifier(BaseModel):
     
     available_score_methods = ['balanced_accuracy']
