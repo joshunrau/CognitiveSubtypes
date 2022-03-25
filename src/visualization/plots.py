@@ -11,32 +11,7 @@ from ..models.cluster import BestKMeans
 from ..utils import flatten_list
 
 
-def plot_kmeans_scores(model: BestKMeans):
-    
-    k_values = list(model.scores.keys())
-    calinski_harabasz_values = [x['calinski_harabasz'] for x in model.scores.values()]
-    silhouette_values = [x['silhouette'] for x in model.scores.values()]
-    assert len(k_values) == len(calinski_harabasz_values) == len(silhouette_values)
 
-    fig, ax1 = plt.subplots(dpi=100)
-
-    color = 'tab:red'
-    ax1.set_xlabel('Number of Clusters')
-    ax1.set_ylabel("Calinski-Harabasz Score", color=color)
-    ax1.plot(k_values, calinski_harabasz_values, color=color)
-    ax1.scatter(k_values, calinski_harabasz_values, color=color)
-    ax1.set(xticks=k_values)
-    ax1.tick_params(axis='y', labelcolor=color)
-
-    color = 'tab:blue'
-    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-    ax2.set_ylabel("Silhouette Score", color=color)
-    ax2.plot(k_values, silhouette_values, color=color)
-    ax2.scatter(k_values, silhouette_values, color=color)
-    ax2.tick_params(axis='y', labelcolor=color)
-    ax2.grid(None)
-
-    fig.tight_layout()
 
 
 def plot_kmeans_elbow(data: Dataset, metric: str = 'distortion') -> None:

@@ -1,17 +1,16 @@
 from abc import ABC, abstractmethod
 from copy import deepcopy
-from typing import Callable
 
 import numpy as np
 
-from sklearn.metrics import balanced_accuracy_score, classification_report, roc_auc_score
+from sklearn.metrics import accuracy_score, balanced_accuracy_score
 from sklearn.model_selection import GridSearchCV
 from sklearn.utils.validation import check_is_fitted, NotFittedError
 
+from ..data.dataset import Dataset
 from ..utils import is_instantiated
 
 class BaseModel(ABC):
-    """ methods accept object of a Dataset class """
     
     def __init__(self) -> None:
         pass
@@ -35,17 +34,20 @@ class BaseModel(ABC):
         pass
 
     @abstractmethod
-    def fit(self, data) -> None:
+    def fit(self, data: Dataset) -> None:
         self._data = deepcopy(data)
     
     @abstractmethod
-    def predict(self, data) -> None:
+    def predict(self, data: Dataset) -> None:
         self.check_is_fitted()
 
 
 class BaseClassifier(BaseModel):
     
-    available_score_methods = ['balanced_accuracy']
+    available_score_methods = {
+        'accuracy': accuracy_score,
+        'balanced_accuracy': balanced_accuracy_score
+    }
 
     def __init__(self, score_method: str) -> None:
         self.score_method = score_method
@@ -58,8 +60,8 @@ class BaseClassifier(BaseModel):
 
     def fit(self, data) -> None:
         super().fit(data)
-        if self.score_method not in self.available_score_methods:
-            raise ValueError(f"Scoring must be one of: {self.available_score_methods}")
+        if self.score_method not in self.available_score_methods.keys():
+            raise ValueError(f"Scoring must be one of: {self.available_score_methods.keys()}")
         if self._data.target is None:
             raise ValueError
         self.grid = GridSearchCV(self.estimator(), self.param_grid, n_jobs=-1, scoring=self.score_method)
@@ -80,20 +82,9 @@ class BaseClassifier(BaseModel):
     def decision_function(self, data):
         return self.estimator.decision_function(data.test.imaging)
     
-    def classification_report(self, data) -> None:
-        print(classification_report(data.test.target, self.predict(data)))
-    
-    def balanced_accuracy_score(self, data):
-        return balanced_accuracy_score(data.test.target, self.predict(data))
-    
-    def roc_auc_score(self, data):
-        try:
-            y_score = self.predict_proba(data)
-        except AttributeError:
-            y_score = self.decision_function(data)
-        print(y_score.shape)
-        return roc_auc_score(data.test.target, y_score, multi_class='ovo')
+    def compute_metric(self, func, data):
+        return func(data.test.target, self.predict(data))
     
     def score(self, data):
-        return self.balanced_accuracy_score(data)
+        return self.compute_metric(self.available_score_methods[self.score_method], data)
         
