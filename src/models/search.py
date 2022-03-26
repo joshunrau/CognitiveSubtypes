@@ -1,7 +1,9 @@
 import numpy as np
 import pandas as pd
+
 from sklearn.utils.validation import check_X_y, NotFittedError
 
+from .base import BaseModel
 from .classify import BaseClassifier, BestKNeighborsClassifier, BestSVC, BestRandomForestClassifier, BestRidgeClassifier
 
 
@@ -9,15 +11,17 @@ class AlreadyFittedError(Exception):
     pass
 
 
-class ClassifierSearch:
+class ClassifierSearch(BaseModel):
 
     available_metrics = BaseClassifier.available_metrics
+    sklearn_estimator = None
 
     def __init__(self, score_method: str, *args) -> None:
 
+        self.score_method = score_method
+
         self._fitted = False
         self._results = None
-        self.score_method = score_method
 
         self.classifiers = [
             BestKNeighborsClassifier(score_method=self.score_method),
@@ -50,18 +54,18 @@ class ClassifierSearch:
         self._fitted = True
 
     @property
-    def results(self):
+    def results_(self):
         return self._results
 
-    @results.setter
-    def results(self, df: pd.DataFrame):
+    @results_.setter
+    def results_(self, df: pd.DataFrame):
         self._results = df
 
     @property
-    def estimator(self):
-        if self.results is None:
+    def subestimator_(self):
+        if self.results_ is None:
             return None
-        return self.classifiers[self.results.index.get_loc(self.results[self.score_method].idxmax())]
+        return self.classifiers[self.results_.index.get_loc(self.results_[self.score_method].idxmax())]
 
     def eval(self, X: np.array, y: np.array):
         check_X_y(X, y)
@@ -70,10 +74,17 @@ class ClassifierSearch:
         results = {}
         for clf in self.classifiers:
             results[str(clf)] = {n: clf.compute_metric(m, X, y) for n, m in self.available_metrics.items()}
-        self.results = pd.DataFrame.from_dict(results, orient='index')
+        self.results_ = pd.DataFrame.from_dict(results, orient='index')
 
     def score(self, X: np.array, y: np.array):
         check_X_y(X, y)
-        if self.estimator is None:
+        if self.subestimator_ is None:
             self.eval(X, y)
-        return self.estimator.score(X, y)
+        return self.subestimator_.score(X, y)
+
+    def predict(self, X: np.array) -> None:
+        pass
+
+    def get_params(self, deep=True):
+        return {"score_method": self.score_method}
+

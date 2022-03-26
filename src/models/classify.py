@@ -22,22 +22,22 @@ class BaseClassifier(BaseModel):
         'balanced_accuracy': balanced_accuracy_score
     }
 
-    def __init__(self, score_method: str) -> None:
+    def __init__(self, score_method: str = 'accuracy') -> None:
         super().__init__()
         self.score_method = score_method
-        self.grid = None
-        self.n_targets = None
+        self.grid_ = None
+        self.n_targets_ = None
 
     @property
-    def estimator(self) -> ClassifierMixin | Type[ClassifierMixin]:
-        return self._estimator
+    def subestimator(self) -> ClassifierMixin | Type[ClassifierMixin]:
+        return self._subestimator
 
-    @estimator.setter
-    def estimator(self, est) -> None:
+    @subestimator.setter
+    def subestimator(self, est) -> None:
         if not isinstance(est, ClassifierMixin):
             raise TypeError
         check_is_fitted(est)
-        self._estimator = est
+        self._subestimator = est
 
     @property
     @abstractmethod
@@ -45,7 +45,7 @@ class BaseClassifier(BaseModel):
         pass
 
     def is_fitted(self) -> bool:
-        if not is_instantiated(self.estimator):
+        if not is_instantiated(self.subestimator):
             return False
         return True
 
@@ -53,25 +53,25 @@ class BaseClassifier(BaseModel):
         if self.score_method not in self.available_metrics.keys():
             raise ValueError(f"Scoring must be one of: {self.available_metrics.keys()}")
         check_X_y(X=X, y=y)
-        self._X, self._y = X, y
-        self.grid = GridSearchCV(self.estimator(), self.param_grid, n_jobs=-1, scoring=self.score_method)
-        self.grid.fit(X, y)
-        self.n_targets = len(np.unique(y))
-        self.estimator = self.grid.best_estimator_
+        self.X_, self.y_ = X, y
+        self.grid_ = GridSearchCV(self.subestimator(), self.param_grid, n_jobs=-1, scoring=self.score_method)
+        self.grid_.fit(X, y)
+        self.n_targets_ = len(np.unique(y))
+        self.subestimator = self.grid_.best_estimator_
 
     def predict(self, X: np.array) -> None:
         check_array(X)
-        return self.grid.predict(X)
+        return self.grid_.predict(X)
 
     def predict_proba(self, X: np.array):
         self.check_is_fitted()
         check_array(X)
-        return self.estimator.predict_proba(X)
+        return self.subestimator.predict_proba(X)
 
     def decision_function(self, X: np.array):
         self.check_is_fitted()
         check_array(X)
-        return self.estimator.decision_function(X)
+        return self.subestimator.decision_function(X)
 
     def compute_metric(self, metric: Callable, X: np.array, y: np.array):
         return metric(self.predict(X), y)
