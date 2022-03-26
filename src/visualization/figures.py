@@ -1,18 +1,14 @@
 import os
-
 from abc import ABC, abstractmethod
 
 import matplotlib.pyplot as plt
 
-from ..filepaths import RESULTS_DIR
+from ..filepaths import PATH_RESULTS_DIR
+
 
 class Figure(ABC):
 
-    def __init__(self) -> None:
-        pass
-
     @property
-    @classmethod
     @abstractmethod
     def name(self):
         pass
@@ -20,23 +16,22 @@ class Figure(ABC):
     @abstractmethod
     def plot(self):
         pass
-    
+
     @property
     def path(self):
-        return os.path.join(RESULTS_DIR, "figures", self.name + '.jpg')
-    
+        return os.path.join(PATH_RESULTS_DIR, "figures", self.name + '.jpg')
+
     def save(self):
         plt.savefig(self.path)
-    
+
+
 class KMeansScores(Figure):
-    
     name = 'kMeansScores'
 
     def __init__(self, model) -> None:
         self.model = model
-    
-    def plot(self, **kwargs):
 
+    def plot(self, **kwargs):
         k_values = list(self.model.scores.keys())
         calinski_harabasz_values = [x['calinski_harabasz'] for x in self.model.scores.values()]
         silhouette_values = [x['silhouette'] for x in self.model.scores.values()]
@@ -61,4 +56,3 @@ class KMeansScores(Figure):
         ax2.grid(None)
 
         fig.tight_layout()
-    

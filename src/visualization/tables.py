@@ -13,11 +13,11 @@ class BaseTable(ABC):
 
 
 class SummaryTable(BaseTable):
-    
+
     def __init__(self, data: Dataset, categorical_vars: list, continuous_vars: list):
-        
+
         stats = OrderedDict()
-        
+
         for var in categorical_vars:
             stats[var] = dict.fromkeys(["N", "Mean/Percent", "SD"], "")
             values = data.df[var].to_numpy()
@@ -27,10 +27,10 @@ class SummaryTable(BaseTable):
                 level, count = levels[i]
                 stats[level] = {
                     "N": count,
-                    "Mean/Percent": count/len(values) * 100,
+                    "Mean/Percent": count / len(values) * 100,
                     "SD": ""
                 }
-                
+
         for var in continuous_vars:
             values = data.df[var].to_numpy()
             stats[var] = {
@@ -38,6 +38,6 @@ class SummaryTable(BaseTable):
                 "Mean/Percent": np.mean(values),
                 "SD": np.std(values)
             }
-        
+
         self.contents = pd.DataFrame.from_dict(apply_dict_keys(stats, camel_case_split), orient='index')
         self.contents = self.contents.applymap(lambda x: round(x, 2) if is_number(x) else x, na_action="ignore")

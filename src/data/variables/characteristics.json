@@ -1,68 +1,68 @@
 {
-    "sex":{
-        "DataField":31,
-        "InstanceNum":0,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":9
+  "sex": {
+    "DataField": 31,
+    "InstanceNum": 0,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "diagnoses":{
-        "DataField":41270,
-        "InstanceNum":0,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":226
-        },
-        "Included":true,
-        "Coding":19
+    "Included": true,
+    "Coding": 9
+  },
+  "diagnoses": {
+    "DataField": 41270,
+    "InstanceNum": 0,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 226
     },
-    "handedness":{
-        "DataField":1707,
-        "InstanceNum":0,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":100430
+    "Included": true,
+    "Coding": 19
+  },
+  "handedness": {
+    "DataField": 1707,
+    "InstanceNum": 0,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "age":{
-        "DataField":21003,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
+    "Included": true,
+    "Coding": 100430
+  },
+  "age": {
+    "DataField": 21003,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "educationalQualifications":{
-        "DataField":6138,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":6
-        },
-        "Included":true,
-        "Coding":100305
+    "Included": true,
+    "Coding": null
+  },
+  "educationalQualifications": {
+    "DataField": 6138,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 6
     },
-    "medications":{
-        "DataField":20003,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":48
-        },
-        "Included":false,
-        "Coding":4
-    }
+    "Included": true,
+    "Coding": 100305
+  },
+  "medications": {
+    "DataField": 20003,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 48
+    },
+    "Included": false,
+    "Coding": 4
+  }
 }

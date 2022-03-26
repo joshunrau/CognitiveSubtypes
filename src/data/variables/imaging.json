@@ -1,2048 +1,2048 @@
 {
-    "areaLeftCaudalanteriorcingulate":{
-        "DataField":27143,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightCaudalanteriorcingulate":{
-        "DataField":27236,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftCaudalmiddlefrontal":{
-        "DataField":27144,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightCaudalmiddlefrontal":{
-        "DataField":27237,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftCuneus":{
-        "DataField":27145,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightCuneus":{
-        "DataField":27238,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftEntorhinal":{
-        "DataField":27146,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightEntorhinal":{
-        "DataField":27239,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftFusiform":{
-        "DataField":27147,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightFusiform":{
-        "DataField":27240,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftInferiorparietal":{
-        "DataField":27148,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightInferiorparietal":{
-        "DataField":27241,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftInferiortemporal":{
-        "DataField":27149,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightInferiortemporal":{
-        "DataField":27242,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftInsula":{
-        "DataField":27173,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightInsula":{
-        "DataField":27266,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftIsthmuscingulate":{
-        "DataField":27150,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightIsthmuscingulate":{
-        "DataField":27243,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftLateraloccipital":{
-        "DataField":27151,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightLateraloccipital":{
-        "DataField":27244,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftLateralorbitofrontal":{
-        "DataField":27152,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightLateralorbitofrontal":{
-        "DataField":27245,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftLingual":{
-        "DataField":27153,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightLingual":{
-        "DataField":27246,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftMedialorbitofrontal":{
-        "DataField":27154,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightMedialorbitofrontal":{
-        "DataField":27247,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftMiddletemporal":{
-        "DataField":27155,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightMiddletemporal":{
-        "DataField":27248,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftParacentral":{
-        "DataField":27157,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightParacentral":{
-        "DataField":27250,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftParahippocampal":{
-        "DataField":27156,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightParahippocampal":{
-        "DataField":27249,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftParsopercularis":{
-        "DataField":27158,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightParsopercularis":{
-        "DataField":27251,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftParsorbitalis":{
-        "DataField":27159,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightParsorbitalis":{
-        "DataField":27252,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftParstriangularis":{
-        "DataField":27160,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightParstriangularis":{
-        "DataField":27253,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftPericalcarine":{
-        "DataField":27161,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightPericalcarine":{
-        "DataField":27254,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftPostcentral":{
-        "DataField":27162,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightPostcentral":{
-        "DataField":27255,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftPosteriorcingulate":{
-        "DataField":27163,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightPosteriorcingulate":{
-        "DataField":27256,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftPrecentral":{
-        "DataField":27164,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightPrecentral":{
-        "DataField":27257,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftPrecuneus":{
-        "DataField":27165,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightPrecuneus":{
-        "DataField":27258,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftRostralanteriorcingulate":{
-        "DataField":27166,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightRostralanteriorcingulate":{
-        "DataField":27259,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftRostralmiddlefrontal":{
-        "DataField":27167,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightRostralmiddlefrontal":{
-        "DataField":27260,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftSuperiorfrontal":{
-        "DataField":27168,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightSuperiorfrontal":{
-        "DataField":27261,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftSuperiorparietal":{
-        "DataField":27169,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightSuperiorparietal":{
-        "DataField":27262,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftSuperiortemporal":{
-        "DataField":27170,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightSuperiortemporal":{
-        "DataField":27263,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftSupramarginal":{
-        "DataField":27171,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightSupramarginal":{
-        "DataField":27264,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaLeftTransversetemporal":{
-        "DataField":27172,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "areaRightTransversetemporal":{
-        "DataField":27265,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftCaudalanteriorcingulate":{
-        "DataField":27174,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightCaudalanteriorcingulate":{
-        "DataField":27267,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftCaudalmiddlefrontal":{
-        "DataField":27175,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightCaudalmiddlefrontal":{
-        "DataField":27268,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftCuneus":{
-        "DataField":27176,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightCuneus":{
-        "DataField":27269,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftEntorhinal":{
-        "DataField":27177,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightEntorhinal":{
-        "DataField":27270,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftFusiform":{
-        "DataField":27178,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightFusiform":{
-        "DataField":27271,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftInferiorparietal":{
-        "DataField":27179,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightInferiorparietal":{
-        "DataField":27272,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftInferiortemporal":{
-        "DataField":27180,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightInferiortemporal":{
-        "DataField":27273,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftInsula":{
-        "DataField":27204,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightInsula":{
-        "DataField":27297,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftIsthmuscingulate":{
-        "DataField":27181,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightIsthmuscingulate":{
-        "DataField":27274,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftLateraloccipital":{
-        "DataField":27182,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightLateraloccipital":{
-        "DataField":27275,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftLateralorbitofrontal":{
-        "DataField":27183,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightLateralorbitofrontal":{
-        "DataField":27276,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftLingual":{
-        "DataField":27184,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightLingual":{
-        "DataField":27277,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftMedialorbitofrontal":{
-        "DataField":27185,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightMedialorbitofrontal":{
-        "DataField":27278,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftMiddletemporal":{
-        "DataField":27186,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightMiddletemporal":{
-        "DataField":27279,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftParacentral":{
-        "DataField":27188,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightParacentral":{
-        "DataField":27281,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftParahippocampal":{
-        "DataField":27187,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightParahippocampal":{
-        "DataField":27280,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftParsopercularis":{
-        "DataField":27189,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightParsopercularis":{
-        "DataField":27282,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftParsorbitalis":{
-        "DataField":27190,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightParsorbitalis":{
-        "DataField":27283,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftParstriangularis":{
-        "DataField":27191,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightParstriangularis":{
-        "DataField":27284,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftPericalcarine":{
-        "DataField":27192,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightPericalcarine":{
-        "DataField":27285,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftPostcentral":{
-        "DataField":27193,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightPostcentral":{
-        "DataField":27286,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftPosteriorcingulate":{
-        "DataField":27194,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightPosteriorcingulate":{
-        "DataField":27287,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftPrecentral":{
-        "DataField":27195,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightPrecentral":{
-        "DataField":27288,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftPrecuneus":{
-        "DataField":27196,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightPrecuneus":{
-        "DataField":27289,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftRostralanteriorcingulate":{
-        "DataField":27197,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightRostralanteriorcingulate":{
-        "DataField":27290,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftRostralmiddlefrontal":{
-        "DataField":27198,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightRostralmiddlefrontal":{
-        "DataField":27291,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftSuperiorfrontal":{
-        "DataField":27199,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightSuperiorfrontal":{
-        "DataField":27292,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftSuperiorparietal":{
-        "DataField":27200,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightSuperiorparietal":{
-        "DataField":27293,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftSuperiortemporal":{
-        "DataField":27201,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightSuperiortemporal":{
-        "DataField":27294,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftSupramarginal":{
-        "DataField":27202,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightSupramarginal":{
-        "DataField":27295,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessLeftTransversetemporal":{
-        "DataField":27203,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "thicknessRightTransversetemporal":{
-        "DataField":27296,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftCaudalanteriorcingulate":{
-        "DataField":27205,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightCaudalanteriorcingulate":{
-        "DataField":27298,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftCaudalmiddlefrontal":{
-        "DataField":27206,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightCaudalmiddlefrontal":{
-        "DataField":27299,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftCuneus":{
-        "DataField":27207,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightCuneus":{
-        "DataField":27300,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftEntorhinal":{
-        "DataField":27208,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightEntorhinal":{
-        "DataField":27301,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftFusiform":{
-        "DataField":27209,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightFusiform":{
-        "DataField":27302,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftInferiorparietal":{
-        "DataField":27210,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightInferiorparietal":{
-        "DataField":27303,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftInferiortemporal":{
-        "DataField":27211,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightInferiortemporal":{
-        "DataField":27304,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftInsula":{
-        "DataField":27235,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightInsula":{
-        "DataField":27328,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftIsthmuscingulate":{
-        "DataField":27212,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightIsthmuscingulate":{
-        "DataField":27305,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftLateraloccipital":{
-        "DataField":27213,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightLateraloccipital":{
-        "DataField":27306,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftLateralorbitofrontal":{
-        "DataField":27214,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightLateralorbitofrontal":{
-        "DataField":27307,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftLingual":{
-        "DataField":27215,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightLingual":{
-        "DataField":27308,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftMedialorbitofrontal":{
-        "DataField":27216,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightMedialorbitofrontal":{
-        "DataField":27309,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftMiddletemporal":{
-        "DataField":27217,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightMiddletemporal":{
-        "DataField":27310,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftParacentral":{
-        "DataField":27219,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightParacentral":{
-        "DataField":27312,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftParahippocampal":{
-        "DataField":27218,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightParahippocampal":{
-        "DataField":27311,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftParsopercularis":{
-        "DataField":27220,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightParsopercularis":{
-        "DataField":27313,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftParsorbitalis":{
-        "DataField":27221,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightParsorbitalis":{
-        "DataField":27314,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftParstriangularis":{
-        "DataField":27222,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightParstriangularis":{
-        "DataField":27315,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftPericalcarine":{
-        "DataField":27223,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightPericalcarine":{
-        "DataField":27316,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftPostcentral":{
-        "DataField":27224,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightPostcentral":{
-        "DataField":27317,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftPosteriorcingulate":{
-        "DataField":27225,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightPosteriorcingulate":{
-        "DataField":27318,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftPrecentral":{
-        "DataField":27226,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightPrecentral":{
-        "DataField":27319,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftPrecuneus":{
-        "DataField":27227,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightPrecuneus":{
-        "DataField":27320,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftRostralanteriorcingulate":{
-        "DataField":27228,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightRostralanteriorcingulate":{
-        "DataField":27321,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftRostralmiddlefrontal":{
-        "DataField":27229,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightRostralmiddlefrontal":{
-        "DataField":27322,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftSuperiorfrontal":{
-        "DataField":27230,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightSuperiorfrontal":{
-        "DataField":27323,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftSuperiorparietal":{
-        "DataField":27231,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightSuperiorparietal":{
-        "DataField":27324,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftSuperiortemporal":{
-        "DataField":27232,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightSuperiortemporal":{
-        "DataField":27325,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftSupramarginal":{
-        "DataField":27233,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightSupramarginal":{
-        "DataField":27326,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeLeftTransversetemporal":{
-        "DataField":27234,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    },
-    "volumeRightTransversetemporal":{
-        "DataField":27327,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
-    }
+  "areaLeftCaudalanteriorcingulate": {
+    "DataField": 27143,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightCaudalanteriorcingulate": {
+    "DataField": 27236,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftCaudalmiddlefrontal": {
+    "DataField": 27144,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightCaudalmiddlefrontal": {
+    "DataField": 27237,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftCuneus": {
+    "DataField": 27145,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightCuneus": {
+    "DataField": 27238,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftEntorhinal": {
+    "DataField": 27146,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightEntorhinal": {
+    "DataField": 27239,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftFusiform": {
+    "DataField": 27147,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightFusiform": {
+    "DataField": 27240,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftInferiorparietal": {
+    "DataField": 27148,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightInferiorparietal": {
+    "DataField": 27241,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftInferiortemporal": {
+    "DataField": 27149,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightInferiortemporal": {
+    "DataField": 27242,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftInsula": {
+    "DataField": 27173,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightInsula": {
+    "DataField": 27266,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftIsthmuscingulate": {
+    "DataField": 27150,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightIsthmuscingulate": {
+    "DataField": 27243,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftLateraloccipital": {
+    "DataField": 27151,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightLateraloccipital": {
+    "DataField": 27244,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftLateralorbitofrontal": {
+    "DataField": 27152,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightLateralorbitofrontal": {
+    "DataField": 27245,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftLingual": {
+    "DataField": 27153,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightLingual": {
+    "DataField": 27246,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftMedialorbitofrontal": {
+    "DataField": 27154,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightMedialorbitofrontal": {
+    "DataField": 27247,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftMiddletemporal": {
+    "DataField": 27155,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightMiddletemporal": {
+    "DataField": 27248,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftParacentral": {
+    "DataField": 27157,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightParacentral": {
+    "DataField": 27250,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftParahippocampal": {
+    "DataField": 27156,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightParahippocampal": {
+    "DataField": 27249,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftParsopercularis": {
+    "DataField": 27158,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightParsopercularis": {
+    "DataField": 27251,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftParsorbitalis": {
+    "DataField": 27159,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightParsorbitalis": {
+    "DataField": 27252,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftParstriangularis": {
+    "DataField": 27160,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightParstriangularis": {
+    "DataField": 27253,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftPericalcarine": {
+    "DataField": 27161,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightPericalcarine": {
+    "DataField": 27254,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftPostcentral": {
+    "DataField": 27162,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightPostcentral": {
+    "DataField": 27255,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftPosteriorcingulate": {
+    "DataField": 27163,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightPosteriorcingulate": {
+    "DataField": 27256,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftPrecentral": {
+    "DataField": 27164,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightPrecentral": {
+    "DataField": 27257,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftPrecuneus": {
+    "DataField": 27165,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightPrecuneus": {
+    "DataField": 27258,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftRostralanteriorcingulate": {
+    "DataField": 27166,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightRostralanteriorcingulate": {
+    "DataField": 27259,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftRostralmiddlefrontal": {
+    "DataField": 27167,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightRostralmiddlefrontal": {
+    "DataField": 27260,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftSuperiorfrontal": {
+    "DataField": 27168,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightSuperiorfrontal": {
+    "DataField": 27261,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftSuperiorparietal": {
+    "DataField": 27169,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightSuperiorparietal": {
+    "DataField": 27262,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftSuperiortemporal": {
+    "DataField": 27170,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightSuperiortemporal": {
+    "DataField": 27263,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftSupramarginal": {
+    "DataField": 27171,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightSupramarginal": {
+    "DataField": 27264,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaLeftTransversetemporal": {
+    "DataField": 27172,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "areaRightTransversetemporal": {
+    "DataField": 27265,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftCaudalanteriorcingulate": {
+    "DataField": 27174,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightCaudalanteriorcingulate": {
+    "DataField": 27267,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftCaudalmiddlefrontal": {
+    "DataField": 27175,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightCaudalmiddlefrontal": {
+    "DataField": 27268,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftCuneus": {
+    "DataField": 27176,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightCuneus": {
+    "DataField": 27269,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftEntorhinal": {
+    "DataField": 27177,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightEntorhinal": {
+    "DataField": 27270,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftFusiform": {
+    "DataField": 27178,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightFusiform": {
+    "DataField": 27271,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftInferiorparietal": {
+    "DataField": 27179,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightInferiorparietal": {
+    "DataField": 27272,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftInferiortemporal": {
+    "DataField": 27180,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightInferiortemporal": {
+    "DataField": 27273,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftInsula": {
+    "DataField": 27204,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightInsula": {
+    "DataField": 27297,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftIsthmuscingulate": {
+    "DataField": 27181,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightIsthmuscingulate": {
+    "DataField": 27274,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftLateraloccipital": {
+    "DataField": 27182,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightLateraloccipital": {
+    "DataField": 27275,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftLateralorbitofrontal": {
+    "DataField": 27183,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightLateralorbitofrontal": {
+    "DataField": 27276,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftLingual": {
+    "DataField": 27184,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightLingual": {
+    "DataField": 27277,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftMedialorbitofrontal": {
+    "DataField": 27185,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightMedialorbitofrontal": {
+    "DataField": 27278,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftMiddletemporal": {
+    "DataField": 27186,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightMiddletemporal": {
+    "DataField": 27279,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftParacentral": {
+    "DataField": 27188,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightParacentral": {
+    "DataField": 27281,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftParahippocampal": {
+    "DataField": 27187,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightParahippocampal": {
+    "DataField": 27280,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftParsopercularis": {
+    "DataField": 27189,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightParsopercularis": {
+    "DataField": 27282,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftParsorbitalis": {
+    "DataField": 27190,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightParsorbitalis": {
+    "DataField": 27283,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftParstriangularis": {
+    "DataField": 27191,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightParstriangularis": {
+    "DataField": 27284,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftPericalcarine": {
+    "DataField": 27192,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightPericalcarine": {
+    "DataField": 27285,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftPostcentral": {
+    "DataField": 27193,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightPostcentral": {
+    "DataField": 27286,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftPosteriorcingulate": {
+    "DataField": 27194,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightPosteriorcingulate": {
+    "DataField": 27287,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftPrecentral": {
+    "DataField": 27195,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightPrecentral": {
+    "DataField": 27288,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftPrecuneus": {
+    "DataField": 27196,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightPrecuneus": {
+    "DataField": 27289,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftRostralanteriorcingulate": {
+    "DataField": 27197,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightRostralanteriorcingulate": {
+    "DataField": 27290,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftRostralmiddlefrontal": {
+    "DataField": 27198,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightRostralmiddlefrontal": {
+    "DataField": 27291,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftSuperiorfrontal": {
+    "DataField": 27199,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightSuperiorfrontal": {
+    "DataField": 27292,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftSuperiorparietal": {
+    "DataField": 27200,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightSuperiorparietal": {
+    "DataField": 27293,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftSuperiortemporal": {
+    "DataField": 27201,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightSuperiortemporal": {
+    "DataField": 27294,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftSupramarginal": {
+    "DataField": 27202,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightSupramarginal": {
+    "DataField": 27295,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessLeftTransversetemporal": {
+    "DataField": 27203,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "thicknessRightTransversetemporal": {
+    "DataField": 27296,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftCaudalanteriorcingulate": {
+    "DataField": 27205,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightCaudalanteriorcingulate": {
+    "DataField": 27298,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftCaudalmiddlefrontal": {
+    "DataField": 27206,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightCaudalmiddlefrontal": {
+    "DataField": 27299,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftCuneus": {
+    "DataField": 27207,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightCuneus": {
+    "DataField": 27300,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftEntorhinal": {
+    "DataField": 27208,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightEntorhinal": {
+    "DataField": 27301,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftFusiform": {
+    "DataField": 27209,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightFusiform": {
+    "DataField": 27302,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftInferiorparietal": {
+    "DataField": 27210,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightInferiorparietal": {
+    "DataField": 27303,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftInferiortemporal": {
+    "DataField": 27211,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightInferiortemporal": {
+    "DataField": 27304,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftInsula": {
+    "DataField": 27235,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightInsula": {
+    "DataField": 27328,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftIsthmuscingulate": {
+    "DataField": 27212,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightIsthmuscingulate": {
+    "DataField": 27305,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftLateraloccipital": {
+    "DataField": 27213,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightLateraloccipital": {
+    "DataField": 27306,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftLateralorbitofrontal": {
+    "DataField": 27214,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightLateralorbitofrontal": {
+    "DataField": 27307,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftLingual": {
+    "DataField": 27215,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightLingual": {
+    "DataField": 27308,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftMedialorbitofrontal": {
+    "DataField": 27216,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightMedialorbitofrontal": {
+    "DataField": 27309,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftMiddletemporal": {
+    "DataField": 27217,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightMiddletemporal": {
+    "DataField": 27310,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftParacentral": {
+    "DataField": 27219,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightParacentral": {
+    "DataField": 27312,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftParahippocampal": {
+    "DataField": 27218,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightParahippocampal": {
+    "DataField": 27311,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftParsopercularis": {
+    "DataField": 27220,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightParsopercularis": {
+    "DataField": 27313,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftParsorbitalis": {
+    "DataField": 27221,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightParsorbitalis": {
+    "DataField": 27314,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftParstriangularis": {
+    "DataField": 27222,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightParstriangularis": {
+    "DataField": 27315,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftPericalcarine": {
+    "DataField": 27223,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightPericalcarine": {
+    "DataField": 27316,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftPostcentral": {
+    "DataField": 27224,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightPostcentral": {
+    "DataField": 27317,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftPosteriorcingulate": {
+    "DataField": 27225,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightPosteriorcingulate": {
+    "DataField": 27318,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftPrecentral": {
+    "DataField": 27226,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightPrecentral": {
+    "DataField": 27319,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftPrecuneus": {
+    "DataField": 27227,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightPrecuneus": {
+    "DataField": 27320,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftRostralanteriorcingulate": {
+    "DataField": 27228,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightRostralanteriorcingulate": {
+    "DataField": 27321,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftRostralmiddlefrontal": {
+    "DataField": 27229,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightRostralmiddlefrontal": {
+    "DataField": 27322,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftSuperiorfrontal": {
+    "DataField": 27230,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightSuperiorfrontal": {
+    "DataField": 27323,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftSuperiorparietal": {
+    "DataField": 27231,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightSuperiorparietal": {
+    "DataField": 27324,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftSuperiortemporal": {
+    "DataField": 27232,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightSuperiortemporal": {
+    "DataField": 27325,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftSupramarginal": {
+    "DataField": 27233,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightSupramarginal": {
+    "DataField": 27326,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeLeftTransversetemporal": {
+    "DataField": 27234,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  },
+  "volumeRightTransversetemporal": {
+    "DataField": 27327,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": true,
+    "Coding": null
+  }
 }

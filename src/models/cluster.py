@@ -1,46 +1,48 @@
-import pandas as pd
-
+import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.metrics import calinski_harabasz_score, silhouette_score
-from sklearn.utils.validation import NotFittedError
+from sklearn.utils.validation import check_array
 
 from .base import BaseModel
 from ..utils import get_array_counts
 
 
 class BestKMeans(BaseModel):
-    
-    estimator = KMeans
+
+    sklearn_estimator = KMeans
     available_metrics = {
-        "calinski_harabasz": calinski_harabasz_score, 
+        "calinski_harabasz": calinski_harabasz_score,
         "silhouette": silhouette_score
     }
 
-    def fit(self, data, k_min: int = 2, k_max: int = 6) -> None:
+    def __init__(self, k_min: int = 2, k_max: int = 6):
+        super().__init__()
+        self.k_min = k_min
+        self.k_max = k_max
+        self.scores = None
+        self.models = None
 
-        super().fit(data)
-        
+    def fit(self, X: np.array, y: None = None) -> None:
+        super().fit(X, y)
+        check_array(X)
         self.models = {}
         self.scores = {}
-
-        for k in range(k_min, k_max):
+        for k in range(self.k_min, self.k_max):
             model, model_name = self.estimator(n_clusters=k, random_state=0), k
-            y_pred = model.fit_predict(self._data.cognitive)
+            y_pred = model.fit_predict(X)
             self.models[model_name] = model
             self.scores[model_name] = {
-                name: metric(self._data.cognitive, y_pred) for name, metric in self.available_metrics.items()
+                name: metric(X, y_pred) for name, metric in self.available_metrics.items()
             }
 
-    def predict(self, data, k: int) -> tuple:
-        
-        try:
-            model = self.models[k]
-        except AttributeError as err:
-            raise NotFittedError from err
+    def is_fitted(self) -> bool:
+        if self.models is None or self.scores is None:
+            return False
+        return True
 
-        y_train = model.predict(data.train.cognitive)
-        y_test = model.predict(data.test.cognitive)
-        return y_train, y_test
-    
-    def get_class_counts(self, data, k: int) -> pd.DataFrame:
-        return get_array_counts(self.predict(data, k)[0])
+    def predict(self, X: np.array, k: int, return_counts: bool = False):
+        super().predict(X)
+        y_pred = self.models[k].predict(X)
+        if return_counts:
+            return get_array_counts(y_pred)
+        return y_pred

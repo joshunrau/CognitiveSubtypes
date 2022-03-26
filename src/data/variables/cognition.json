@@ -1,123 +1,123 @@
 {
-    "meanReactionTimeTest":{
-        "DataField":20023,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
+  "meanReactionTimeTest": {
+    "DataField": 20023,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "maxDigitsNumericMemoryTest":{
-        "DataField":4282,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":100696
+    "Included": true,
+    "Coding": null
+  },
+  "maxDigitsNumericMemoryTest": {
+    "DataField": 4282,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "timeTrailMakingTestA":{
-        "DataField":6348,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":1990
+    "Included": true,
+    "Coding": 100696
+  },
+  "timeTrailMakingTestA": {
+    "DataField": 6348,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "timeTrailMakingTestB":{
-        "DataField":6350,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":1990
+    "Included": true,
+    "Coding": 1990
+  },
+  "timeTrailMakingTestB": {
+    "DataField": 6350,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "attemptsTowerTest":{
-        "DataField":6383,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
+    "Included": true,
+    "Coding": 1990
+  },
+  "attemptsTowerTest": {
+    "DataField": 6383,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "correctTowerTest":{
-        "DataField":21004,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
+    "Included": true,
+    "Coding": null
+  },
+  "correctTowerTest": {
+    "DataField": 21004,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "attemptsSymbolDigitTest":{
-        "DataField":23323,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":6361
+    "Included": true,
+    "Coding": null
+  },
+  "attemptsSymbolDigitTest": {
+    "DataField": 23323,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "correctSymbolDigitTest":{
-        "DataField":23324,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":null
+    "Included": true,
+    "Coding": 6361
+  },
+  "correctSymbolDigitTest": {
+    "DataField": 23324,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "prospectiveMemoryTask":{
-        "DataField":20018,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":true,
-        "Coding":18
+    "Included": true,
+    "Coding": null
+  },
+  "prospectiveMemoryTask": {
+    "DataField": 20018,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
     },
-    "incorrectPairsMatchingTask":{
-        "DataField":399,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":1,
-            "step":1,
-            "stop":4
-        },
-        "Included":true,
-        "Coding":null
+    "Included": true,
+    "Coding": 18
+  },
+  "incorrectPairsMatchingTask": {
+    "DataField": 399,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 1,
+      "step": 1,
+      "stop": 4
     },
-    "correctAssociateLearningTest":{
-        "DataField":20197,
-        "InstanceNum":2,
-        "ArrayRange":{
-            "start":0,
-            "step":1,
-            "stop":1
-        },
-        "Included":false,
-        "Coding":null
-    }
+    "Included": true,
+    "Coding": null
+  },
+  "correctAssociateLearningTest": {
+    "DataField": 20197,
+    "InstanceNum": 2,
+    "ArrayRange": {
+      "start": 0,
+      "step": 1,
+      "stop": 1
+    },
+    "Included": false,
+    "Coding": null
+  }
 }

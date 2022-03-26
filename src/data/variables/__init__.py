@@ -2,7 +2,9 @@ import json
 import warnings
 
 from pkg_resources import resource_filename
+
 from .coding import VARIABLE_CODES
+
 
 def load_variables():
 
@@ -17,7 +19,7 @@ def load_variables():
                 warnings.warn("Could not find file for Biobank coding scheme: " + str(err))
                 dct["Coding"] = None
         return dct
-    
+
     def load_json(filepath):
         with open(filepath) as file:
             return json.loads(file.read(), object_hook=parse_obj)

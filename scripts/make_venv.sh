@@ -22,7 +22,7 @@ if ! command_exists virtualenv; then
 fi
 
 if command_exists module; then
-    module load python/3.9 scipy-stack/2022a
+    module load python/3.10 scipy-stack/2022a
 fi
 
 rm -rf venv

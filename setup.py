@@ -20,13 +20,11 @@ setup(
     ],
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    python_requires="==3.9.*",
+    python_requires="==3.10.*",
     install_requires=get_install_requires(),
     entry_points = {
         'console_scripts': [
             'autossh=autossh.main:main',
-            'build_dataset=data.build:build_dataset',
-            'fit_model=models.fit:fit_model'
         ]
     },
     package_data={"data" : ["variables/*.json", "variables/coding/*.json"]},
