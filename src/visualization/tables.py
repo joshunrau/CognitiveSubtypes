@@ -80,3 +80,8 @@ class GroupedSummaryTable(Table):
     @property
     def contents(self):
         return self._contents
+
+
+class PatientsVsControlsTable(GroupedSummaryTable):
+    def __init__(self, data: Dataset) -> None:
+        super().__init__(data, group_var = "subjectType")
