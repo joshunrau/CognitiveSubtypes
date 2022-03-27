@@ -23,7 +23,7 @@ class Figure(ABC):
         plt.savefig(self.path)
 
 
-class KMeansScores(Figure):
+class KMeansScoresFigure(Figure):
 
     def __init__(self, model) -> None:
         self.model = model
@@ -38,7 +38,7 @@ class KMeansScores(Figure):
 
         color = 'tab:red'
         ax1.set_xlabel('Number of Clusters')
-        ax1.set_ylabel("Calinski-Harabasz Score", color=color)
+        ax1.set_ylabel("Calinski-Harabasz Index", color=color)
         ax1.plot(k_values, calinski_harabasz_values, color=color)
         ax1.scatter(k_values, calinski_harabasz_values, color=color)
         ax1.set(xticks=k_values)
@@ -46,7 +46,7 @@ class KMeansScores(Figure):
 
         color = 'tab:blue'
         ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-        ax2.set_ylabel("Silhouette Score", color=color)
+        ax2.set_ylabel("Silhouette Coefficient", color=color)
         ax2.plot(k_values, silhouette_values, color=color)
         ax2.scatter(k_values, silhouette_values, color=color)
         ax2.tick_params(axis='y', labelcolor=color)

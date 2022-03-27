@@ -27,7 +27,7 @@ class BestKMeans(BaseModel):
         check_array(X)
         self.models = {}
         self.scores = {}
-        for k in range(self.k_min, self.k_max):
+        for k in range(self.k_min, self.k_max + 1):
             model, model_name = self.subestimator(n_clusters=k), k
             y_pred = model.fit_predict(X)
             self.models[model_name] = model

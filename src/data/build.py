@@ -3,8 +3,10 @@ import os
 import re
 from datetime import date, datetime
 
+import numpy as np
 import pandas as pd
 
+from sklearn.neighbors import NearestNeighbors
 from .variables import load_variables
 from ..filepaths import PATH_CURRENT_CSV, PATH_DATA_DIR
 
@@ -201,6 +203,18 @@ class DataBuilder:
             raise AssertionError
 
 
+def get_matched_controls(patient_df: pd.DataFrame, control_df: pd.DataFrame):
+    match_vars = ["age", "sex"]
+    patient_features = patient_df[match_vars].to_numpy()
+    patient_features[:, 1] = np.where(patient_features[:, 1] == "Male", 1, 0)
+    control_features = control_df[match_vars].to_numpy()
+    control_features[:, 1] = np.where(control_features[:, 1] == "Male", 1, 0)
+    model = NearestNeighbors()
+    model.fit(control_features)
+    _, neigh_ind = model.kneighbors(patient_features, n_neighbors=1)
+    return control_df.iloc[neigh_ind.flatten()]
+
+
 def build_dataset(path_current_csv: str = PATH_CURRENT_CSV, path_output_dir: str = PATH_DATA_DIR):
     if not os.path.isfile(path_current_csv):
         raise FileNotFoundError("File not found: " + path_current_csv)
@@ -209,8 +223,9 @@ def build_dataset(path_current_csv: str = PATH_CURRENT_CSV, path_output_dir: str
 
     data = DataBuilder(path_current_csv, rm_na=True)
     patient_df = data.get_patients()
-    control_df = data.get_controls().sample(n=len(patient_df), random_state=0)
-    data.df = pd.concat([patient_df, control_df])
+    control_df = data.get_controls()
+    matched_controls = get_matched_controls(patient_df, control_df)
+    data.df = pd.concat([patient_df, matched_controls])
 
     assert sum(data.df['subjectType'] == 'patient') == sum(data.df['subjectType'] == 'control')
     data.write_csv(path_output_dir)
