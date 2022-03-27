@@ -2,9 +2,11 @@ import os
 from abc import ABC, abstractmethod
 
 import matplotlib.pyplot as plt
+import seaborn as sns
 
+from ..data.dataset import Dataset
 from ..filepaths import PATH_RESULTS_DIR
-
+from ..utils import camel_case_split
 
 class Figure(ABC):
 
@@ -23,6 +25,28 @@ class Figure(ABC):
         plt.savefig(self.path)
 
 
+class DataTransformFigure(Figure):
+
+    def __init__(self) -> None:
+        self.raw_data = Dataset.load()
+        self.transformed_data = Dataset.load()
+        self.transformed_data.apply_transforms()
+        self.transformed_data.apply_scaler()
+    
+    def plot(self, **kwargs):
+        variables = self.raw_data.cognitive_feature_names
+        n_rows = len(variables)
+        fig, axes = plt.subplots(nrows=n_rows, ncols=2, **kwargs)
+        for i in range(n_rows):
+            sns.histplot(data=self.raw_data.df, x=variables[i], ax=axes[i][0])
+            sns.histplot(data=self.transformed_data.df, x=variables[i], ax=axes[i][1])
+            axes[i][0].set(xlabel=camel_case_split(variables[i]))
+            axes[i][1].set(xlabel=camel_case_split(variables[i]))
+        fig.set_figwidth(12)
+        fig.set_figheight(2 * n_rows)
+        fig.tight_layout()
+
+
 class KMeansScoresFigure(Figure):
 
     def __init__(self, model) -> None:
@@ -30,26 +54,12 @@ class KMeansScoresFigure(Figure):
 
     def plot(self, **kwargs):
         k_values = list(self.model.scores.keys())
-        calinski_harabasz_values = [x['calinski_harabasz'] for x in self.model.scores.values()]
         silhouette_values = [x['silhouette'] for x in self.model.scores.values()]
-        assert len(k_values) == len(calinski_harabasz_values) == len(silhouette_values)
-
-        fig, ax1 = plt.subplots(**kwargs)
-
-        color = 'tab:red'
-        ax1.set_xlabel('Number of Clusters')
-        ax1.set_ylabel("Calinski-Harabasz Index", color=color)
-        ax1.plot(k_values, calinski_harabasz_values, color=color)
-        ax1.scatter(k_values, calinski_harabasz_values, color=color)
-        ax1.set(xticks=k_values)
-        ax1.tick_params(axis='y', labelcolor=color)
-
-        color = 'tab:blue'
-        ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
-        ax2.set_ylabel("Silhouette Coefficient", color=color)
-        ax2.plot(k_values, silhouette_values, color=color)
-        ax2.scatter(k_values, silhouette_values, color=color)
-        ax2.tick_params(axis='y', labelcolor=color)
-        ax2.grid(None)
-
+        fig, ax = plt.subplots(**kwargs)
+        ax.set_xlabel('Number of Clusters')
+        ax.set_ylabel("Silhouette Coefficient")
+        ax.plot(k_values, silhouette_values)
+        ax.scatter(k_values, silhouette_values)
+        ax.set(xticks=k_values)
+        ax.grid()
         fig.tight_layout()

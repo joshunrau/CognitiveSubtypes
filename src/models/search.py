@@ -25,7 +25,7 @@ class ClassifierSearch:
 
         self.classifiers = [clf(score_method=self.score_method) for clf in [
             BestDummyClassifier, BestKNeighborsClassifier, BestSVC, 
-            BestRandomForestClassifier, BestRidgeClassifier,
+            BestRandomForestClassifier, BestRidgeClassifier
         ]]
 
         for clf in args:

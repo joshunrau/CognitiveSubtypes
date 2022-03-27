@@ -226,6 +226,6 @@ def build_dataset(path_current_csv: str = PATH_CURRENT_CSV, path_output_dir: str
     control_df = data.get_controls()
     matched_controls = get_matched_controls(patient_df, control_df)
     data.df = pd.concat([patient_df, matched_controls])
-
+    
     assert sum(data.df['subjectType'] == 'patient') == sum(data.df['subjectType'] == 'control')
     data.write_csv(path_output_dir)

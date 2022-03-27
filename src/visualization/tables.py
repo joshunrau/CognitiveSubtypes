@@ -11,9 +11,11 @@ from ..utils import camel_case_split
 
 class Table(ABC):
 
-    def __init__(self, data: Dataset) -> None:
+    def __init__(self, data: Dataset, add_categorical_vars: list = [], add_continuous_vars: list = []) -> None:
         self.data = data
-    
+        self.categorical_vars = ["sex"] + add_categorical_vars
+        self.continuous_vars = ["age"] + add_continuous_vars + data.cognitive_feature_names
+
     def __str__(self) -> str:
         return self.__class__.__name__
     
@@ -32,18 +34,15 @@ class Table(ABC):
 
 class GroupedSummaryTable(Table):
     
-    def __init__(self, data: Dataset, group_var: str) -> None:
+    def __init__(self, data: Dataset, group_var: str, **kwargs) -> None:
         
-        super().__init__(data)
-    
-        categorical_vars = ["sex"]
-        continuous_vars = ["age"] + data.cognitive_feature_names
+        super().__init__(data,  **kwargs)
         
         df = deepcopy(data.df)
-        df = df.merge(pd.get_dummies(df[categorical_vars], prefix="", prefix_sep=""), left_index=True, right_index=True)
+        df = df.merge(pd.get_dummies(df[self.categorical_vars], prefix="", prefix_sep=""), left_index=True, right_index=True)
         
         dummy_vars = []
-        for variable in categorical_vars:
+        for variable in self.categorical_vars:
             if len(df[variable].unique()) != 2:
                 raise ValueError
             dummy_vars.append(df[variable].value_counts().idxmax())
@@ -63,9 +62,9 @@ class GroupedSummaryTable(Table):
             categorical_stats = round(categorical_stats, 3)
             categorical_stats[stats[2]] = ""
 
-            total_var = subset_df[[group_var] + continuous_vars].groupby(group_var).count()
-            mean_var = subset_df[[group_var] + continuous_vars].groupby(group_var).mean()
-            std_var = subset_df[[group_var] + continuous_vars].groupby(group_var).std()
+            total_var = subset_df[[group_var] + self.continuous_vars].groupby(group_var).count()
+            mean_var = subset_df[[group_var] + self.continuous_vars].groupby(group_var).mean()
+            std_var = subset_df[[group_var] + self.continuous_vars].groupby(group_var).std()
             continuous_stats = pd.concat([total_var, mean_var, std_var]).set_axis(stats).T
             continuous_stats = round(continuous_stats, 3)
 
@@ -85,3 +84,8 @@ class GroupedSummaryTable(Table):
 class PatientsVsControlsTable(GroupedSummaryTable):
     def __init__(self, data: Dataset) -> None:
         super().__init__(data, group_var = "subjectType")
+
+
+class ClusterTable(GroupedSummaryTable):
+    def __init__(self, data: Dataset) -> None:
+        super().__init__(data, group_var = "class", add_categorical_vars = ["subjectType"])

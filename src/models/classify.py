@@ -117,7 +117,7 @@ class BestSVC(BaseClassifier):
     param_grid = {
         'C': (1e-4, 1e+4, 'log-uniform'),
         'gamma': (1e-5, 1e+1, 'log-uniform'),
-        'degree': (1, 5),
+        'degree': (1, 3),
         'kernel': ['linear', 'poly', 'rbf'],
         'class_weight': ['balanced', None],
     }
@@ -139,7 +139,7 @@ class BestRandomForestClassifier(BaseClassifier):
         'n_estimators': (50, 500),
         'max_depth': (5, 50),
         'max_features':  (1e-3, 1e+0, 'log-uniform'),
-        'min_samples_split': (1, 5),
+        'min_samples_split': (2, 5),
         'min_samples_leaf': (1, 5),
         'class_weight': ['balanced', None],
     }

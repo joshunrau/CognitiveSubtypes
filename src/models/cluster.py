@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.cluster import KMeans
-from sklearn.metrics import calinski_harabasz_score, silhouette_score
+from sklearn.metrics import calinski_harabasz_score, davies_bouldin_score, silhouette_score
 from sklearn.utils.validation import check_array
 
 from .base import BaseModel
@@ -12,6 +12,7 @@ class BestKMeans(BaseModel):
     sklearn_estimator = KMeans
     available_metrics = {
         "calinski_harabasz": calinski_harabasz_score,
+        "davies_bouldin": davies_bouldin_score,
         "silhouette": silhouette_score
     }
 
