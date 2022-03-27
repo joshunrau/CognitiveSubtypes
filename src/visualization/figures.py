@@ -8,10 +8,8 @@ from ..filepaths import PATH_RESULTS_DIR
 
 class Figure(ABC):
 
-    @property
-    @abstractmethod
-    def name(self):
-        pass
+    def __str__(self) -> str:
+        return self.__class__.__name__
 
     @abstractmethod
     def plot(self):
@@ -19,14 +17,13 @@ class Figure(ABC):
 
     @property
     def path(self):
-        return os.path.join(PATH_RESULTS_DIR, "figures", self.name + '.jpg')
+        return os.path.join(PATH_RESULTS_DIR, "figures", str(self) + '.jpg')
 
     def save(self):
         plt.savefig(self.path)
 
 
 class KMeansScores(Figure):
-    name = 'kMeansScores'
 
     def __init__(self, model) -> None:
         self.model = model

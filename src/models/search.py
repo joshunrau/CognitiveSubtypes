@@ -3,15 +3,15 @@ import pandas as pd
 
 from sklearn.utils.validation import check_X_y, NotFittedError
 
-from .base import BaseModel
-from .classify import BaseClassifier, BestKNeighborsClassifier, BestSVC, BestRandomForestClassifier, BestRidgeClassifier
+from .classify import BaseClassifier, BestDummyClassifier, BestKNeighborsClassifier, \
+    BestSVC, BestRandomForestClassifier, BestRidgeClassifier
 
 
 class AlreadyFittedError(Exception):
     pass
 
 
-class ClassifierSearch(BaseModel):
+class ClassifierSearch:
 
     available_metrics = BaseClassifier.available_metrics
     sklearn_estimator = None
@@ -23,12 +23,11 @@ class ClassifierSearch(BaseModel):
         self._fitted = False
         self._results = None
 
-        self.classifiers = [
-            BestKNeighborsClassifier(score_method=self.score_method),
-            BestSVC(score_method=self.score_method),
-            BestRandomForestClassifier(score_method=self.score_method),
-            BestRidgeClassifier(score_method=self.score_method)
-        ]
+        self.classifiers = [clf(score_method=self.score_method) for clf in [
+            BestDummyClassifier, BestKNeighborsClassifier, BestSVC, 
+            BestRandomForestClassifier, BestRidgeClassifier,
+        ]]
+
         for clf in args:
             if not isinstance(clf, BaseClassifier):
                 raise TypeError(f"Models must inherit from {BaseClassifier}")
@@ -43,7 +42,7 @@ class ClassifierSearch(BaseModel):
             raise AlreadyFittedError("Fit method has already been called for ClassifierSearch")
         if self.score_method not in self.available_metrics.keys():
             raise ValueError(f"Scoring must be one of: {self.available_metrics.keys()}")
-
+            
         n_fit, n_remain = 0, len(self.classifiers)
         for clf in self.classifiers:
             clf.fit(X, y)
@@ -81,10 +80,3 @@ class ClassifierSearch(BaseModel):
         if self.subestimator_ is None:
             self.eval(X, y)
         return self.subestimator_.score(X, y)
-
-    def predict(self, X: np.array) -> None:
-        pass
-
-    def get_params(self, deep=True):
-        return {"score_method": self.score_method}
-

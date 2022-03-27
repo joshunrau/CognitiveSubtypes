@@ -9,7 +9,7 @@ Estimator = TypeVar("Estimator", bound=BaseEstimator)
 
 
 class BaseModel(ABC):
-
+    
     def __init__(self) -> None:
         self.X_ = None
         self.y_ = None

@@ -14,7 +14,7 @@ def plot_kmeans_elbow(data: Dataset, metric: str = 'distortion') -> None:
     if metric not in available_metrics:
         raise ValueError
 
-    model = KMeans(random_state=0)
+    model = KMeans()
     visualizer = KElbowVisualizer(model, k=(2, 6), timings=False, metric=metric)
     visualizer.fit(data.cognitive)
 
