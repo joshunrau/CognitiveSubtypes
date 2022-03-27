@@ -5,7 +5,7 @@ import numpy as np
 from src.data.dataset import Dataset
 from src.models.cluster import BestKMeans
 from src.models.search import ClassifierSearch
-from src.visualization.figures import  DataTransformFigure, KMeansScoresFigure
+from src.visualization.figures import  DataTransformFigure, KMeansScoresFigure, PRCurveFigure
 from src.visualization.tables import ClusterTable, PatientsVsControlsTable
 
 def main():
@@ -16,7 +16,7 @@ def main():
     data.apply_scaler()
 
     figure1 = DataTransformFigure()
-    figure1.plot(dpi=300)
+    figure1.plot()
     figure1.save()
 
     table1 = PatientsVsControlsTable(data)
@@ -34,7 +34,7 @@ def main():
     table2.save()
 
     figure2 = KMeansScoresFigure(clu)
-    figure2.plot(dpi=300)
+    figure2.plot()
     figure2.save()
 
     cs = ClassifierSearch(score_method='balanced_accuracy')
@@ -42,6 +42,10 @@ def main():
     cs.score(data.test.imaging, data.test.target)
     
     print(cs.results_)
+    
+    figure3 = PRCurveFigure(cs.subestimator_, data)
+    figure3.plot()
+    figure3.save()
 
 
 if __name__ == "__main__":

@@ -30,6 +30,7 @@ class BaseClassifier(BaseModel):
         self.score_method = score_method
         self.grid_ = None
         self.n_targets_ = None
+        self.classes_ = None
 
     @property
     def subestimator(self) -> ClassifierMixin | Type[ClassifierMixin]:
@@ -73,6 +74,7 @@ class BaseClassifier(BaseModel):
         self.grid_.fit(X, y)
         self.n_targets_ = len(np.unique(y))
         self.subestimator = self.grid_.best_estimator_
+        self.classes_ = self.subestimator.classes_
 
     def predict(self, X: np.array) -> None:
         check_array(X)
