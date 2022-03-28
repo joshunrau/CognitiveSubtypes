@@ -132,3 +132,4 @@ dmypy.json
 /data
 /notebooks
 /results
+scratch.py
