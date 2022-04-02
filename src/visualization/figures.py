@@ -24,8 +24,8 @@ def get_estimator(cs):
 
 def plot_transforms():
 
-    raw_data = Dataset.load_patients()
-    transformed_data, _ = Dataset.get_scale_transform()
+    raw_data = Dataset.load()
+    transformed_data = Dataset.load_preprocess()
 
     variables = raw_data.cognitive_feature_names
     nrows = len(variables)
@@ -81,8 +81,8 @@ def violin_plot(data):
     fontsize = 12
 
     x_labels = {
-        "0": "High",
         "1": "Low",
+        "0": "High",
     }
 
     hue_labels = {
@@ -142,7 +142,7 @@ def plot_feature_importances(model, data):
             label = separate(label, s)
         return label
     
-    clf = get_estimator(model)
+    clf = model.best_estimator_.named_steps.clf
     viz = FeatureImportances(clf, topn=20, labels=[format_label(x) for x in data.imaging_feature_names])
     viz.fit(data.train.imaging, data.train.target)
     viz.finalize()

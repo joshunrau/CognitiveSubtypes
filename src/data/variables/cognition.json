@@ -102,9 +102,9 @@
     "DataField": 399,
     "InstanceNum": 2,
     "ArrayRange": {
-      "start": 1,
+      "start": 2,
       "step": 1,
-      "stop": 4
+      "stop": 3
     },
     "Included": true,
     "Coding": null

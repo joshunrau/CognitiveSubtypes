@@ -1,148 +1,175 @@
 from abc import abstractmethod
-from typing import Callable, Type
 
 import numpy as np
 
-from sklearn.base import ClassifierMixin
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.dummy import DummyClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.feature_selection import SelectPercentile
 from sklearn.linear_model import RidgeClassifier
-from sklearn.metrics import accuracy_score, balanced_accuracy_score
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, roc_auc_score
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
-from sklearn.utils.validation import check_array, check_is_fitted, check_X_y
+from sklearn.utils.validation import check_array, check_is_fitted, NotFittedError
 
 from skopt import BayesSearchCV
-
+from skopt.space import Categorical, Integer, Real
 from .base import BaseModel
-from ..utils import is_instantiated
 
 
 class BaseClassifier(BaseModel):
 
     available_metrics = {
         'accuracy': accuracy_score,
-        'balanced_accuracy': balanced_accuracy_score
+        'balanced_accuracy': balanced_accuracy_score,
+        'roc_auc': roc_auc_score
+    }
+
+    prob_metrics = ['roc_auc']
+
+    fs_param_grid = {
+        #'fs__percentile': Integer(1, 99)
     }
 
     def __init__(self, score_method: str = 'accuracy') -> None:
         super().__init__()
-        self.score_method = score_method
-        self.grid_ = None
-        self.n_targets_ = None
-        self.classes_ = None
+        self._pipeline = Pipeline([
+            ('scaler', StandardScaler()),
+            #('fs', SelectPercentile()),
+            ("clf", self.sklearn_estimator())
+        ])
+        self._score_method = score_method
 
-    @property
-    def subestimator(self) -> ClassifierMixin | Type[ClassifierMixin]:
-        return self._subestimator
-
-    @subestimator.setter
-    def subestimator(self, est) -> None:
-        if not isinstance(est, ClassifierMixin):
-            raise TypeError
-        check_is_fitted(est)
-        self._subestimator = est
-
+    def __str__(self) -> str:
+        return str(self.sklearn_estimator.__name__)
+    
     @property
     @abstractmethod
-    def param_grid(self) -> dict:
+    def clf_param_grid(self) -> dict:
         pass
 
+    @property
+    def param_grid(self) -> dict:
+        return self.fs_param_grid | self.clf_param_grid
+    
     @property
     @abstractmethod
     def n_iter(self) -> int:
         pass
 
+    @property
+    def pipeline(self) -> Pipeline:
+        return self._pipeline
+
+    @pipeline.setter
+    def pipeline(self, pipeline: Pipeline) -> None:
+        if not isinstance(pipeline, Pipeline):
+            raise TypeError
+        self._pipeline = pipeline
+
     def is_fitted(self) -> bool:
-        if not is_instantiated(self.subestimator):
+        try:
+            check_is_fitted(self.pipeline)
+        except NotFittedError:
             return False
         return True
 
-    def fit(self, X: np.array, y: np.array) -> None:
-        if self.score_method not in self.available_metrics.keys():
+    def fit(self, X: np.ndarray, y: np.ndarray, **kwargs) -> None:
+        super().fit(X, y)
+        if self._score_method not in self.available_metrics.keys():
             raise ValueError(f"Scoring must be one of: {self.available_metrics.keys()}")
-        check_X_y(X=X, y=y)
-        self.X_, self.y_ = X, y
         self.grid_ = BayesSearchCV(
-            self.subestimator(), 
-            self.param_grid, 
-            n_jobs=-1, 
-            scoring=self.score_method,
-            n_iter=self.n_iter, 
-            cv=3, 
-            verbose=True)
+            self.pipeline,
+            self.param_grid,
+            n_jobs=-1,
+            scoring=self._score_method,
+            n_iter=self.n_iter,
+            cv=5,
+            **kwargs)
+        print("Begin fitting best classifier for model: " + str(self))
         self.grid_.fit(X, y)
         self.n_targets_ = len(np.unique(y))
-        self.subestimator = self.grid_.best_estimator_
-        self.classes_ = self.subestimator.classes_
+        self.best_estimator_ = self.grid_.best_estimator_
+        self.best_params_ = self.grid_.best_params_
+        self.best_score_ = self.grid_.best_score_
+        self.classes_ = self.grid_.classes_
+        self.n_features_in_ = self.grid_.n_features_in_
+        print("Done!")
+        print(f"{self._score_method}: {self.best_score_}")
 
-    def predict(self, X: np.array) -> None:
+    def predict(self, X: np.ndarray) -> None:
+        self.check_is_fitted()
         check_array(X)
         return self.grid_.predict(X)
 
-    def predict_proba(self, X: np.array):
+    def get_y_score(self, X: np.ndarray):
         self.check_is_fitted()
         check_array(X)
-        return self.subestimator.predict_proba(X)
+        if len(self.classes_) != 2:
+            raise ValueError("This method was created for binary classes")
+        try:
+            return self.grid_.predict_proba(X)[:, 1]
+        except AttributeError:
+            return self.grid_.decision_function(X)
 
-    def decision_function(self, X: np.array):
-        self.check_is_fitted()
-        check_array(X)
-        return self.subestimator.decision_function(X)
+    def score(self, X: np.ndarray, y: np.ndarray):
+        return self.grid_.score(X, y)
 
-    def compute_metric(self, metric: Callable, X: np.array, y: np.array):
-        return metric(y, self.predict(X))
-
-    def score(self, X: np.array, y: np.array):
-        return self.compute_metric(self.available_metrics[self.score_method], X, y)
-
-
-class BestDummyClassifier(BaseClassifier):
-    sklearn_estimator = DummyClassifier
-    param_grid = {
-        "strategy": ["most_frequent", "uniform"],
-    }
-    n_iter = 8
 
 class BestKNeighborsClassifier(BaseClassifier):
     sklearn_estimator = KNeighborsClassifier
-    param_grid = {
-        'n_neighbors': (1, 20),
-        'weights': ['uniform', 'distance'],
-        'metric': ['euclidean', 'manhattan', 'minkowski'],
+    clf_param_grid = {
+        'clf__n_neighbors': Integer(1, 20),
+        'clf__weights': Categorical(['uniform', 'distance']),
+        'clf__metric': Categorical(['euclidean', 'manhattan', 'minkowski']),
     }
     n_iter = 25
 
 
 class BestSVC(BaseClassifier):
     sklearn_estimator = SVC
-    param_grid = {
-        'C': (1e-4, 1e+4, 'log-uniform'),
-        'gamma': (1e-5, 1e+1, 'log-uniform'),
-        'degree': (1, 3),
-        'kernel': ['linear', 'poly', 'rbf'],
-        'class_weight': ['balanced', None],
+    clf_param_grid = {
+        'clf__C': Real(1e-2, 1e+3, 'log-uniform'),
+        'clf__gamma': Real(1e-4, 1e+1, 'log-uniform'),
+        'clf__degree': Integer(1, 3),
+        'clf__kernel': Categorical(['linear', 'poly', 'rbf']),
+        'clf__probability': Categorical([True])
     }
     n_iter = 50
 
 
 class BestRidgeClassifier(BaseClassifier):
     sklearn_estimator = RidgeClassifier
-    param_grid = {
-        'alpha': (1e-4, 1e+0, 'log-uniform'),
-        'class_weight': ['balanced', None],
+    clf_param_grid = {
+        'clf__alpha': Real(1e-4, 1e+0, 'log-uniform'),
+        'clf__class_weight': Categorical(['balanced'])
     }
     n_iter = 15
 
 
 class BestRandomForestClassifier(BaseClassifier):
     sklearn_estimator = RandomForestClassifier
-    param_grid = {
-        'n_estimators': (50, 500),
-        'max_depth': (5, 50),
-        'max_features':  (1e-3, 1e+0, 'log-uniform'),
-        'min_samples_split': (2, 5),
-        'min_samples_leaf': (1, 5),
-        'class_weight': ['balanced', None],
+    clf_param_grid = {
+        'clf__n_estimators': Integer(50, 500),
+        'clf__max_depth': Integer(5, 50),
+        'clf__max_features': Real(1e-3, 1e+0, 'log-uniform'),
+        'clf__min_samples_split': Integer(2, 5),
+        'clf__min_samples_leaf': Integer(1, 5),
+        'clf__class_weight': Categorical(['balanced'])
     }
     n_iter = 30
+
+
+class BestGradientBoostingClassifier(BaseClassifier):
+    sklearn_estimator = GradientBoostingClassifier
+    clf_param_grid = {
+        "clf__loss": Categorical(["deviance"]),
+        "clf__learning_rate": Real(1e-3, 5e-1, 'log-uniform'),
+        "clf__min_samples_split": Real(0.1, 0.9, 'log-uniform'),
+        "clf__min_samples_leaf": Real(0.1, 0.5, 'log-uniform'),
+        "clf__max_depth": Integer(2, 10),
+        "clf__max_features": Categorical(["log2","sqrt"]),
+        "clf__criterion": Categorical(["friedman_mse",  "squared_error"]),
+        "clf__subsample": Real(0.5, 1, 'log-uniform')
+    }
+    n_iter = 50

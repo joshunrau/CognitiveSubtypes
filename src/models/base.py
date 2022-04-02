@@ -1,26 +1,21 @@
 from abc import ABC, abstractmethod
-from typing import Type, Union, TypeVar
+from typing import Type
 
 import numpy as np
 from sklearn.base import BaseEstimator
-from sklearn.utils.validation import check_array, NotFittedError
-
-Estimator = TypeVar("Estimator", bound=BaseEstimator)
+from sklearn.utils.validation import check_array, check_X_y, NotFittedError
 
 
 class BaseModel(ABC):
-    
-    def __init__(self) -> None:
-        self.X_ = None
-        self.y_ = None
-        self._subestimator = self.sklearn_estimator
 
-    def __str__(self) -> str:
-        return str(self.subestimator)
+    @property
+    @abstractmethod
+    def sklearn_estimator(self) -> Type[BaseEstimator]:
+        pass
 
     def check_is_fitted(self) -> None:
         if not self.is_fitted():
-            raise NotFittedError("Estimator must be fitted before method call")
+            raise NotFittedError("Object must be fitted before method call")
 
     @abstractmethod
     def is_fitted(self) -> bool:
@@ -31,22 +26,17 @@ class BaseModel(ABC):
     def available_metrics(self) -> dict:
         pass
 
-    @property
     @abstractmethod
-    def sklearn_estimator(self) -> Estimator | Type[Estimator]:
-        pass
-
-    @property
-    def subestimator(self) -> Estimator | Type[Estimator]:
-        return self._subestimator
-
-    @abstractmethod
-    def fit(self, X: np.array, y: Union[None, np.array]) -> None:
+    def fit(self, X: np.ndarray, y: None | np.ndarray = None) -> None:
+        if y is None:
+            check_array(X)
+        else:
+            check_X_y(X, y)
         self.X_ = X
         self.y_ = y
 
     @abstractmethod
-    def predict(self, X: np.array) -> None:
+    def predict(self, X: np.ndarray) -> None:
         self.check_is_fitted()
         check_array(X)
 
@@ -54,4 +44,3 @@ class BaseModel(ABC):
         for parameter, value in parameters.items():
             setattr(self, parameter, value)
         return self
-

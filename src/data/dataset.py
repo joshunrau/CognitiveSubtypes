@@ -1,7 +1,9 @@
 import numpy as np
 import pandas as pd
+
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import FunctionTransformer, PowerTransformer, StandardScaler
+from sklearn.preprocessing import PowerTransformer, StandardScaler
+from sklearn.utils.validation import check_is_fitted
 
 from .build import DataBuilder
 from ..filepaths import PATH_DATA_DIR
@@ -50,19 +52,31 @@ class Data:
             "meanReactionTimeTest",
             "timeTrailMakingTestA",
             "timeTrailMakingTestB",
-            "accuracyTowerTest",
-            "accuracySymbolDigitTest",
+            "correctTowerTest",
+            "correctSymbolDigitTest",
             "incorrectPairsMatchingTask",
-            "prospectiveMemoryTask"
+            "prospectiveMemoryTask",
+            'maxDigitsNumericMemoryTest'
         ]
+    
+    def feature_names_startswith(self, s: str):
+        return [x for x in self.df.columns if x.startswith(s)]
+    
+    @property
+    def area_feature_names(self):
+        return self.feature_names_startswith('area')
 
     @property
+    def thickness_feature_names(self):
+        return self.feature_names_startswith('thickness')
+
+    @property
+    def volume_feature_names(self):
+        return self.feature_names_startswith('volume')
+    
+    @property
     def imaging_feature_names(self):
-        imaging_feature_names = []
-        for col in self.df.columns:
-            if col.startswith("area") or col.startswith("thickness") or col.startswith("volume"):
-                imaging_feature_names.append(col)
-        return imaging_feature_names
+        return self.area_feature_names + self.thickness_feature_names + self.volume_feature_names
 
     @property
     def feature_names(self):
@@ -82,29 +96,29 @@ class Data:
 
 
 class Dataset(Data):
+    
+    features_to_transform = [
+        "meanReactionTimeTest",
+        "timeTrailMakingTestA",
+        "timeTrailMakingTestB",
+        "correctSymbolDigitTest",
+        "incorrectPairsMatchingTask",
+    ]
 
     def __init__(self, df):
-        train_data, test_data = train_test_split(df, test_size=0.3, random_state=0)
+        train_data, test_data = train_test_split(df, test_size=0.25, random_state=0)
         self.train, self.test = Data(train_data), Data(test_data)
 
-    def apply_transforms(self):
+    def apply_transformer(self, transformer, vars_to_transform):
+        check_is_fitted(transformer)
+        self.train.df[vars_to_transform] = transformer.transform(self.train.df[vars_to_transform])
+        self.test.df[vars_to_transform] = transformer.transform(self.test.df[vars_to_transform])
 
-        log_transformer = FunctionTransformer(np.log)
-        power_transformer = PowerTransformer(standardize=False)
-
-        self.transforms = [
-            [log_transformer, ["meanReactionTimeTest", "timeTrailMakingTestA", "timeTrailMakingTestB"]],
-            [power_transformer, ["accuracyTowerTest", "accuracySymbolDigitTest", "incorrectPairsMatchingTask"]]
-        ]
-
-        for transformer, variables in self.transforms:
-            self.train.df[variables] = transformer.fit_transform(self.train.df[variables])
-            self.test.df[variables] = transformer.transform(self.test.df[variables])
-
-    def apply_scaler(self, scaler=StandardScaler()):
-        self.train.df[self.train.feature_names] = scaler.fit_transform(self.train.features)
-        self.test.df[self.test.feature_names] = scaler.transform(self.test.features)
-
+    def apply_scaler(self, scaler, vars_to_scale):
+        check_is_fitted(scaler)
+        self.train.df[vars_to_scale] = scaler.transform(self.train.df[vars_to_scale])
+        self.test.df[vars_to_scale] = scaler.transform(self.test.df[vars_to_scale])
+    
     def summarize_by_class(self):
         if self.target is None:
             raise ValueError("Target for Dataset has not yet been set!")
@@ -132,3 +146,44 @@ class Dataset(Data):
     @classmethod
     def load(cls, output_dir=PATH_DATA_DIR):
         return cls(DataBuilder.load(output_dir=output_dir))
+    
+    @classmethod
+    def load_patients(cls):
+        data = DataBuilder.load()
+        return cls(data[data['subjectType'] == 'patient'])
+    
+    @classmethod
+    def load_controls(cls):
+        data = DataBuilder.load()
+        return cls(data[data['subjectType'] == 'control'])
+    
+    @classmethod
+    def load_preprocess(cls):
+        data = cls.load()
+        scaler = StandardScaler()
+        scaler.fit(data.train.df[data.cognitive_feature_names])
+        data.apply_scaler(scaler, data.cognitive_feature_names)
+        transformer = PowerTransformer(method='yeo-johnson')
+        transformer.fit(data.train.df[cls.features_to_transform])
+        data.apply_transformer(transformer, cls.features_to_transform)
+        return data
+        
+    @classmethod
+    def get_sets(cls):
+        
+        controls = Dataset.load_controls()
+        patients = Dataset.load_patients()
+        
+        transformer = PowerTransformer(method='yeo-johnson')
+        transformer.fit(patients.df[cls.features_to_transform])
+        patients.apply_transformer(transformer, cls.features_to_transform)
+        transformer.fit(controls.df[cls.features_to_transform])
+        controls.apply_transformer(transformer, cls.features_to_transform)
+        transformer.fit(controls.df[cls.features_to_transform])
+        
+        scaler = StandardScaler()
+        scaler.fit(controls.df[controls.cognitive_feature_names])
+        controls.apply_scaler(scaler, controls.cognitive_feature_names)
+        patients.apply_scaler(scaler, patients.cognitive_feature_names)
+
+        return patients, controls

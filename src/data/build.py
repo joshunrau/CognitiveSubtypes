@@ -16,7 +16,7 @@ class DataBuilder:
 
     idvar = "id"
     variables = load_variables()
-
+    
     included_diagnoses = {
         "anySSD": r"F2\d",
         "anyMoodDisorder": r"F3\d"
@@ -43,27 +43,17 @@ class DataBuilder:
         "EduOtherProfQual": "Other professional qualifications eg: nursing, teaching"
     }
 
-    other_include = {
-        'handedness': "Right-handed"
-    }
-
-    def __init__(self, path_csv: str = PATH_CURRENT_CSV, rm_na=False) -> None:
-
+    def __init__(self, path_csv: str = PATH_CURRENT_CSV) -> None:
+        
         ukbb_vars, recoded_vars = self.get_var_names()
 
         self.df = pd.read_csv(path_csv, dtype=str, usecols=ukbb_vars)
         self.df.rename({k: v for k, v in zip(ukbb_vars, recoded_vars)}, axis=1, inplace=True)
         self.df.dropna(axis=1, how="all", inplace=True)
 
-        # Recode array vars
         self.df = self.add_binary_variables(self.df, "educationalQualifications", self.edu_levels, drop_target=True)
         self.df = self.add_binary_variables(self.df, "diagnoses", self.selected_diagnoses, drop_target=True)
 
-        # Apply exclusion criteria for diagnoses
-        for key in self.excluded_diagnoses:
-            self.df = self.df[self.df[key] == False]
-
-        # Recode variable values
         for name in self.variables:
             cols = [col for col in self.df.columns if col.startswith(name)]
             if self.variables[name]["Included"] and cols != [] and self.variables[name]["Coding"] is not None:
@@ -71,26 +61,21 @@ class DataBuilder:
 
         self.df.reset_index(drop=True, inplace=True)
         self.df = self.df.apply(pd.to_numeric, errors="ignore")
+        self.df.dropna(how="any", inplace=True)
 
-        if rm_na:
-            self.df.dropna(how="any", inplace=True)
-
-        # Merge incorrectPairsMatchingTask
-        pm_tasks = ["incorrectPairsMatchingTask1", "incorrectPairsMatchingTask2", "incorrectPairsMatchingTask3"]
-        self.df["incorrectPairsMatchingTask"] = self.df[pm_tasks[0]] + self.df[pm_tasks[1]] + self.df[pm_tasks[2]]
-        self.df.drop(pm_tasks, axis=1, inplace=True)
-
-        # Compute accuracy variables
-        self.df["accuracyTowerTest"] = self.df["correctTowerTest"] / self.df["attemptsTowerTest"]
-        self.df["accuracySymbolDigitTest"] = self.df["correctSymbolDigitTest"] / self.df["attemptsSymbolDigitTest"]
-
-        # Compute DX
         self.df = self.df.assign(dx=self.df.apply(self.compute_dx, axis=1))
         self.df.drop(list(self.selected_diagnoses.keys()), axis=1)
 
-        for key, value in self.other_include.items():
-            self.df = self.df[self.df[key] == value]
-
+        for key in self.excluded_diagnoses:
+            self.df = self.df[self.df[key] == False]
+        self.df = self.df[self.df['handedness'] == "Right-handed"]
+        
+        self.patient_df = self.get_patients()
+        self.control_df = self.get_controls()
+        self.matched_controls = self.get_matched_controls(self.patient_df, self.control_df)
+        self.df = pd.concat([self.patient_df, self.matched_controls])
+        assert sum(self.df['subjectType'] == 'patient') == sum(self.df['subjectType'] == 'control')
+        
     def get_var_names(self) -> tuple:
         """ Return lists of actual and recoded variable names based on config """
         ukbb_vars, recoded_vars = ["eid"], [self.idvar]
@@ -111,7 +96,7 @@ class DataBuilder:
             raise ValueError
         return ukbb_vars, recoded_vars
 
-    def add_binary_variables(self, df: pd.DataFrame, target: str, patterns: dict, drop_target=False):
+    def add_binary_variables(self, df: pd.DataFrame, target: str, patterns: dict, drop_target: bool = False):
         """ 
         Takes as input a variable of interest and a dictionary with keys representing new
         variable names mapped onto regular expressions. New binary variables will be created
@@ -144,10 +129,19 @@ class DataBuilder:
         if drop_target:
             df.drop(cols, axis=1, inplace=True)
         return pd.merge(df, new_df, left_on=self.idvar, right_on=self.idvar)
-
-    def write_csv(self, output_dir):
-        filename = os.path.join(output_dir, f"dataset_{date.today().isoformat()}.csv")
-        self.df.to_csv(filename, index=False)
+    
+    @staticmethod
+    def compute_dx(df: pd.DataFrame):
+        if df["anySSD"] & df["anyMoodDisorder"]:
+            return "SSD + Mood Disorder"
+        elif df["anySSD"]:
+            return "Only SSD"
+        elif df["anyMoodDisorder"]:
+            return "Only Mood Disorder"
+        elif ~df['anyDementia'] & ~df['anyMentalDisorder']:
+            return None
+        else:
+            raise AssertionError
 
     def get_patients(self):
         list_series = [self.df[key] == True for key in self.included_diagnoses]
@@ -160,9 +154,13 @@ class DataBuilder:
         df = copy.deepcopy(self.df[pd.concat(list_series, axis=1).any(axis=1)])
         df['subjectType'] = 'control'
         return df
-
+    
+    def write_csv(self, output_dir: str = PATH_DATA_DIR):
+        filename = os.path.join(output_dir, f"dataset_{date.today().isoformat()}.csv")
+        self.df.to_csv(filename, index=False)
+        
     @classmethod
-    def get_latest_filepath(cls, output_dir):
+    def get_latest_filepath(cls, output_dir: str = PATH_DATA_DIR):
         """ Return the path to most recent saved dataset """
 
         newest_date, newest_file = None, None
@@ -178,9 +176,9 @@ class DataBuilder:
             return None
 
         return os.path.join(output_dir, newest_file)
-
+    
     @classmethod
-    def load(cls, output_dir):
+    def load(cls, output_dir: str = PATH_DATA_DIR):
         """ Returns the most recent saved dataframe """
 
         filepath = cls.get_latest_filepath(output_dir)
@@ -188,44 +186,15 @@ class DataBuilder:
             raise FileNotFoundError("Could not find existing dataset")
 
         return pd.read_csv(filepath)
-
-    @staticmethod
-    def compute_dx(df):
-        if df["anySSD"] & df["anyMoodDisorder"]:
-            return "SSD + Mood Disorder"
-        elif df["anySSD"]:
-            return "Only SSD"
-        elif df["anyMoodDisorder"]:
-            return "Only Mood Disorder"
-        elif ~df['anyDementia'] & ~df['anyMentalDisorder']:
-            return None
-        else:
-            raise AssertionError
-
-
-def get_matched_controls(patient_df: pd.DataFrame, control_df: pd.DataFrame):
-    match_vars = ["age", "sex"]
-    patient_features = patient_df[match_vars].to_numpy()
-    patient_features[:, 1] = np.where(patient_features[:, 1] == "Male", 1, 0)
-    control_features = control_df[match_vars].to_numpy()
-    control_features[:, 1] = np.where(control_features[:, 1] == "Male", 1, 0)
-    model = NearestNeighbors()
-    model.fit(control_features)
-    _, neigh_ind = model.kneighbors(patient_features, n_neighbors=1)
-    return control_df.iloc[neigh_ind.flatten()]
-
-
-def build_dataset(path_current_csv: str = PATH_CURRENT_CSV, path_output_dir: str = PATH_DATA_DIR):
-    if not os.path.isfile(path_current_csv):
-        raise FileNotFoundError("File not found: " + path_current_csv)
-    if not os.path.isdir(path_output_dir):
-        raise NotADirectoryError("Directory not found: " + path_output_dir)
-
-    data = DataBuilder(path_current_csv, rm_na=True)
-    patient_df = data.get_patients()
-    control_df = data.get_controls()
-    matched_controls = get_matched_controls(patient_df, control_df)
-    data.df = pd.concat([patient_df, matched_controls])
     
-    assert sum(data.df['subjectType'] == 'patient') == sum(data.df['subjectType'] == 'control')
-    data.write_csv(path_output_dir)
+    @staticmethod
+    def get_matched_controls(patient_df: pd.DataFrame, control_df: pd.DataFrame):
+        match_vars = ["age", "sex"]
+        patient_features = patient_df[match_vars].to_numpy()
+        patient_features[:, 1] = np.where(patient_features[:, 1] == "Male", 1, 0)
+        control_features = control_df[match_vars].to_numpy()
+        control_features[:, 1] = np.where(control_features[:, 1] == "Male", 1, 0)
+        model = NearestNeighbors()
+        model.fit(control_features)
+        _, neigh_ind = model.kneighbors(patient_features, n_neighbors=1)
+        return control_df.iloc[neigh_ind.flatten()]
