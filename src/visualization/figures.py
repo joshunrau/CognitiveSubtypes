@@ -1,100 +1,77 @@
 import os
 
-from abc import ABC, abstractmethod
-
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from matplotlib.legend import Legend
-from yellowbrick.classifier import PrecisionRecallCurve
+from yellowbrick.classifier import ROCAUC
+from yellowbrick.model_selection import FeatureImportances
 
 from ..data.dataset import Dataset
 from ..filepaths import PATH_RESULTS_DIR
 from ..utils import camel_case_split
 
-class Figure(ABC):
 
-    fontsize=12
-
-    def __str__(self) -> str:
-        return self.__class__.__name__
-
-    @abstractmethod
-    def plot(self):
-        pass
-
-    @property
-    def path(self):
-        return os.path.join(PATH_RESULTS_DIR, "figures", str(self) + '.jpg')
-
-    def save(self):
-        plt.savefig(self.path, dpi=300, bbox_inches='tight')
+def save_figure(filename):
+    plt.savefig(os.path.join(PATH_RESULTS_DIR, "figures", filename), dpi=300, bbox_inches='tight')
 
 
-class DataTransformFigure(Figure):
+def get_estimator(cs):
+    try:
+        return cs.pipeline.pipeline
+    except AttributeError:
+        return cs.pipeline
 
-    def __init__(self) -> None:
-        self.raw_data = Dataset.load()
-        self.transformed_data = Dataset.load()
-        self.transformed_data.apply_transforms()
-        self.transformed_data.apply_scaler()
+
+def plot_transforms():
+
+    raw_data = Dataset.load_patients()
+    transformed_data, _ = Dataset.get_scale_transform()
+
+    variables = raw_data.cognitive_feature_names
+    nrows = len(variables)
+    fig, axes = plt.subplots(nrows=nrows, ncols=2)
     
-    def plot(self):
-        variables = self.raw_data.cognitive_feature_names
-        n_rows = len(variables)
-        fig, axes = plt.subplots(nrows=n_rows, ncols=2)
-        for i in range(n_rows):
-            sns.histplot(data=self.raw_data.df, x=variables[i], ax=axes[i][0])
-            sns.histplot(data=self.transformed_data.df, x=variables[i], ax=axes[i][1])
-            axes[i][0].set(xlabel=camel_case_split(variables[i]))
-            axes[i][1].set(xlabel=camel_case_split(variables[i]))
-        fig.set_figwidth(12)
-        fig.set_figheight(2 * n_rows)
-        fig.tight_layout()
+    for i in range(nrows):
+        sns.histplot(data=raw_data.df, x=variables[i], ax=axes[i][0])
+        axes[i][0].set(xlabel=camel_case_split(variables[i]))
+        axes[i][0].set_ylabel(None)
+    
+    for i in range(nrows):
+        sns.histplot(data=transformed_data.df, x=variables[i], ax=axes[i][1])
+        axes[i][1].set(xlabel=camel_case_split(variables[i]))
+        axes[i][1].set_ylabel(None)
+    
+    fig.subplots_adjust(wspace=0)
+    fig.set_figwidth(8)
+    fig.set_figheight(1.2 * len(variables))
+    fig.tight_layout()
 
 
-class KMeansScoresFigure(Figure):
+def plot_kmeans_scores(model):
+    k_values = list(model.scores_.keys())
+    calinski_harabasz_values = [x['calinski_harabasz'] for x in model.scores_.values()]
+    silhouette_values = [x['silhouette'] for x in model.scores_.values()]
+    assert len(k_values) == len(calinski_harabasz_values) == len(silhouette_values)
 
-    def __init__(self, model) -> None:
-        self.model = model
+    fig, ax1 = plt.subplots()
 
-    def plot(self):
-        k_values = list(self.model.scores.keys())
-        silhouette_values = [x['silhouette'] for x in self.model.scores.values()]
-        fig, ax = plt.subplots()
-        ax.set_xlabel('Number of Clusters')
-        ax.set_ylabel("Silhouette Coefficient")
-        ax.plot(k_values, silhouette_values)
-        ax.scatter(k_values, silhouette_values)
-        ax.set(xticks=k_values)
-        ax.grid()
-        fig.tight_layout()
+    color = 'tab:red'
+    ax1.set_xlabel('Number of Clusters')
+    ax1.set_ylabel("Calinski-Harabasz Index", color=color)
+    ax1.plot(k_values, calinski_harabasz_values, color=color)
+    ax1.scatter(k_values, calinski_harabasz_values, color=color)
+    ax1.set(xticks=k_values)
+    ax1.tick_params(axis='y', labelcolor=color)
 
+    color = 'tab:blue'
+    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+    ax2.set_ylabel("Silhouette Coefficient", color=color)
+    ax2.plot(k_values, silhouette_values, color=color)
+    ax2.scatter(k_values, silhouette_values, color=color)
+    ax2.tick_params(axis='y', labelcolor=color)
+    ax2.grid(None)
 
-class PRCurveFigure(Figure):
-
-    def __init__(self, clf, data) -> None:
-        self.clf = clf
-        self.data = data
-
-    def plot(self, title = " "):
-
-        try:
-            estimator = self.clf.subestimator
-        except AttributeError:
-            estimator = self.clf
-        
-        viz = PrecisionRecallCurve(
-            estimator,
-            classes=self.clf.classes_,
-            colors=["purple", "cyan", "blue"],
-            per_class=True,
-            micro=False,
-            title=title
-        )
-        viz.fit(self.data.train.imaging, self.data.train.target)
-        viz.score(self.data.test.imaging, self.data.test.target)
-        viz.finalize()
+    fig.tight_layout()
 
 
 def violin_plot(data):
@@ -104,9 +81,8 @@ def violin_plot(data):
     fontsize = 12
 
     x_labels = {
-        "0": "HSD",
-        "1": "SPM",
-        "2": "GS"
+        "0": "High",
+        "1": "Low",
     }
 
     hue_labels = {
@@ -130,15 +106,43 @@ def violin_plot(data):
 
     axes[0].set_ylabel("Z Scores")
     axes[4].set_ylabel("Z Scores")
-    axes[7].grid(None)
-    axes[7].set_xticklabels([])
 
-    lines, hueticklabels = axes[0].get_legend_handles_labels()
-    hueticklabels = [hue_labels[lab] for lab in hueticklabels]
-    axes[7].add_artist(Legend(axes[7], lines,  hueticklabels, title="Group", 
-        fontsize=fontsize, ncol=1, loc='center', frameon=False))
-    for dim in ['top', 'right', 'bottom', 'left']:
-        axes[7].spines[dim].set_visible(False)
+    lines, labels = axes[0].get_legend_handles_labels()
+    labels = [hue_labels[lab] for lab in labels]
+    
+    fig.legend(lines, labels, ncol=len(labels), loc='lower center', 
+               fontsize=fontsize, borderaxespad=1)
+    
     fig.subplots_adjust(wspace=0)
-    fig.tight_layout()
-    plt.savefig(os.path.join(PATH_RESULTS_DIR, "figures", 'violin.jpg'), dpi=300, bbox_inches='tight')
+
+
+def plot_roc_curve(model, data, **kwargs):
+
+    estimator = get_estimator(model)
+    viz = ROCAUC(estimator, binary=True, **kwargs)
+    viz.fit(data.train.imaging, data.train.target)
+    viz.score(data.test.imaging, data.test.target)
+    viz.finalize()
+
+
+def plot_feature_importances(model, data):
+    
+    def separate(s, substring):
+        splt = s.lower().split(substring.lower())
+        if len(splt) == 1:
+            return s
+        elif len(splt) != 2:
+            raise ValueError(f"List contains more than two strings: {splt}")
+        splt.insert(1, substring)
+        return " ".join([x.strip() for x in splt]).title()
+    
+    def format_label(label):
+        label = camel_case_split(label)
+        for s in ['inferior', 'middle', 'superior', 'anterior', 'posterior', 'rostral', 'caudal', 'lateral']:
+            label = separate(label, s)
+        return label
+    
+    clf = get_estimator(model)
+    viz = FeatureImportances(clf, topn=20, labels=[format_label(x) for x in data.imaging_feature_names])
+    viz.fit(data.train.imaging, data.train.target)
+    viz.finalize()
