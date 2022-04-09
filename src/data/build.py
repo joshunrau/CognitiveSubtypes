@@ -43,27 +43,47 @@ class DataBuilder:
         "EduOtherProfQual": "Other professional qualifications eg: nursing, teaching"
     }
 
-    def __init__(self, path_csv: str = PATH_CURRENT_CSV) -> None:
+    def __init__(self, drop_dx: bool = True, drop_na: bool = True, path_csv: str = PATH_CURRENT_CSV, verbose: bool = False) -> None:
         
-        ukbb_vars, recoded_vars = self.get_var_names()
+        self._verbose = verbose
 
+        self.printv("Begin getting variable names...")
+        ukbb_vars, recoded_vars = self.get_var_names()
+        self.printv("Done!")
+
+        self.printv("Begin reading CSV...")
         self.df = pd.read_csv(path_csv, dtype=str, usecols=ukbb_vars)
         self.df.rename({k: v for k, v in zip(ukbb_vars, recoded_vars)}, axis=1, inplace=True)
         self.df.dropna(axis=1, how="all", inplace=True)
+        self.printv("Done!")
 
+        self.printv("Begin getting education...")
         self.df = self.add_binary_variables(self.df, "educationalQualifications", self.edu_levels, drop_target=True)
-        self.df = self.add_binary_variables(self.df, "diagnoses", self.selected_diagnoses, drop_target=True)
+        self.printv("Done!")
 
+        self.printv("Begin adding diagnoses...")
+        self.df = self.add_binary_variables(self.df, "diagnoses", self.selected_diagnoses, drop_target=drop_dx)
+        self.printv("Done!")
+
+        self.printv("Begin iterating...")
         for name in self.variables:
+            self.printv(f"Variable: {name}")
             cols = [col for col in self.df.columns if col.startswith(name)]
+            self.printv(f"Columns: {cols}")
             if self.variables[name]["Included"] and cols != [] and self.variables[name]["Coding"] is not None:
+                self.printv(f"Replace: {self.variables[name]['Coding']}")
                 self.df[cols] = self.df[cols].replace(to_replace=self.variables[name]["Coding"])
 
         self.df.reset_index(drop=True, inplace=True)
         self.df = self.df.apply(pd.to_numeric, errors="ignore")
-        self.df.dropna(how="any", inplace=True)
 
+        if drop_na:
+            self.df.dropna(how="any", inplace=True)
+
+        self.printv("Assigning diagnoses...")
         self.df = self.df.assign(dx=self.df.apply(self.compute_dx, axis=1))
+        self.printv("Done!")
+
         self.df.drop(list(self.selected_diagnoses.keys()), axis=1)
 
         for key in self.excluded_diagnoses:
@@ -75,7 +95,11 @@ class DataBuilder:
         self.matched_controls = self.get_matched_controls(self.patient_df, self.control_df)
         self.df = pd.concat([self.patient_df, self.matched_controls])
         assert sum(self.df['subjectType'] == 'patient') == sum(self.df['subjectType'] == 'control')
-        
+    
+    def printv(self, msg: str):
+        if self._verbose:
+            print(msg)
+
     def get_var_names(self) -> tuple:
         """ Return lists of actual and recoded variable names based on config """
         ukbb_vars, recoded_vars = ["eid"], [self.idvar]
@@ -127,7 +151,9 @@ class DataBuilder:
 
         new_df = pd.DataFrame(new_vars)
         if drop_target:
+            self.printv("Dropping target...")
             df.drop(cols, axis=1, inplace=True)
+            self.printv("Finished dropping target!")
         return pd.merge(df, new_df, left_on=self.idvar, right_on=self.idvar)
     
     @staticmethod

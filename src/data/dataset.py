@@ -45,7 +45,11 @@ class Data:
 
     def get(self, names):
         return self.df[names].to_numpy()
-
+    
+    @property
+    def demo_feature_names(self):
+        return ['age']
+    
     @property
     def cognitive_feature_names(self):
         return [
@@ -65,7 +69,7 @@ class Data:
     @property
     def area_feature_names(self):
         return self.feature_names_startswith('area')
-
+    
     @property
     def thickness_feature_names(self):
         return self.feature_names_startswith('thickness')
@@ -80,12 +84,12 @@ class Data:
 
     @property
     def feature_names(self):
-        return self.cognitive_feature_names + self.imaging_feature_names
+        return self.demo_feature_names + self.cognitive_feature_names + self.imaging_feature_names
 
     @property
     def cognitive(self):
         return self.get(self.cognitive_feature_names)
-
+    
     @property
     def imaging(self):
         return self.get(self.imaging_feature_names)

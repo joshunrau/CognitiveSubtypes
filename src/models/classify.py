@@ -1,9 +1,9 @@
 from abc import abstractmethod
 
 import numpy as np
+import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.feature_selection import SelectPercentile
 from sklearn.linear_model import RidgeClassifier
 from sklearn.metrics import accuracy_score, balanced_accuracy_score, roc_auc_score
 from sklearn.neighbors import KNeighborsClassifier
@@ -27,15 +27,12 @@ class BaseClassifier(BaseModel):
 
     prob_metrics = ['roc_auc']
 
-    fs_param_grid = {
-        #'fs__percentile': Integer(1, 99)
-    }
+    fs_param_grid = {}
 
     def __init__(self, score_method: str = 'accuracy') -> None:
         super().__init__()
         self._pipeline = Pipeline([
             ('scaler', StandardScaler()),
-            #('fs', SelectPercentile()),
             ("clf", self.sklearn_estimator())
         ])
         self._score_method = score_method
@@ -69,8 +66,8 @@ class BaseClassifier(BaseModel):
 
     def is_fitted(self) -> bool:
         try:
-            check_is_fitted(self.pipeline)
-        except NotFittedError:
+            check_is_fitted(self.grid_)
+        except (AttributeError, NotFittedError):
             return False
         return True
 
@@ -173,3 +170,23 @@ class BestGradientBoostingClassifier(BaseClassifier):
         "clf__subsample": Real(0.5, 1, 'log-uniform')
     }
     n_iter = 50
+
+
+class ClassifierSearch:
+    
+    def __init__(self):
+        self.classifiers = []
+        for clf in [BestKNeighborsClassifier, BestRidgeClassifier, BestRandomForestClassifier]:
+            self.classifiers.append(clf(score_method='roc_auc'))
+        self.model_names = ['KNN', 'RDG', 'RFC']
+        self.roc_auc_scores = None
+        
+    def fit(self, data):
+        self.roc_auc_scores = {"Train": [], "Test": []}
+        for clf in self.classifiers:
+            x_train = data.train.df[data.imaging_feature_names].to_numpy()
+            x_test = data.test.df[data.imaging_feature_names].to_numpy()
+            clf.fit(x_train, data.train.target, verbose=False)
+            self.roc_auc_scores["Train"].append(clf.best_score_)
+            self.roc_auc_scores["Test"].append(clf.score(x_test, data.test.target))
+        self.roc_auc_scores = pd.DataFrame(self.roc_auc_scores, index=self.model_names)

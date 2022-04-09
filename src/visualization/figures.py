@@ -125,7 +125,21 @@ def plot_roc_curve(model, data, **kwargs):
     viz.finalize()
 
 
-def plot_feature_importances(model, data):
+def plot_roc_auc_scores(cs):
+    fig, axes = plt.subplots(ncols=2, sharey=True, figsize=(10, 4))
+    p1 = axes[0].bar(cs.model_names, cs.roc_auc_scores["Train"], align='center', alpha=1, color="#408ec6")
+    axes[0].bar_label(p1, label_type='edge', fmt='%.2f')
+    axes[0].set_title("Training")
+    axes[0].set_ylabel('AUC')
+    axes[0].set_xticks((0, 1, 2), cs.model_names)
+    p2 = axes[1].bar(cs.model_names, cs.roc_auc_scores["Test"], align='center', alpha=1, color="#1e2761")
+    axes[1].bar_label(p2, label_type='edge', fmt='%.2f')
+    axes[1].set_title("Validation")
+    axes[1].set_xticks((0, 1, 2), cs.model_names)
+    fig.subplots_adjust(top=1, wspace=.05)
+
+
+def plot_feature_importances(model, data, **kwargs):
     
     def separate(s, substring):
         splt = s.lower().split(substring.lower())
@@ -143,6 +157,6 @@ def plot_feature_importances(model, data):
         return label
     
     clf = model.best_estimator_.named_steps.clf
-    viz = FeatureImportances(clf, topn=20, labels=[format_label(x) for x in data.imaging_feature_names])
+    viz = FeatureImportances(clf, topn=20, labels=[format_label(x) for x in data.imaging_feature_names], **kwargs)
     viz.fit(data.train.imaging, data.train.target)
     viz.finalize()
