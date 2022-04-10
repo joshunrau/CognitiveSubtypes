@@ -130,6 +130,4 @@ dmypy.json
 
 .DS_Store
 /data
-/notebooks
 /results
-scratch.py

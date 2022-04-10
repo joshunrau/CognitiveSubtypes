@@ -1,3 +1,4 @@
+import warnings
 from abc import abstractmethod
 
 import numpy as np
@@ -71,7 +72,7 @@ class BaseClassifier(BaseModel):
             return False
         return True
 
-    def fit(self, X: np.ndarray, y: np.ndarray, **kwargs) -> None:
+    def fit(self, X: np.ndarray, y: np.ndarray, surpress_warnings = True, **kwargs) -> None:
         super().fit(X, y)
         if self._score_method not in self.available_metrics.keys():
             raise ValueError(f"Scoring must be one of: {self.available_metrics.keys()}")
@@ -84,7 +85,12 @@ class BaseClassifier(BaseModel):
             cv=5,
             **kwargs)
         print("Begin fitting best classifier for model: " + str(self))
-        self.grid_.fit(X, y)
+        if surpress_warnings:
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                self.grid_.fit(X, y)
+        else:
+            self.grid_.fit(X, y)
         self.n_targets_ = len(np.unique(y))
         self.best_estimator_ = self.grid_.best_estimator_
         self.best_params_ = self.grid_.best_params_
@@ -149,12 +155,12 @@ class BestRandomForestClassifier(BaseClassifier):
     clf_param_grid = {
         'clf__n_estimators': Integer(50, 500),
         'clf__max_depth': Integer(5, 50),
-        'clf__max_features': Real(1e-3, 1e+0, 'log-uniform'),
+        'clf__max_features': Real(1e-2, 1e+0, 'log-uniform'),
         'clf__min_samples_split': Integer(2, 5),
         'clf__min_samples_leaf': Integer(1, 5),
         'clf__class_weight': Categorical(['balanced'])
     }
-    n_iter = 30
+    n_iter = 40
 
 
 class BestGradientBoostingClassifier(BaseClassifier):
@@ -186,7 +192,30 @@ class ClassifierSearch:
         for clf in self.classifiers:
             x_train = data.train.df[data.imaging_feature_names].to_numpy()
             x_test = data.test.df[data.imaging_feature_names].to_numpy()
-            clf.fit(x_train, data.train.target, verbose=False)
+            clf.fit(x_train, data.train.target, surpress_warnings=True, verbose=False)
             self.roc_auc_scores["Train"].append(clf.best_score_)
             self.roc_auc_scores["Test"].append(clf.score(x_test, data.test.target))
         self.roc_auc_scores = pd.DataFrame(self.roc_auc_scores, index=self.model_names)
+        self.best_classifier = self.classifiers[self.model_names.index(self.roc_auc_scores["Test"].idxmax())]
+
+  
+def get_feature_importances(best_random_forest, feature_names):
+    
+    forest = best_random_forest.best_estimator_.named_steps['clf']
+    if len(feature_names) != len(forest.feature_importances_):
+        raise ValueError
+    forest_importances = {k:v for k, v in zip(feature_names, forest.feature_importances_)}
+    
+    regional_importances = {}
+    for feature in forest_importances:
+        for measure in ['area', 'thickness', 'volume']:
+            if feature.startswith(measure):
+                try:
+                    regional_importances[feature.replace(measure, '')][measure] = forest_importances[feature]
+                except KeyError:
+                    regional_importances[feature.replace(measure, '')] = {}
+                    regional_importances[feature.replace(measure, '')][measure] = forest_importances[feature]
+    regional_importances = pd.DataFrame.from_dict(regional_importances).T
+    regional_importances.index = regional_importances.index.map(lambda x: x.lower().replace("left", "lh_").replace("right", "rh_"))
+    regional_importances = regional_importances.rename(lambda x: x.capitalize(), axis=1)
+    return regional_importances

@@ -4,7 +4,7 @@ library(ggplot2)
 library(tidyverse)
 library(ggthemes)
 
-df = read.csv("/Users/joshua/Developer/CognitiveSubtypes/notebooks/rois.csv") %>%
+df = read.csv("/Users/joshua/Developer/CognitiveSubtypes/data/rois.csv") %>%
   pivot_longer(cols = c("Area", "Thickness", "Volume"), names_to = "measure")
 
 cortical_pos <- c("left lateral", "left medial", "right medial", "right lateral")
@@ -34,4 +34,4 @@ df %>%
     strip.text.y = element_text(angle = 0, hjust = 0)) +
   facet_grid(measure ~ .)
 
-ggsave('/Users/joshua/Developer/CognitiveSubtypes/results/figures/fig5.jpg', dpi=300)
+ggsave('/Users/joshua/Developer/CognitiveSubtypes/results/figures/figure5.jpg', dpi=300)

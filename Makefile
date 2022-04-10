@@ -1,14 +1,6 @@
-.PHONY: data install clean
+.PHONY: clean
 
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-
-all: install clean
-
-model: venv
-	./scripts/make_model.sh $(DATA_DIR)
-
-data: venv
-	./scripts/make_data.sh $(CURRENT_CSV) $(DATA_DIR)
 
 venv:
 	./scripts/make_venv.sh $(ROOT_DIR)
