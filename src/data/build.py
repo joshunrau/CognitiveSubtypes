@@ -220,7 +220,7 @@ class DataBuilder:
         patient_features[:, 1] = np.where(patient_features[:, 1] == "Male", 1, 0)
         control_features = control_df[match_vars].to_numpy()
         control_features[:, 1] = np.where(control_features[:, 1] == "Male", 1, 0)
-        model = NearestNeighbors()
+        model = NearestNeighbors(algorithm='kd_tree')
         model.fit(control_features)
         _, neigh_ind = model.kneighbors(patient_features, n_neighbors=1)
         return control_df.iloc[neigh_ind.flatten()]
